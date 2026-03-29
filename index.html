@@ -1,1006 +1,860 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FourteenDays — Get Your App Google Approved</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --black: #080808;
-    --white: #f5f2ed;
-    --accent: #c8f542;
-    --danger: #ff4444;
-    --muted: #888;
-    --border: rgba(245,242,237,0.1);
-    --card-bg: #111;
-  }
-
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  html, body {
-    background: var(--black);
-    color: var(--white);
-    font-family: 'DM Sans', sans-serif;
-    overflow-x: hidden; 
-  }
-
-  /* ── NAV ── */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 18px 40px;
-    background: rgba(8,8,8,0.85);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
-  }
-
-  .nav-left { 
-    display: flex; 
-    align-items: center; 
-    gap: 32px; 
-  }
-
-  .logo {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 26px;
-    letter-spacing: 2px;
-    color: var(--accent);
-    text-decoration: none;
-  }
-
-  .btn-pricing-nav {
-    background: transparent;
-    border: none;
-    color: var(--white);
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 13px;
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition: color .2s;
-    padding-top: 2px;
-  }
-  .btn-pricing-nav:hover { color: var(--accent); }
-
-  .nav-right { display: flex; gap: 12px; align-items: center; }
-
-  .btn {
-    display: inline-flex; align-items: center; gap: 8px;
-    padding: 10px 20px; border-radius: 6px;
-    font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 600;
-    cursor: pointer; border: none; text-decoration: none;
-    transition: all .2s ease;
-  }
-
-  .btn-accent { background: var(--accent); color: #000; }
-  .btn-accent:hover { background: #b8e032; transform: translateY(-1px); }
-
-  .btn-wa { background: #25d366; color: #fff; }
-  .btn-wa:hover { background: #1db954; transform: translateY(-1px); }
-
-  /* ── MAIN / HERO ── */
-  main {
-    display: flex;
-    flex-direction: column;
-    padding-top: 73px;
-    min-height: 100vh;
-  }
-
-  /* ── HERO SPLIT ── */
-  .hero {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    flex-grow: 1;
-  }
-
-  .hero-left {
-    padding: 60px 44px;
-    border-right: 1px solid var(--border);
-    display: flex; flex-direction: column;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .hero-left::before {
-    content: '';
-    position: absolute; inset: 0;
-    background: radial-gradient(ellipse at 30% 20%, rgba(255,68,68,.08) 0%, transparent 60%);
-    pointer-events: none;
-  }
-
-  .side-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 18px;
-    opacity: .5;
-  }
-
-  .side-label.danger { color: var(--danger); opacity: 1; }
-  .side-label.good { color: var(--accent); opacity: 1; }
-
-  .hero-left h2 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(30px, 3.5vw, 48px);
-    line-height: 1.05;
-    color: var(--white);
-    margin-bottom: 16px;
-  }
-
-  .hero-left h2 span { color: var(--danger); }
-
-  .pain-points {
-    list-style: none;
-    margin-bottom: 30px;
-    flex: 1;
-  }
-
-  .pain-points li {
-    display: flex; gap: 10px; align-items: flex-start;
-    padding: 12px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-    font-size: 14px;
-    color: #ccc;
-    line-height: 1.5;
-  }
-
-  .pain-points li::before {
-    content: '✗';
-    color: var(--danger);
-    font-weight: 700;
-    flex-shrink: 0;
-    margin-top: 1px;
-  }
-
-  .loop-badge {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: rgba(255,68,68,.12);
-    border: 1px solid rgba(255,68,68,.3);
-    border-radius: 30px;
-    padding: 6px 14px;
-    font-size: 12px;
-    color: var(--danger);
-    font-family: 'JetBrains Mono', monospace;
-    margin-bottom: 24px;
-    animation: pulse-red 2s infinite;
-    align-self: flex-start;
-  }
-
-  @keyframes pulse-red {
-    0%, 100% { box-shadow: 0 0 0 0 rgba(255,68,68,.3); }
-    50% { box-shadow: 0 0 0 6px rgba(255,68,68,0); }
-  }
-
-  .loop-dot {
-    width: 8px; height: 8px; border-radius: 50%;
-    background: var(--danger);
-    animation: blink 1s infinite;
-  }
-
-  @keyframes blink { 0%, 100% { opacity:1 } 50% { opacity:.2 } }
-
-  .rejection-card {
-    margin-top: auto;
-    background: rgba(255,68,68,.06);
-    border: 1px solid rgba(255,68,68,.2);
-    border-radius: 10px;
-    padding: 16px 20px;
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-  }
-
-  .rejection-icon {
-    width: 38px; height: 38px; border-radius: 8px;
-    background: var(--danger);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 18px; flex-shrink: 0;
-  }
-
-  .rejection-text strong {
-    display: block;
-    font-size: 13px; font-weight: 600;
-    color: var(--danger);
-    margin-bottom: 3px;
-  }
-
-  .rejection-text p {
-    font-size: 12px;
-    color: #999;
-    line-height: 1.5;
-  }
-
-  .rejection-stamp {
-    margin-left: auto;
-    background: var(--danger);
-    color: #fff;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 15px;
-    letter-spacing: 1px;
-    padding: 4px 10px;
-    border-radius: 4px;
-    flex-shrink: 0;
-    align-self: center;
-    transform: rotate(-3deg);
-  }
-
-  .hero-right {
-    padding: 60px 44px;
-    display: flex; flex-direction: column;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .hero-right::before {
-    content: '';
-    position: absolute; inset: 0;
-    background: radial-gradient(ellipse at 70% 20%, rgba(200,245,66,.06) 0%, transparent 60%);
-    pointer-events: none;
-  }
-
-  .hero-right h2 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(30px, 3.5vw, 48px);
-    line-height: 1.05;
-    margin-bottom: 16px;
-  }
-
-  .hero-right h2 span { color: var(--accent); }
-
-  .benefits {
-    list-style: none;
-    margin-bottom: 30px;
-    flex: 1;
-  }
-
-  .benefits li {
-    display: flex; gap: 10px; align-items: flex-start;
-    padding: 12px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-    font-size: 14px;
-    color: #ccc;
-    line-height: 1.5;
-  }
-
-  .benefits li::before {
-    content: '✓';
-    color: var(--accent);
-    font-weight: 700;
-    flex-shrink: 0;
-    margin-top: 1px;
-  }
-
-  .stats-row {
-    display: flex; gap: 0;
-    margin-bottom: 24px;
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    overflow: hidden;
-  }
-
-  .stat {
-    flex: 1; text-align: center;
-    padding: 14px 10px;
-    border-right: 1px solid var(--border);
-  }
-  .stat:last-child { border-right: none; }
-
-  .stat-number {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 32px;
-    color: var(--accent);
-    line-height: 1;
-    margin-bottom: 3px;
-  }
-
-  .stat-label {
-    font-size: 11px;
-    color: var(--muted);
-    letter-spacing: .5px;
-  }
-
-  .approved-card {
-    margin-top: auto;
-    background: rgba(200,245,66,.06);
-    border: 1px solid rgba(200,245,66,.2);
-    border-radius: 10px;
-    padding: 16px 20px;
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-  }
-
-  .approved-icon {
-    width: 38px; height: 38px; border-radius: 8px;
-    background: var(--accent);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 18px; flex-shrink: 0;
-  }
-
-  .approved-text strong {
-    display: block;
-    font-size: 13px; font-weight: 600;
-    color: var(--accent);
-    margin-bottom: 3px;
-  }
-
-  .approved-text p {
-    font-size: 12px;
-    color: #999;
-    line-height: 1.5;
-  }
-
-  .approved-stamp {
-    margin-left: auto;
-    background: var(--accent);
-    color: #000;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 15px;
-    letter-spacing: 1px;
-    padding: 4px 10px;
-    border-radius: 4px;
-    flex-shrink: 0;
-    align-self: center;
-    transform: rotate(-3deg);
-  }
-
-  /* ── SCROLL BOTTOM BAR ── */
-  .scroll-bar {
-    position: fixed; bottom: 0; left: 0; right: 0; z-index: 90;
-    background: rgba(8,8,8,0.95);
-    backdrop-filter: blur(12px);
-    border-top: 1px solid var(--border);
-    padding: 16px 40px;
-    transform: translateY(100%);
-    transition: transform .5s cubic-bezier(.22,1,.36,1);
-    box-shadow: 0 -10px 40px rgba(0,0,0,0.6);
-  }
-
-  .scroll-bar.visible { transform: translateY(0); }
-
-  .scroll-bar-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .scroll-bar-text {
-    font-size: 14px;
-    line-height: 1.6;
-    color: #ccc;
-    margin: 0;
-    flex: 1;
-  }
-
-  .scroll-bar-text strong { color: var(--white); }
-
-  .scroll-bar-actions {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    flex-shrink: 0;
-  }
-
-  .scroll-bar-close {
-    background: none;
-    border: none;
-    color: var(--muted);
-    font-size: 28px;
-    cursor: pointer;
-    line-height: 1;
-    padding: 0;
-    transition: color .2s, transform .2s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .scroll-bar-close:hover { 
-    color: var(--white); 
-    transform: scale(1.1);
-  }
-
-  /* ── MODAL OVERLAY ── */
-  .overlay {
-    position: fixed; inset: 0; z-index: 200;
-    background: rgba(0,0,0,.75);
-    backdrop-filter: blur(6px);
-    display: flex; align-items: center; justify-content: center;
-    opacity: 0; pointer-events: none;
-    transition: opacity .25s;
-    padding: 20px;
-  }
-
-  .overlay.active { opacity: 1; pointer-events: all; }
-
-  .modal {
-    background: #111;
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 36px;
-    width: 100%;
-    /* CHANGED: Increased max-width */
-    max-width: 800px;
-    max-height: 90vh;
-    overflow-y: auto;
-    transform: translateY(20px) scale(.97);
-    transition: transform .3s cubic-bezier(.22,1,.36,1);
-    position: relative;
-  }
-
-  .overlay.active .modal { transform: translateY(0) scale(1); }
-
-  .modal-close {
-    position: absolute; top: 16px; right: 16px;
-    background: rgba(255,255,255,.08);
-    border: none; color: var(--white);
-    width: 30px; height: 30px; border-radius: 50%;
-    font-size: 18px; cursor: pointer;
-    display: flex; align-items: center; justify-content: center;
-    transition: background .2s;
-  }
-  .modal-close:hover { background: rgba(255,255,255,.15); }
-
-  .modal h3 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 32px;
-    margin-bottom: 4px;
-    letter-spacing: 1px;
-  }
-
-  .modal-sub {
-    font-size: 13px; color: var(--muted);
-    margin-bottom: 24px;
-  }
-
-  /* CHANGED: Make pricing options horizontal */
-  .pricing-options {
-    display: flex; 
-    flex-direction: row; 
-    gap: 16px;
-    margin-bottom: 24px;
-  }
-
-  .price-card {
-    border: 1.5px solid var(--border);
-    border-radius: 10px;
-    padding: 18px 16px;
-    cursor: pointer;
-    transition: all .2s;
-    display: flex; 
-    flex-direction: column; 
-    align-items: flex-start; 
-    justify-content: flex-start;
-    flex: 1;
-  }
-
-  .price-card:hover { border-color: var(--accent); }
-  .price-card.selected { border-color: var(--accent); background: rgba(200,245,66,.06); }
-
-  .price-card input[type="radio"] { display: none; }
-
-  .price-info { width: 100%; margin-bottom: 12px; }
-  .price-name { font-weight: 600; font-size: 15px; margin-bottom: 4px; }
-  .price-desc { font-size: 12px; color: var(--muted); line-height: 1.4; }
-
-  .price-tag {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 28px;
-    color: var(--accent);
-    white-space: nowrap;
-    margin-top: auto;
-  }
-
-  .price-tag small {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 12px;
-    color: var(--muted);
-    font-weight: 400;
-  }
-
-  .form-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin-bottom: 16px;
-  }
-
-  .form-field {
-    display: flex; flex-direction: column; gap: 6px;
-  }
-
-  .form-field.full { grid-column: 1 / -1; }
-
-  .form-field label {
-    font-size: 12px;
-    color: var(--muted);
-    font-weight: 500;
-  }
-
-  .form-field input,
-  .form-field select {
-    background: rgba(255,255,255,.05);
-    border: 1px solid var(--border);
-    border-radius: 7px;
-    padding: 12px 14px;
-    color: var(--white);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 14px;
-    outline: none;
-    transition: border-color .2s;
-    width: 100%;
-  }
-
-  .form-field input:focus,
-  .form-field select:focus {
-    border-color: var(--accent);
-  }
-
-  .form-field select option { background: #111; }
-
-  .btn-submit {
-    width: 100%;
-    background: var(--accent);
-    color: #000;
-    border: none;
-    padding: 14px;
-    border-radius: 8px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 15px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all .2s;
-    letter-spacing: .3px;
-    margin-top: 8px;
-  }
-
-  .btn-submit:hover { background: #b8e032; transform: translateY(-1px); }
-
-  .form-note {
-    text-align: center;
-    font-size: 11.5px;
-    color: var(--muted);
-    margin-top: 12px;
-  }
-
-  /* ── EXIT POPUP ── */
-  .exit-modal {
-    background: #111;
-    border: 1px solid rgba(200,245,66,.25);
-    border-radius: 16px;
-    padding: 40px 36px;
-    width: 100%;
-    max-width: 460px;
-    text-align: center;
-    transform: scale(.9);
-    transition: transform .3s cubic-bezier(.22,1,.36,1);
-    position: relative;
-  }
-
-  .overlay.active .exit-modal { transform: scale(1); }
-
-  .exit-timer {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 44px;
-    color: var(--accent);
-    margin: 16px 0;
-    animation: countdown-pulse 1s infinite;
-  }
-
-  @keyframes countdown-pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: .7; }
-  }
-
-  .exit-modal h3 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 34px;
-    line-height: 1.1;
-    margin-bottom: 10px;
-  }
-
-  .exit-modal p {
-    font-size: 14px;
-    color: #bbb;
-    line-height: 1.6;
-    margin-bottom: 24px;
-  }
-
-  .exit-modal .special-price {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 52px;
-    color: var(--accent);
-    line-height: 1;
-  }
-
-  .exit-modal .was-price {
-    font-size: 18px;
-    color: var(--muted);
-    text-decoration: line-through;
-    margin-bottom: 4px;
-  }
-
-  .exit-skip {
-    background: none; border: none;
-    color: var(--muted);
-    font-size: 12px;
-    cursor: pointer;
-    margin-top: 14px;
-    text-decoration: underline;
-    display: block;
-    width: 100%;
-    text-align: center;
-    transition: color .2s;
-  }
-  .exit-skip:hover { color: var(--white); }
-
-  /* ── MOBILE ── */
-  @media (max-width: 768px) {
-    nav { padding: 14px 20px; }
-    .nav-left { gap: 16px; }
-    .logo { font-size: 20px; }
-    .btn { padding: 8px 14px; font-size: 12px; }
-    .btn-pricing-nav { font-size: 12px; }
-
-    .hero { grid-template-columns: 1fr; }
-    .hero-left { padding: 40px 20px 30px; border-right: none; border-bottom: 1px solid var(--border); }
-    .hero-right { padding: 40px 20px 40px; }
-    .hero-left h2, .hero-right h2 { font-size: 32px; }
-
-    .stats-row { margin-bottom: 14px; }
-    .stat-number { font-size: 24px; }
-
-    .form-grid { grid-template-columns: 1fr; }
-    .modal { padding: 24px 20px; }
-    .exit-modal { padding: 28px 24px; }
-
-    /* Stack pricing horizontally to vertical on mobile */
-    .pricing-options { flex-direction: column; }
-    .price-card { 
-      flex-direction: row; 
-      align-items: center; 
-      padding: 14px 18px; 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>getsome.rest — Real Humans Test Your App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* ─────────────────────────────────────────────
+       TOKENS
+    ───────────────────────────────────────────── */
+    :root {
+      --white:   #ffffff;
+      --off:     #f7f6f3;
+      --ink:     #111111;
+      --mid:     #888880;
+      --border:  #e8e6e0;
+      --lime:    #c8f542;   /* the ONE accent */
+      --lime-dk: #9dc918;
+      --red:     #e63d2f;   /* urgency only */
+      --radius:  14px;
+      --fs-mono: 'DM Mono', monospace;
+      --fs-serif:'Lora', Georgia, serif;
     }
-    .price-info { margin-bottom: 0; width: auto; }
-    .price-tag { margin-top: 0; margin-left: auto; }
 
-    .scroll-bar { padding: 20px; }
-    .scroll-bar-inner { 
-      flex-direction: column; 
-      align-items: flex-start; 
-      gap: 16px; 
-    }
-    .scroll-bar-actions { 
-      width: 100%; 
-      justify-content: space-between; 
-    }
-    .scroll-bar-actions .btn { flex-grow: 1; justify-content: center; }
-  }
+    /* ─────────────────────────────────────────────
+       RESET + BASE
+    ───────────────────────────────────────────── */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { font-size: 16px; scroll-behavior: smooth; }
 
-  @media (max-width: 480px) {
-    .nav-right .btn-wa span { display: none; }
-  }
-</style>
+    body {
+      font-family: var(--fs-serif);
+      background: var(--white);
+      color: var(--ink);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─────────────────────────────────────────────
+       CUSTOM CURSOR
+    ───────────────────────────────────────────── */
+    body { cursor: none; }
+    #cur {
+      position: fixed; z-index: 9999; pointer-events: none;
+      width: 12px; height: 12px;
+      background: var(--lime);
+      border-radius: 50%;
+      transform: translate(-50%,-50%);
+      transition: width .25s, height .25s, background .2s;
+      mix-blend-mode: multiply;
+    }
+    body.hovering #cur { width: 44px; height: 44px; }
+
+    /* ─────────────────────────────────────────────
+       TOP MARQUEE
+    ───────────────────────────────────────────── */
+    .marquee-bar {
+      width: 100%; overflow: hidden;
+      background: var(--ink); padding: 11px 0;
+      border-bottom: none;
+    }
+    .marquee-track {
+      display: flex; width: max-content;
+      animation: marq 28s linear infinite;
+    }
+    .marquee-track:hover { animation-play-state: paused; }
+
+    @keyframes marq { to { transform: translateX(-50%); } }
+
+    .marquee-unit {
+      display: flex; align-items: center; gap: 32px;
+      padding: 0 40px; white-space: nowrap;
+      font-family: var(--fs-mono);
+      font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase;
+      color: rgba(255,255,255,.45);
+    }
+    .marquee-unit .hi { color: var(--lime); font-weight: 500; }
+    .marquee-unit .sep { opacity: .2; }
+
+    /* ─────────────────────────────────────────────
+       HEADER
+    ───────────────────────────────────────────── */
+    header {
+      position: sticky; top: 0; z-index: 200;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px;
+      height: 64px;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo {
+      font-family: var(--fs-serif);
+      font-size: 19px; font-style: italic;
+      color: var(--ink); text-decoration: none;
+      letter-spacing: -.3px;
+    }
+    .logo b { font-style: normal; font-weight: 700; }
+
+    .nav-center {
+      display: flex; align-items: center; gap: 6px;
+      font-family: var(--fs-mono);
+      font-size: 11px; letter-spacing: .05em; text-transform: uppercase;
+      color: var(--mid);
+    }
+    .status-dot {
+      width: 7px; height: 7px;
+      background: #3ecf6b; border-radius: 50%;
+      animation: blink 1.6s ease-in-out infinite;
+    }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.25} }
+
+    .nav-actions { display: flex; align-items: center; gap: 10px; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 7px;
+      font-family: var(--fs-mono);
+      font-size: 12px; letter-spacing: .05em; text-transform: uppercase;
+      text-decoration: none; border: none; cursor: none;
+      padding: 9px 20px; border-radius: 50px;
+      transition: all .22s ease;
+      font-weight: 500;
+    }
+    .btn-ghost {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--mid);
+    }
+    .btn-ghost:hover { border-color: var(--ink); color: var(--ink); }
+
+    .btn-lime {
+      background: var(--lime);
+      border: 1px solid var(--lime);
+      color: var(--ink);
+      font-weight: 700;
+    }
+    .btn-lime:hover {
+      background: var(--lime-dk);
+      border-color: var(--lime-dk);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(156,201,24,.3);
+    }
+
+    /* ─────────────────────────────────────────────
+       HERO WRAPPER
+    ───────────────────────────────────────────── */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 480px;
+      min-height: calc(100vh - 64px - 42px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* ─────────────────────────────────────────────
+       LEFT PANE
+    ───────────────────────────────────────────── */
+    .left {
+      padding: 72px 64px 80px;
+      border-right: 1px solid var(--border);
+      display: flex; flex-direction: column; justify-content: space-between;
+      position: relative; overflow: hidden;
+    }
+
+    /* the BIG background number */
+    .bg-price {
+      position: absolute;
+      bottom: -40px; right: -30px;
+      font-family: var(--fs-mono);
+      font-size: 340px; font-weight: 300;
+      line-height: 1; letter-spacing: -20px;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(17,17,17,.055);
+      pointer-events: none; user-select: none;
+      animation: breathe 7s ease-in-out infinite;
+    }
+    @keyframes breathe {
+      0%,100% { transform: scale(1) translateY(0); }
+      50%      { transform: scale(1.015) translateY(-6px); }
+    }
+
+    /* kicker */
+    .kicker {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-family: var(--fs-mono);
+      font-size: 11px; letter-spacing: .12em; text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 36px;
+    }
+    .kicker::before {
+      content: '';
+      display: inline-block;
+      width: 24px; height: 1px;
+      background: var(--mid);
+    }
+
+    /* headline */
+    .headline {
+      font-size: clamp(40px, 4.5vw, 66px);
+      font-weight: 600; line-height: 1.08;
+      letter-spacing: -.04em;
+      margin-bottom: 28px;
+      max-width: 640px;
+    }
+    .headline em { font-style: italic; font-weight: 400; color: var(--mid); }
+    .headline .underline {
+      position: relative; white-space: nowrap;
+    }
+    .headline .underline::after {
+      content: '';
+      position: absolute;
+      left: 0; bottom: 4px;
+      width: 100%; height: 10px;
+      background: var(--lime);
+      border-radius: 3px;
+      z-index: -1;
+      transform-origin: left;
+      animation: revealBar .9s cubic-bezier(.77,0,.18,1) .4s both;
+    }
+    @keyframes revealBar {
+      from { transform: scaleX(0); }
+      to   { transform: scaleX(1); }
+    }
+
+    /* description */
+    .desc {
+      font-size: 17px; font-weight: 400; line-height: 1.75;
+      color: var(--mid);
+      max-width: 500px;
+      margin-bottom: 52px;
+    }
+    .desc strong { color: var(--ink); font-weight: 600; }
+
+    /* stats row */
+    .stats {
+      display: flex; gap: 0;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      max-width: 560px;
+    }
+    .stat {
+      flex: 1; padding: 22px 24px;
+      border-right: 1px solid var(--border);
+      position: relative;
+    }
+    .stat:last-child { border-right: none; }
+    .stat-num {
+      font-family: var(--fs-mono);
+      font-size: 28px; font-weight: 500;
+      color: var(--ink); letter-spacing: -.02em;
+      display: block; margin-bottom: 4px;
+    }
+    .stat-num .accent { color: var(--lime-dk); }
+    .stat-label {
+      font-family: var(--fs-mono);
+      font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase;
+      color: var(--mid);
+    }
+    /* lime dot top-left on first stat */
+    .stat:first-child::before {
+      content: '';
+      position: absolute; top: 12px; right: 14px;
+      width: 8px; height: 8px;
+      background: var(--lime); border-radius: 50%;
+    }
+
+    /* bottom contact row */
+    .contact-row {
+      display: flex; align-items: center; gap: 28px;
+      margin-top: 48px;
+    }
+    .contact-link {
+      display: flex; align-items: center; gap: 9px;
+      font-family: var(--fs-mono);
+      font-size: 12px; letter-spacing: .04em; text-transform: uppercase;
+      color: var(--mid); text-decoration: none;
+      transition: color .2s;
+    }
+    .contact-link:hover { color: var(--ink); }
+    .contact-link svg { width: 15px; height: 15px; }
+    .contact-sep { width: 1px; height: 20px; background: var(--border); }
+
+    /* ─────────────────────────────────────────────
+       RIGHT PANE — FORM
+    ───────────────────────────────────────────── */
+    .right {
+      background: var(--off);
+      display: flex; flex-direction: column;
+    }
+
+    /* price hero at top of form pane */
+    .price-hero {
+      padding: 44px 44px 36px;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+    .price-eyebrow {
+      font-family: var(--fs-mono);
+      font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase;
+      color: var(--mid); margin-bottom: 16px;
+    }
+    .price-display {
+      display: flex; align-items: flex-start; gap: 6px;
+      margin-bottom: 12px;
+    }
+    .price-dollar {
+      font-family: var(--fs-mono);
+      font-size: 22px; font-weight: 300;
+      color: var(--mid); margin-top: 10px;
+    }
+    .price-big {
+      font-family: var(--fs-serif);
+      font-size: 88px; font-weight: 700;
+      line-height: .95; letter-spacing: -.06em;
+      color: var(--ink);
+    }
+    .price-meta {
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding-bottom: 8px; gap: 3px;
+    }
+    .price-meta span {
+      font-family: var(--fs-mono);
+      font-size: 10.5px; letter-spacing: .06em; text-transform: uppercase;
+      color: var(--mid);
+    }
+    .price-tagline {
+      font-size: 14px; font-style: italic;
+      color: var(--mid); line-height: 1.6;
+    }
+    .price-tagline b { font-style: normal; font-weight: 600; color: var(--ink); }
+
+    /* lime stripe — top of form pane */
+    .price-hero::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 4px;
+      background: var(--lime);
+    }
+
+    /* form body */
+    .form-body {
+      padding: 36px 44px 44px;
+      flex: 1;
+    }
+    .form-title {
+      font-family: var(--fs-serif);
+      font-size: 20px; font-style: italic; font-weight: 400;
+      color: var(--ink); margin-bottom: 26px;
+    }
+
+    .fg { margin-bottom: 13px; }
+    .fg-label {
+      display: block;
+      font-family: var(--fs-mono);
+      font-size: 9.5px; letter-spacing: .12em; text-transform: uppercase;
+      color: var(--mid); margin-bottom: 6px;
+    }
+    .fg-ctrl {
+      width: 100%;
+      padding: 13px 15px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      font-family: var(--fs-serif);
+      font-size: 15px; color: var(--ink);
+      outline: none;
+      transition: border-color .2s, box-shadow .2s;
+      cursor: none;
+    }
+    .fg-ctrl::placeholder { color: rgba(17,17,17,.22); font-style: italic; }
+    .fg-ctrl:focus {
+      border-color: var(--ink);
+      box-shadow: 0 0 0 3px rgba(17,17,17,.06);
+    }
+    select.fg-ctrl {
+      appearance: none; cursor: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='11' fill='%23888880' viewBox='0 0 16 16'%3E%3Cpath d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 15px center;
+      background-color: var(--white);
+    }
+    select.fg-ctrl option { background: var(--white); }
+    textarea.fg-ctrl { resize: none; height: 68px; font-style: italic; }
+
+    .fg-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+    /* submit */
+    .submit-wrap { margin-top: 18px; }
+    .submit-btn {
+      display: block; width: 100%;
+      padding: 17px;
+      background: var(--ink);
+      color: var(--white);
+      border: none; border-radius: 12px;
+      font-family: var(--fs-mono);
+      font-size: 13px; font-weight: 500;
+      letter-spacing: .06em; text-transform: uppercase;
+      cursor: none;
+      position: relative; overflow: hidden;
+      transition: transform .22s, box-shadow .22s;
+    }
+    .submit-btn::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: var(--lime);
+      transform: translateX(-101%);
+      transition: transform .38s cubic-bezier(.77,0,.18,1);
+    }
+    .submit-btn:hover::before { transform: translateX(0); }
+    .submit-btn:hover {
+      color: var(--ink);
+      transform: translateY(-2px);
+      box-shadow: 0 14px 36px rgba(17,17,17,.14);
+    }
+    .submit-btn span { position: relative; z-index: 1; }
+
+    .form-footnote {
+      display: flex; align-items: center; justify-content: center; gap: 7px;
+      margin-top: 13px;
+      font-family: var(--fs-mono);
+      font-size: 10px; letter-spacing: .06em; text-transform: uppercase;
+      color: rgba(17,17,17,.3);
+    }
+    .form-footnote svg { width: 11px; height: 11px; color: var(--lime-dk); }
+
+    /* ─────────────────────────────────────────────
+       MODAL — EXIT INTENT
+    ───────────────────────────────────────────── */
+    .modal-veil {
+      position: fixed; inset: 0; z-index: 800;
+      background: rgba(17,17,17,.65);
+      backdrop-filter: blur(18px);
+      display: none; align-items: center; justify-content: center;
+      padding: 20px;
+    }
+    .modal-veil.open { display: flex; animation: veilin .3s ease; }
+    @keyframes veilin { from{opacity:0} to{opacity:1} }
+
+    .modal-card {
+      width: 100%; max-width: 500px;
+      background: var(--white);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 40px 100px rgba(17,17,17,.25);
+      animation: cardin .45s cubic-bezier(.22,1,.36,1);
+    }
+    @keyframes cardin {
+      from { transform: translateY(24px) scale(.97); opacity: 0; }
+      to   { transform: translateY(0) scale(1); opacity: 1; }
+    }
+
+    .modal-top {
+      background: var(--ink); padding: 40px 44px 36px;
+      position: relative;
+    }
+    /* lime stripe */
+    .modal-top::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 4px;
+      background: var(--lime);
+    }
+
+    .modal-close {
+      position: absolute; top: 18px; right: 18px;
+      width: 34px; height: 34px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 50%; cursor: none;
+      color: rgba(255,255,255,.5);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px;
+      transition: all .2s;
+    }
+    .modal-close:hover { background: rgba(255,255,255,.16); color: #fff; }
+
+    .modal-tag {
+      font-family: var(--fs-mono);
+      font-size: 10px; letter-spacing: .14em; text-transform: uppercase;
+      color: var(--lime); margin-bottom: 16px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .modal-tag::before {
+      content: '';
+      width: 18px; height: 1px; background: var(--lime);
+    }
+
+    .modal-h {
+      font-family: var(--fs-serif);
+      font-size: 32px; font-weight: 700; line-height: 1.1;
+      color: var(--white); margin-bottom: 8px;
+    }
+    .modal-h em { font-style: italic; font-weight: 400; color: var(--lime); }
+
+    .modal-sub {
+      font-size: 14px; color: rgba(255,255,255,.45);
+      line-height: 1.6; margin-bottom: 28px;
+      font-style: italic;
+    }
+
+    .modal-price-row {
+      display: flex; align-items: center; gap: 16px;
+    }
+    .m-was {
+      font-family: var(--fs-mono);
+      font-size: 20px; font-weight: 300;
+      color: rgba(255,255,255,.25);
+      text-decoration: line-through;
+    }
+    .m-arrow { color: rgba(255,255,255,.2); font-size: 18px; }
+    .m-now {
+      font-family: var(--fs-serif);
+      font-size: 48px; font-weight: 700; letter-spacing: -.04em;
+      color: var(--lime); line-height: 1;
+    }
+    .m-now sup { font-size: 22px; vertical-align: super; }
+    .m-badge {
+      margin-left: auto;
+      padding: 5px 14px;
+      background: var(--lime);
+      color: var(--ink);
+      border-radius: 50px;
+      font-family: var(--fs-mono);
+      font-size: 11px; font-weight: 700; letter-spacing: .06em;
+    }
+
+    .modal-form { padding: 32px 44px 36px; }
+
+    .modal-form .fg-ctrl { background: var(--off); }
+    .modal-form .fg-ctrl:focus { background: var(--white); }
+
+    .modal-submit {
+      display: block; width: 100%;
+      padding: 17px;
+      background: var(--lime);
+      color: var(--ink);
+      border: none; border-radius: 12px;
+      font-family: var(--fs-mono);
+      font-size: 13px; font-weight: 700;
+      letter-spacing: .06em; text-transform: uppercase;
+      cursor: none;
+      position: relative; overflow: hidden;
+      transition: transform .2s, box-shadow .2s, background .2s;
+      margin-top: 6px;
+    }
+    .modal-submit:hover {
+      background: var(--lime-dk);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(156,201,24,.35);
+    }
+
+    .modal-timer {
+      text-align: center; margin-top: 14px;
+      font-family: var(--fs-mono);
+      font-size: 11px; letter-spacing: .05em;
+      color: var(--mid);
+    }
+    .modal-timer b { color: var(--red); }
+
+    /* ─────────────────────────────────────────────
+       RESPONSIVE
+    ───────────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .hero { grid-template-columns: 1fr; }
+      .left {
+        border-right: none; border-bottom: 1px solid var(--border);
+        padding: 56px 36px 60px;
+      }
+      .right { min-height: auto; }
+    }
+    @media (max-width: 720px) {
+      header { padding: 0 20px; }
+      .nav-center { display: none; }
+      .btn-ghost { display: none; }
+      .left { padding: 48px 24px 56px; }
+      .price-hero, .form-body { padding-left: 24px; padding-right: 24px; }
+      .headline { font-size: 36px; }
+      .stats { flex-direction: column; }
+      .stat { border-right: none; border-bottom: 1px solid var(--border); }
+      .stat:last-child { border-bottom: none; }
+      .fg-row { grid-template-columns: 1fr; }
+      .modal-top, .modal-form { padding-left: 28px; padding-right: 28px; }
+      .modal-h { font-size: 26px; }
+    }
+  </style>
 </head>
 <body>
 
-<nav>
-  <div class="nav-left">
-    <a class="logo" href="#">FourteenDays</a>
-    <button class="btn-pricing-nav" onclick="openPricing()">PRICING</button>
-  </div>
-  <div class="nav-right">
-    <button class="btn btn-accent" onclick="openPricing()">Buy Now →</button>
-    <a class="btn btn-wa" href="https://wa.me/yourphonenumber" target="_blank">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.999 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2.046 22l4.932-1.37C8.41 21.511 10.175 22 11.999 22 17.523 22 22 17.523 22 12S17.523 2 11.999 2zm0 18c-1.617 0-3.12-.474-4.388-1.285l-.315-.187-3.267.908.924-3.184-.205-.328A7.942 7.942 0 014 12c0-4.411 3.588-8 7.999-8S20 7.589 20 12c0 4.411-3.588 8-8.001 8z"/></svg>
-      <span>WhatsApp</span>
-    </a>
-  </div>
-</nav>
+  <!-- ── CUSTOM CURSOR ── -->
+  <div id="cur"></div>
 
-<main>
-  <div class="hero">
-    <div class="hero-left">
-      <div class="side-label danger">⬤ &nbsp;The Endless Loop You're Stuck In</div>
-      <h2>Submit. Wait. <span>Rejected.</span><br>Repeat Forever.</h2>
-
-      <div class="loop-badge">
-        <div class="loop-dot"></div>
-        Testing Loop — Day 47 of 14
+  <!-- ── TOP MARQUEE ── -->
+  <div class="marquee-bar">
+    <div class="marquee-track">
+      <!-- two identical sets for seamless loop -->
+      <div class="marquee-unit">
+        <span class="hi">12 Real Testers</span><span class="sep">·</span>
+        <span>No Emulators. Ever.</span><span class="sep">·</span>
+        <span class="hi">$14 Flat</span><span class="sep">·</span>
+        <span>14 Days Daily Coverage</span><span class="sep">·</span>
+        <span class="hi">Reply in 2 Hours</span><span class="sep">·</span>
+        <span>Real Android Devices</span><span class="sep">·</span>
+        <span class="hi">Limited Slots</span><span class="sep">·</span>
+        <span>Daily Written Reports</span><span class="sep">·</span>
       </div>
-
-      <ul class="pain-points">
-        <li>You submit your app thinking it's finally ready</li>
-        <li>Google rejects it with a vague, useless reason</li>
-        <li>You fix what they said — only to get a NEW rejection</li>
-        <li>You're going in circles for weeks, sometimes months</li>
-        <li>Zero clarity on what Google actually wants from you</li>
-        <li>Your app launch is delayed, revenue is bleeding</li>
-      </ul>
-
-      <div class="rejection-card">
-        <div class="rejection-icon">🚫</div>
-        <div class="rejection-text">
-          <strong>Google Play — Policy Violation</strong>
-          <p>Your app has been rejected. It does not comply with our Developer Program Policy. Your app must be remediated before it can be published.</p>
-        </div>
-        <div class="rejection-stamp">REJECTED</div>
-      </div>
-    </div>
-
-    <div class="hero-right">
-      <div class="side-label good">✦ &nbsp;FourteenDays — We End The Loop</div>
-      <h2>Your App. <span>Approved.</span><br>No Guessing. Done.</h2>
-
-      <div class="stats-row">
-        <div class="stat">
-          <div class="stat-number">97%</div>
-          <div class="stat-label">Approval Rate</div>
-        </div>
-        <div class="stat">
-          <div class="stat-number">14</div>
-          <div class="stat-label">Days Max</div>
-        </div>
-        <div class="stat">
-          <div class="stat-number">200+</div>
-          <div class="stat-label">Apps Approved</div>
-        </div>
-      </div>
-
-      <ul class="benefits">
-        <li>We know exactly what Google's reviewers look for</li>
-        <li>Real testers, real devices — policy-compliant testing done right</li>
-        <li>We handle the loop so you never have to go through it</li>
-        <li>Transparent process with updates at every step</li>
-        <li>If rejected under our watch — we fix it for free, no questions</li>
-        <li>Pay once, get approved. No hidden fees, no surprises</li>
-      </ul>
-
-      <div class="approved-card">
-        <div class="approved-icon">✅</div>
-        <div class="approved-text">
-          <strong>Google Play — App Published Successfully</strong>
-          <p>Congratulations! Your app is now live on Google Play Store and available to millions of users worldwide.</p>
-        </div>
-        <div class="approved-stamp">APPROVED</div>
+      <div class="marquee-unit" aria-hidden="true">
+        <span class="hi">12 Real Testers</span><span class="sep">·</span>
+        <span>No Emulators. Ever.</span><span class="sep">·</span>
+        <span class="hi">$14 Flat</span><span class="sep">·</span>
+        <span>14 Days Daily Coverage</span><span class="sep">·</span>
+        <span class="hi">Reply in 2 Hours</span><span class="sep">·</span>
+        <span>Real Android Devices</span><span class="sep">·</span>
+        <span class="hi">Limited Slots</span><span class="sep">·</span>
+        <span>Daily Written Reports</span><span class="sep">·</span>
       </div>
     </div>
   </div>
-</main>
 
-<div class="scroll-bar" id="scrollBar">
-  <div class="scroll-bar-inner">
-    <p class="scroll-bar-text">
-      That's it. No 47-section landing page trying to convince you. If you have an app stuck in testing hell, we can get it approved. <strong>The stats above are real. The choice is simple.</strong>
-    </p>
-    <div class="scroll-bar-actions">
-      <button class="btn btn-accent" onclick="openPricing()">Start Now →</button>
-      <button class="scroll-bar-close" onclick="closeScrollBar()" title="Close">&times;</button>
+  <!-- ── HEADER ── -->
+  <header>
+    <a href="#" class="logo"><b>getsome</b>.rest</a>
+    <div class="nav-center">
+      <span class="status-dot"></span>
+      Accepting orders now
+    </div>
+    <div class="nav-actions">
+      <a href="mailto:hello@getsome.rest" class="btn btn-ghost">hello@getsome.rest</a>
+      <a href="https://wa.me/YOUR_NUMBER" class="btn btn-lime">WhatsApp Us</a>
+    </div>
+  </header>
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+
+    <!-- LEFT — editorial -->
+    <div class="left">
+      <div class="bg-price" aria-hidden="true">$14</div>
+
+      <div>
+        <div class="kicker">Android Beta Testing · Since Day One</div>
+
+        <h1 class="headline">
+          Your app deserves<br>
+          <span class="underline">real humans</span>,<br>
+          not <em>guesswork.</em>
+        </h1>
+
+        <p class="desc">
+          We put <strong>12 real people</strong> on real Android phones, testing your app <strong>every single day for 14 days</strong>. You get written reports daily. We find crashes, friction, and weird edge cases before your users do. All of this — <strong>for $14.</strong>
+        </p>
+
+        <div class="stats">
+          <div class="stat">
+            <span class="stat-num">12<span class="accent">×</span></span>
+            <span class="stat-label">Real testers</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">14</span>
+            <span class="stat-label">Days coverage</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num"><span class="accent">$</span>14</span>
+            <span class="stat-label">Flat rate</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-row">
+        <a href="mailto:hello@getsome.rest" class="contact-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          hello@getsome.rest
+        </a>
+        <div class="contact-sep"></div>
+        <a href="https://wa.me/YOUR_NUMBER" class="contact-link">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Chat on WhatsApp
+        </a>
+        <div class="contact-sep"></div>
+        <span class="contact-link" style="cursor:none;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Reply in ~2 hours
+        </span>
+      </div>
+    </div>
+
+    <!-- RIGHT — form pane -->
+    <div class="right">
+      <div class="price-hero">
+        <p class="price-eyebrow">Flat price, no surprises</p>
+        <div class="price-display">
+          <span class="price-dollar">$</span>
+          <span class="price-big">14</span>
+          <div class="price-meta">
+            <span>12 testers</span>
+            <span>14 days</span>
+            <span>daily reports</span>
+          </div>
+        </div>
+        <p class="price-tagline">The cost of a lunch — for the <b>peace of mind</b> your app deserves.</p>
+      </div>
+
+      <div class="form-body">
+        <p class="form-title">Start here — we'll do the rest.</p>
+
+        <!-- Replace YOUR_EMAIL -->
+        <form action="https://formsubmit.co/YOUR_EMAIL@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="New Order — getsome.rest v4">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="Form Source" value="Main Form — v4">
+
+          <div class="fg">
+            <label class="fg-label">Your Name</label>
+            <input class="fg-ctrl" type="text" name="Name" placeholder="Jane Smith" required>
+          </div>
+
+          <div class="fg fg-row">
+            <div class="fg">
+              <label class="fg-label">Email</label>
+              <input class="fg-ctrl" type="email" name="Email" placeholder="jane@app.com" required>
+            </div>
+            <div class="fg">
+              <label class="fg-label">WhatsApp</label>
+              <input class="fg-ctrl" type="tel" name="WhatsApp" placeholder="+1 234 567 890">
+            </div>
+          </div>
+
+          <div class="fg">
+            <label class="fg-label">Play Store Link</label>
+            <input class="fg-ctrl" type="url" name="App Link" placeholder="https://play.google.com/store/apps/…">
+          </div>
+
+          <div class="fg">
+            <label class="fg-label">Number of Testers</label>
+            <select class="fg-ctrl" name="Testers Count">
+              <option value="12 testers — $14">12 Testers — $14 &nbsp;(most popular)</option>
+              <option value="24 testers — $26">24 Testers — $26</option>
+              <option value="50 testers — $49">50 Testers — $49</option>
+            </select>
+          </div>
+
+          <div class="fg">
+            <label class="fg-label">Anything we should know?</label>
+            <textarea class="fg-ctrl" name="Message" placeholder="Edge cases, focus areas, special requirements…"></textarea>
+          </div>
+
+          <div class="submit-wrap">
+            <button type="submit" class="submit-btn">
+              <span>Submit & Claim My Spot →</span>
+            </button>
+            <p class="form-footnote">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              Private · No spam · 2-hour reply
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ── EXIT INTENT MODAL ── -->
+  <div class="modal-veil" id="veil">
+    <div class="modal-card">
+      <div class="modal-top">
+        <button class="modal-close" id="mclose">✕</button>
+        <div class="modal-tag">One-time offer</div>
+        <h2 class="modal-h">Before you go — <em>20% off</em>, just for you.</h2>
+        <p class="modal-sub">We don't discount often. But if you were on the fence, this should tip you over.</p>
+        <div class="modal-price-row">
+          <span class="m-was">$14</span>
+          <span class="m-arrow">→</span>
+          <span class="m-now"><sup>$</sup>11.20</span>
+          <span class="m-badge">–20%</span>
+        </div>
+      </div>
+      <div class="modal-form">
+        <!-- Replace YOUR_EMAIL -->
+        <form action="https://formsubmit.co/YOUR_EMAIL@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="🔥 DISCOUNT LEAD — 20% OFF — getsome.rest v4">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="Form Source" value="Exit Intent — 20% OFF — v4">
+          <input type="hidden" name="Discount" value="20% — $11.20">
+
+          <div class="fg-row" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;">
+            <div class="fg">
+              <label class="fg-label">Name</label>
+              <input class="fg-ctrl" type="text" name="Name" placeholder="Jane Smith" required>
+            </div>
+            <div class="fg">
+              <label class="fg-label">Email</label>
+              <input class="fg-ctrl" type="email" name="Email" placeholder="jane@app.com" required>
+            </div>
+          </div>
+          <div class="fg" style="margin-bottom:10px;">
+            <label class="fg-label">WhatsApp</label>
+            <input class="fg-ctrl" type="tel" name="WhatsApp" placeholder="+1 234 567 890">
+          </div>
+          <div class="fg" style="margin-bottom:16px;">
+            <label class="fg-label">Play Store Link (optional)</label>
+            <input class="fg-ctrl" type="url" name="App Link" placeholder="https://play.google.com/…">
+          </div>
+
+          <button type="submit" class="modal-submit">Lock In 20% Discount →</button>
+          <p class="modal-timer">⏰ Offer disappears in <b id="mtimer">10:00</b></p>
+        </form>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="overlay" id="pricingOverlay" onclick="overlayClick(event, 'pricingOverlay')">
-  <div class="modal">
-    <button class="modal-close" onclick="closeModal('pricingOverlay')">×</button>
-    <h3>Get Your App Approved</h3>
-    <p class="modal-sub">Pick a plan, fill the form — we'll confirm and send your payment link within a few hours.</p>
+  <!-- ── SCRIPTS ── -->
+  <script>
+    /* — Custom cursor — */
+    const cur = document.getElementById('cur');
+    document.addEventListener('mousemove', e => {
+      cur.style.left = e.clientX + 'px';
+      cur.style.top  = e.clientY + 'px';
+    });
+    document.querySelectorAll('a, button, input, select, textarea, .contact-link').forEach(el => {
+      el.addEventListener('mouseenter', () => document.body.classList.add('hovering'));
+      el.addEventListener('mouseleave', () => document.body.classList.remove('hovering'));
+    });
 
-    <div class="pricing-options">
-      <label class="price-card selected" id="plan1" onclick="selectPlan('plan1')">
-        <input type="radio" name="plan" value="single" checked>
-        <div class="price-info">
-          <div class="price-name">Single App</div>
-          <div class="price-desc">One app, full testing cycle</div>
-        </div>
-        <div class="price-tag">$44 <small>/app</small></div>
-      </label>
+    /* — Exit intent modal — */
+    const veil   = document.getElementById('veil');
+    const mclose = document.getElementById('mclose');
+    let shown = false;
 
-      <label class="price-card" id="plan2" onclick="selectPlan('plan2')">
-        <input type="radio" name="plan" value="bundle3">
-        <div class="price-info">
-          <div class="price-name">3 App Bundle</div>
-          <div class="price-desc">Save $60 — best for small studios</div>
-        </div>
-        <div class="price-tag">$24 <small>/app</small></div>
-      </label>
-
-      <label class="price-card" id="plan3" onclick="selectPlan('plan3')">
-        <input type="radio" name="plan" value="bulk4">
-        <div class="price-info">
-          <div class="price-name">4+ Apps (Bulk)</div>
-          <div class="price-desc">Maximum savings for agencies</div>
-        </div>
-        <div class="price-tag">$14 <small>/app</small></div>
-      </label>
-    </div>
-
-    <form id="orderForm" action="https://formsubmit.co/YOUR_EMAIL@gmail.com" method="POST">
-      <input type="hidden" name="_subject" value="New FourteenDays Order Request">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="selected_plan" id="selectedPlanInput" value="Single App — $44/app">
-
-      <div class="form-grid">
-        <div class="form-field">
-          <label>Your Name *</label>
-          <input type="text" name="name" placeholder="John Doe" required>
-        </div>
-        <div class="form-field">
-          <label>Email *</label>
-          <input type="email" name="email" placeholder="john@example.com" required>
-        </div>
-        <div class="form-field">
-          <label>WhatsApp Number</label>
-          <input type="tel" name="whatsapp" placeholder="+1 234 567 890">
-        </div>
-        <div class="form-field">
-          <label>Number of Apps *</label>
-          <select name="app_count" id="appCountSelect" required>
-            <option value="">Select...</option>
-            <option value="1">1 App</option>
-            <option value="2">2 Apps</option>
-            <option value="3">3 Apps</option>
-            <option value="4">4 Apps</option>
-            <option value="5+">5+ Apps</option>
-          </select>
-        </div>
-        <div class="form-field full">
-          <label>App Name / Package ID</label>
-          <input type="text" name="app_name" placeholder="My App / com.example.app" required>
-        </div>
-        </div>
-
-      <button type="submit" class="btn-submit">Submit Order — We'll Send Payment Link ⚡</button>
-      <p class="form-note">No payment now. We confirm first, then send your secure payment link.</p>
-    </form>
-  </div>
-</div>
-
-<div class="overlay" id="exitOverlay" onclick="overlayClick(event, 'exitOverlay')">
-  <div class="exit-modal">
-    <button class="modal-close" onclick="closeModal('exitOverlay')">×</button>
-    <div style="font-size:13px; color: var(--accent); font-family:'JetBrains Mono',monospace; letter-spacing:1px; margin-bottom:8px;">⚡ WAIT — LIMITED OFFER</div>
-    <h3>Leaving Already?<br>Here's a Deal Worth Staying For.</h3>
-    <p>Order <strong>in the next 10 minutes</strong> and we'll test your app for just <strong style="color:var(--accent)">$29 per app</strong> — that's 34% off the standard price. This offer disappears when the timer hits zero.</p>
-    <div class="was-price">Regular price: $44/app</div>
-    <div class="special-price">$29<span style="font-size:20px;color:var(--muted)">/app</span></div>
-    <div class="exit-timer" id="exitTimer">10:00</div>
-    <button class="btn btn-accent" style="width:100%;justify-content:center;font-size:15px;padding:14px" onclick="closeModal('exitOverlay'); openPricing('exit')">Claim $29 Offer Now →</button>
-    <button class="exit-skip" onclick="closeModal('exitOverlay')">No thanks, I'd rather pay more later</button>
-  </div>
-</div>
-
-<script>
-  // ── SCROLL BAR LOGIC (TRIGGERS AT VERY BOTTOM)
-  let scrollShown = false;
-  
-  window.addEventListener('scroll', () => {
-    const isAtBottom = window.innerHeight + Math.round(window.scrollY) >= document.documentElement.scrollHeight - 20;
-    if (!scrollShown && isAtBottom) {
-      scrollShown = true;
-      document.getElementById('scrollBar').classList.add('visible');
+    function openModal() {
+      if (shown) return;
+      shown = true;
+      veil.classList.add('open');
+      startTimer();
     }
-  }, { passive: true });
 
-  function closeScrollBar() {
-    document.getElementById('scrollBar').classList.remove('visible');
-  }
+    document.addEventListener('mouseleave', e => {
+      if (e.clientY < 8) openModal();
+    });
+    setTimeout(openModal, 50000); // mobile fallback
 
-  // ── MODALS
-  function openPricing(mode) {
-    if (mode === 'exit') {
-      document.getElementById('selectedPlanInput').value = 'EXIT OFFER — $29/app (10-min deal)';
+    mclose.addEventListener('click', () => veil.classList.remove('open'));
+    veil.addEventListener('click',   e => { if (e.target === veil) veil.classList.remove('open'); });
+
+    function startTimer() {
+      let s = 600;
+      const el = document.getElementById('mtimer');
+      const t = setInterval(() => {
+        s--;
+        const m = Math.floor(s / 60);
+        const sc = s % 60;
+        el.textContent = m + ':' + (sc < 10 ? '0' : '') + sc;
+        if (s <= 0) { clearInterval(t); el.textContent = 'Expired'; }
+      }, 1000);
     }
-    document.getElementById('pricingOverlay').classList.add('active');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function openExit() {
-    document.getElementById('exitOverlay').classList.add('active');
-    document.body.style.overflow = 'hidden';
-    startTimer();
-  }
-
-  function closeModal(id) {
-    document.getElementById(id).classList.remove('active');
-    document.body.style.overflow = '';
-  }
-
-  function overlayClick(e, id) {
-    if (e.target === document.getElementById(id)) closeModal(id);
-  }
-
-  // ── PLAN SELECTION (SYNCED WITH DROPDOWN)
-  const appCountSelect = document.getElementById('appCountSelect');
-
-  function selectPlan(id, updateDropdown = true) {
-    // UI Update
-    ['plan1','plan2','plan3'].forEach(p => document.getElementById(p).classList.remove('selected'));
-    document.getElementById(id).classList.add('selected');
-    
-    // Value Update
-    const labels = {
-      plan1: 'Single App — $44/app',
-      plan2: '3 App Bundle — $24/app',
-      plan3: '4+ Apps Bulk — $14/app'
-    };
-    document.getElementById('selectedPlanInput').value = labels[id];
-
-    // Sync Dropdown Logic
-    if (updateDropdown) {
-      if(id === 'plan1') appCountSelect.value = "1";
-      if(id === 'plan2') appCountSelect.value = "3";
-      if(id === 'plan3') appCountSelect.value = "4"; 
-    }
-  }
-
-  // Sync Plan Card when Dropdown Changes manually
-  appCountSelect.addEventListener('change', (e) => {
-    const val = e.target.value;
-    if (val === "1" || val === "2") {
-      selectPlan('plan1', false);
-    } else if (val === "3") {
-      selectPlan('plan2', false);
-    } else if (val === "4" || val === "5+") {
-      selectPlan('plan3', false);
-    }
-  });
-
-  // ── EXIT INTENT
-  let exitShown = false;
-
-  document.addEventListener('mouseleave', (e) => {
-    if (e.clientY <= 0 && !exitShown && !document.getElementById('pricingOverlay').classList.contains('active')) {
-      exitShown = true;
-      openExit();
-    }
-  });
-
-  document.addEventListener('visibilitychange', () => {
-    if (document.visibilityState === 'hidden' && !exitShown) {
-      exitShown = true;
-    }
-  });
-
-  // ── COUNTDOWN TIMER
-  let timerInterval;
-  function startTimer() {
-    let seconds = 600;
-    clearInterval(timerInterval);
-    timerInterval = setInterval(() => {
-      seconds--;
-      if (seconds <= 0) {
-        clearInterval(timerInterval);
-        document.getElementById('exitTimer').textContent = 'EXPIRED';
-        document.getElementById('exitTimer').style.color = 'var(--danger)';
-        return;
-      }
-      const m = Math.floor(seconds / 60).toString().padStart(2,'0');
-      const s = (seconds % 60).toString().padStart(2,'0');
-      const el = document.getElementById('exitTimer');
-      if (el) el.textContent = `${m}:${s}`;
-    }, 1000);
-  }
-
-  // ── FORM SUBMISSION
-  const form = document.getElementById('orderForm');
-  form.addEventListener('submit', () => {
-    setTimeout(() => {
-      const btn = form.querySelector('.btn-submit');
-      btn.textContent = 'Sending...';
-      btn.disabled = true;
-    }, 10);
-  });
-
-  // Initialize dropdown on load
-  document.addEventListener("DOMContentLoaded", () => {
-      appCountSelect.value = "1";
-  });
-</script>
+  </script>
 </body>
 </html>
