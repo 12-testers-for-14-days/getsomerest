@@ -1,0 +1,32 @@
+name: Generate Sitemap
+
+on:
+  push:
+    branches: [ main ]
+    # Triggers the workflow whenever you push changes to HTML files
+    paths:
+      - '**.html'
+
+jobs:
+  sitemap_job:
+    runs-on: ubuntu-latest
+    name: Generate a sitemap
+
+    steps:
+    - name: Checkout the repo
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0 
+
+    - name: Generate the sitemap
+      id: sitemap
+      uses: cicirello/generate-sitemap@v1
+      with:
+        base-url-path: https://getsome.rest 
+        drop-html-extension: true
+
+    - name: Commit and push the sitemap
+      uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+        commit_message: "chore: auto-generate sitemap.xml"
+        file_pattern: sitemap.xml
