@@ -1,20 +1,16 @@
-name: Generate Sitemap
+name: Generate sitemap
 
 on:
   push:
-    branches: [ main ]
-    # Triggers the workflow whenever you push changes to HTML files
-    paths:
-      - '**.html'
+    branches: [ "main" ]
 
 jobs:
   sitemap_job:
     runs-on: ubuntu-latest
     name: Generate a sitemap
-
     steps:
     - name: Checkout the repo
-      uses: actions/checkout@v4
+      uses: actions/checkout@v3
       with:
         fetch-depth: 0 
 
@@ -22,11 +18,14 @@ jobs:
       id: sitemap
       uses: cicirello/generate-sitemap@v1
       with:
-        base-url-path: https://getsome.rest 
-        drop-html-extension: true
+        base-url-path: https://getsome.rest/
 
-    - name: Commit and push the sitemap
-      uses: stefanzweifel/git-auto-commit-action@v5
-      with:
-        commit_message: "chore: auto-generate sitemap.xml"
-        file_pattern: sitemap.xml
+    - name: Commit and push
+      run: |
+        if [[ `git status --porcelain sitemap.xml` ]]; then
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
+          git add sitemap.xml
+          git commit -m "Automated sitemap update"
+          git push
+        fi
