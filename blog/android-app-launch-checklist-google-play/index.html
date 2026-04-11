@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Android App Launch Checklist: Everything to Do Before Submitting to Google Play</title>
+  <meta name="description" content="A complete pre-launch checklist for Android developers: policy, store listing, privacy policy, internal testing, and the 12-tester requirement.">
+  <link rel="canonical" href="https://getsome.rest/blog/android-app-launch-checklist-google-play">
+
+  <meta property="og:title" content="Android App Launch Checklist: Everything to Do Before Submitting to Google Play">
+  <meta property="og:description" content="A complete pre-launch checklist for Android developers: policy, store listing, privacy policy, internal testing, and the 12-tester requirement.">
+  <meta property="og:url" content="https://getsome.rest/blog/android-app-launch-checklist-google-play">
+  <meta property="og:image" content="https://getsome.rest/images/android-app-launch-checklist.jpg">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "Android App Launch Checklist: Everything to Do Before Submitting to Google Play",
+        "description": "A complete pre-launch checklist for Android developers: policy, store listing, privacy policy, closed testing, and the 12-tester requirement.",
+        "author": { "@type": "Organization", "name": "Getsome.rest", "url": "https://getsome.rest" },
+        "publisher": { "@type": "Organization", "name": "Getsome.rest", "url": "https://getsome.rest" },
+        "datePublished": "2026-04-16",
+        "dateModified": "2026-04-16",
+        "url": "https://getsome.rest/blog/android-app-launch-checklist-google-play",
+        "mainEntityOfPage": "https://getsome.rest/blog/android-app-launch-checklist-google-play"
+      },
+      {
+        "@type": "HowTo",
+        "name": "Android App Launch Checklist: Everything to Do Before Submitting to Google Play",
+        "description": "The ultimate step-by-step checklist to ensure your Android app is ready for the Google Play Store.",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "Secure Your Developer Account and Identity",
+            "text": "Ensure your Google Play Developer account is fully verified, the $25 fee is paid, and your identity verification is approved."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Prepare the Privacy Policy and Legal Documents",
+            "text": "Host a comprehensive privacy policy on a public URL. It must disclose exactly what data your app collects and how it is used."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Complete the App Content Declarations",
+            "text": "Fill out the Data Safety form, Target Audience questionnaire, and Content Rating surveys in the Play Console."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Optimize Your Store Listing",
+            "text": "Upload high-quality screenshots, a feature graphic, and write ASO-optimized short and long descriptions."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Conduct Internal Testing",
+            "text": "Use the Internal Testing track to distribute the app to your internal team (up to 100 users) to catch major bugs instantly."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Complete the 14-Day Closed Testing Requirement",
+            "text": "For new personal accounts, recruit 12 real Android testers and run a 14-day consecutive closed test to unlock production access."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Submit the Production Access Form",
+            "text": "Detail your testing methodology and feedback loop to pass Google's final manual review."
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Do I need a privacy policy to publish on Google Play?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. All apps on Google Play must have a privacy policy linked in the store listing and within the app if it handles personal data." }
+          },
+          {
+            "@type": "Question",
+            "name": "How far in advance should I start closed testing before my launch?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Start at least 6 weeks before your target launch date to account for the 14-day test, form review, and any back-and-forth with Google." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --white:   #ffffff;
+      --off:     #f7f6f3;
+      --ink:     #111111;
+      --mid:     #888880;
+      --border:  #e8e6e0;
+      --lime:    #c8f542;
+      --lime-dk: #9dc918;
+      --red:     #e63d2f;
+      --radius:  14px;
+      --fs-mono: 'DM Mono', monospace;
+      --fs-serif:'Lora', Georgia, serif;
+      --content-w: 740px;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--fs-serif);
+      background: var(--white);
+      color: var(--ink);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body { cursor: none; }
+    #cur {
+      position: fixed; z-index: 9999; pointer-events: none;
+      width: 12px; height: 12px;
+      background: var(--lime);
+      border-radius: 50%;
+      transform: translate(-50%,-50%);
+      transition: width .25s, height .25s, background .2s;
+      mix-blend-mode: multiply;
+    }
+    body.hovering #cur { width: 44px; height: 44px; }
+
+    /* ── Marquee ── */
+    .marquee-bar { width: 100%; overflow: hidden; background: var(--ink); padding: 11px 0; }
+    .marquee-track { display: flex; width: max-content; animation: marq 28s linear infinite; }
+    .marquee-track:hover { animation-play-state: paused; }
+    @keyframes marq { to { transform: translateX(-50%); } }
+    .marquee-unit {
+      display: flex; align-items: center; gap: 32px; padding: 0 40px; white-space: nowrap;
+      font-family: var(--fs-mono); font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase;
+      color: rgba(255,255,255,.45);
+    }
+    .marquee-unit .hi { color: var(--lime); font-weight: 500; }
+    .marquee-unit .sep { opacity: .2; }
+
+    /* ── Header ── */
+    header {
+      position: sticky; top: 0; z-index: 200;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px; height: 64px;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+    .logo { font-family: var(--fs-serif); font-size: 19px; font-style: italic; color: var(--ink); text-decoration: none; letter-spacing: -.3px; }
+    .logo b { font-style: normal; font-weight: 700; }
+    .nav-center { display: flex; align-items: center; gap: 6px; font-family: var(--fs-mono); font-size: 11px; letter-spacing: .05em; text-transform: uppercase; color: var(--mid); }
+    .status-dot { width: 7px; height: 7px; background: #3ecf6b; border-radius: 50%; animation: blink 1.6s ease-in-out infinite; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.25} }
+    .nav-actions { display: flex; align-items: center; gap: 10px; }
+    .btn { display: inline-flex; align-items: center; gap: 7px; font-family: var(--fs-mono); font-size: 12px; letter-spacing: .05em; text-transform: uppercase; text-decoration: none; border: none; cursor: none; padding: 9px 20px; border-radius: 50px; transition: all .22s ease; font-weight: 500; }
+    .btn-ghost { background: transparent; border: 1px solid var(--border); color: var(--mid); }
+    .btn-ghost:hover { border-color: var(--ink); color: var(--ink); }
+    .btn-lime { background: var(--lime); border: 1px solid var(--lime); color: var(--ink); font-weight: 700; }
+    .btn-lime:hover { background: var(--lime-dk); border-color: var(--lime-dk); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(156,201,24,.3); }
+
+    /* ── Blog Hero ── */
+    .blog-hero {
+      border-bottom: 1px solid var(--border);
+      padding: 72px 64px 64px;
+      position: relative; overflow: hidden;
+    }
+    .blog-hero::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 4px;
+      background: var(--lime);
+    }
+    .hero-inner { max-width: var(--content-w); margin: 0 auto; }
+
+    .breadcrumb {
+      display: flex; align-items: center; gap: 8px;
+      font-family: var(--fs-mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase;
+      color: var(--mid); margin-bottom: 28px;
+    }
+    .breadcrumb a { color: var(--mid); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--ink); }
+    .breadcrumb .sep { opacity: .4; }
+
+    .post-tags { display: flex; gap: 8px; margin-bottom: 22px; }
+    .post-tag {
+      font-family: var(--fs-mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase;
+      padding: 4px 12px; border-radius: 50px;
+      border: 1px solid var(--lime-dk); color: var(--lime-dk);
+    }
+
+    .post-h1 {
+      font-size: clamp(34px, 4.5vw, 50px);
+      font-weight: 700; line-height: 1.1; letter-spacing: -.04em;
+      margin-bottom: 24px;
+    }
+    .post-h1 em { font-style: italic; font-weight: 400; color: var(--mid); }
+    .post-h1 .hl {
+      position: relative; white-space: nowrap;
+    }
+    .post-h1 .hl::after {
+      content: '';
+      position: absolute; left: 0; bottom: 2px;
+      width: 100%; height: 9px;
+      background: var(--lime); border-radius: 3px; z-index: -1;
+      transform-origin: left;
+      animation: revealBar .9s cubic-bezier(.77,0,.18,1) .3s both;
+    }
+    @keyframes revealBar { from{transform:scaleX(0)} to{transform:scaleX(1)} }
+
+    .post-meta {
+      display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+    .post-meta-item {
+      display: flex; align-items: center; gap: 6px;
+      font-family: var(--fs-mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase;
+      color: var(--mid);
+    }
+    .post-meta-item svg { width: 12px; height: 12px; }
+    .post-meta-sep { width: 1px; height: 14px; background: var(--border); }
+
+    /* Share Bar */
+    .share-bar {
+      display: flex; align-items: center; gap: 12px;
+      padding-bottom: 32px; margin-bottom: 36px;
+      border-bottom: 1px solid var(--border);
+    }
+    .sb-label {
+      font-family: var(--fs-mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase;
+      color: var(--mid); margin-right: 4px;
+    }
+    .sb-btn {
+      display: flex; align-items: center; justify-content: center;
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      background: var(--off); border: 1px solid var(--border);
+      color: var(--mid);
+      transition: all .2s ease; text-decoration: none;
+    }
+    .sb-btn svg { width: 14px; height: 14px; fill: currentColor; }
+    .sb-btn:hover { background: var(--lime); border-color: var(--lime-dk); color: var(--ink); transform: translateY(-2px); }
+
+    .post-intro {
+      font-size: 19px; line-height: 1.8; color: var(--mid);
+      font-style: italic;
+    }
+    .post-intro strong { color: var(--ink); font-style: normal; }
+
+    /* ── TOC ── */
+    .toc-wrap {
+      max-width: var(--content-w); margin: 0 auto 64px;
+      padding: 0 64px;
+    }
+    .toc-box {
+      background: var(--off);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      margin-top: 0;
+    }
+    .toc-label {
+      font-family: var(--fs-mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase;
+      color: var(--lime-dk); margin-bottom: 16px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .toc-label::before { content: ''; width: 24px; height: 1px; background: var(--lime-dk); }
+    .toc-list { list-style: none; }
+    .toc-list li { margin-bottom: 8px; }
+    .toc-list a {
+      font-family: var(--fs-mono); font-size: 12px; letter-spacing: .03em;
+      color: var(--mid); text-decoration: none;
+      display: flex; align-items: center; gap: 10px;
+      transition: color .15s;
+    }
+    .toc-list a:hover { color: var(--ink); }
+    .toc-num { color: var(--lime-dk); font-size: 10px; min-width: 20px; }
+
+    /* ── Article Body ── */
+    .article-wrap {
+      display: grid;
+      grid-template-columns: 1fr 260px;
+      gap: 64px;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 64px 100px;
+      align-items: start;
+    }
+
+    .article-body h2 {
+      font-size: 30px; font-weight: 700; line-height: 1.2;
+      letter-spacing: -.03em;
+      margin: 56px 0 20px;
+      padding-top: 8px;
+    }
+    .article-body h2:first-child { margin-top: 0; }
+    .article-body h3 {
+      font-size: 20px; font-weight: 600; line-height: 1.3;
+      letter-spacing: -.02em;
+      margin: 32px 0 14px;
+      color: var(--ink);
+    }
+    .article-body p {
+      font-size: 17px; line-height: 1.85; color: #333;
+      margin-bottom: 20px;
+    }
+    .article-body strong { color: var(--ink); font-weight: 600; }
+    .article-body a { color: var(--lime-dk); text-decoration: none; border-bottom: 1px solid var(--lime-dk); }
+    .article-body a:hover { color: var(--ink); border-color: var(--ink); }
+
+    .article-body ol, .article-body ul {
+      margin: 0 0 24px 0;
+      padding: 0;
+      list-style: none;
+    }
+    .article-body ol { counter-reset: step; }
+    .article-body ol li {
+      font-size: 16px; line-height: 1.75; color: #333;
+      margin-bottom: 12px;
+      padding-left: 36px; position: relative;
+      counter-increment: step;
+    }
+    .article-body ol li::before {
+      content: counter(step);
+      position: absolute; left: 0; top: 2px;
+      width: 22px; height: 22px;
+      background: var(--lime);
+      color: var(--ink);
+      border-radius: 50%;
+      font-family: var(--fs-mono); font-size: 11px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .article-body ul li {
+      font-size: 16px; line-height: 1.75; color: #333;
+      margin-bottom: 10px;
+      padding-left: 28px; position: relative;
+    }
+    .article-body ul li::before {
+      content: '→';
+      position: absolute; left: 0;
+      color: var(--lime-dk); font-family: var(--fs-mono);
+      font-size: 13px;
+    }
+
+    /* Checklist Steps Styling */
+    .checklist-item {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      margin: 40px 0;
+      background: var(--white);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.02);
+      position: relative;
+      overflow: hidden;
+    }
+    .checklist-item::before {
+      content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--mid); transition: background .3s;
+    }
+    .checklist-item:hover::before { background: var(--lime-dk); }
+    .cl-header {
+      display: flex; align-items: center; gap: 16px; margin-bottom: 20px;
+      border-bottom: 1px solid var(--border); padding-bottom: 20px;
+    }
+    .cl-num {
+      display: flex; align-items: center; justify-content: center;
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--off); color: var(--mid);
+      border: 1px solid var(--border);
+      font-family: var(--fs-mono); font-size: 16px; font-weight: 700;
+      flex-shrink: 0;
+    }
+    .cl-title { font-size: 22px; font-weight: 700; color: var(--ink); line-height: 1.2; margin: 0; }
+
+    /* Callout boxes */
+    .callout {
+      border-left: 4px solid var(--lime);
+      background: rgba(200,245,66,.07);
+      border-radius: 0 10px 10px 0;
+      padding: 18px 22px;
+      margin: 28px 0;
+    }
+    .callout.warn { border-color: #e09a2b; background: rgba(224,154,43,.07); }
+    .callout.danger { border-color: var(--red); background: rgba(230,61,47,.07); }
+    .callout-label {
+      font-family: var(--fs-mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase;
+      color: var(--lime-dk); margin-bottom: 8px; font-weight: 500;
+    }
+    .callout.warn .callout-label { color: #c07d10; }
+    .callout.danger .callout-label { color: var(--red); }
+    .callout p { font-size: 15px; line-height: 1.7; color: var(--ink); margin: 0; }
+
+    /* CTA block mid-article */
+    .mid-cta {
+      background: var(--ink);
+      border-radius: var(--radius);
+      padding: 40px;
+      margin: 48px 0;
+      position: relative; overflow: hidden;
+      display: flex; flex-direction: column; align-items: flex-start;
+    }
+    .mid-cta::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--lime); }
+    .mid-cta-label { font-family: var(--fs-mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--lime); margin-bottom: 14px; }
+    .mid-cta h3 { font-size: 28px; font-weight: 700; color: var(--white); line-height: 1.2; letter-spacing: -.02em; margin-bottom: 12px; }
+    .mid-cta p { font-size: 16px; line-height: 1.6; color: rgba(255,255,255,.65); margin-bottom: 28px; max-width: 80%; }
+    .mid-cta a {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--fs-mono); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+      background: var(--lime); color: var(--ink);
+      padding: 16px 32px; border-radius: 50px;
+      text-decoration: none; border: none;
+      transition: all .2s;
+    }
+    .mid-cta a:hover { background: var(--lime-dk); transform: translateY(-2px); box-shadow: 0 12px 32px rgba(156,201,24,.35); }
+    .mid-cta-price {
+      position: absolute; bottom: -10px; right: 20px;
+      font-family: var(--fs-mono); font-size: 140px; font-weight: 300;
+      color: rgba(255,255,255,.03); letter-spacing: -8px; line-height: 1;
+      pointer-events: none;
+    }
+
+    /* FAQ section */
+    .faq-section { margin-top: 56px; }
+    .faq-section h2 { font-size: 28px; font-weight: 700; letter-spacing: -.03em; margin-bottom: 24px; }
+    .faq-item { border-bottom: 1px solid var(--border); padding: 24px 0; }
+    .faq-q { font-size: 18px; font-weight: 600; line-height: 1.4; margin-bottom: 12px; color: var(--ink); }
+    .faq-a { font-size: 16px; line-height: 1.8; color: #444; }
+
+    /* Sidebar */
+    .sidebar { position: sticky; top: 84px; }
+    .sidebar-card {
+      background: var(--off);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+    .sidebar-card-head {
+      background: var(--ink); padding: 20px 24px;
+      position: relative;
+    }
+    .sidebar-card-head::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--lime); }
+    .sidebar-card-head .sc-label { font-family: var(--fs-mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--lime); margin-bottom: 10px; }
+    .sidebar-card-head .sc-price { font-family: var(--fs-serif); font-size: 44px; font-weight: 700; color: var(--white); line-height: 1; letter-spacing: -.04em; }
+    .sidebar-card-head .sc-sub { font-family: var(--fs-mono); font-size: 10px; color: rgba(255,255,255,.4); margin-top: 4px; letter-spacing: .05em; text-transform: uppercase; }
+    .sidebar-card-body { padding: 20px 24px; }
+    .sc-feat { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-size: 14px; color: var(--ink); }
+    .sc-check { width: 18px; height: 18px; background: var(--lime); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--fs-mono); font-size: 10px; font-weight: 700; flex-shrink: 0; }
+    .sc-btn {
+      display: block; width: 100%; text-align: center;
+      font-family: var(--fs-mono); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+      background: var(--lime); color: var(--ink);
+      padding: 15px; border-radius: 10px;
+      text-decoration: none; margin-top: 18px;
+      transition: all .2s;
+    }
+    .sc-btn:hover { background: var(--lime-dk); transform: translateY(-2px); box-shadow: 0 10px 28px rgba(156,201,24,.3); }
+    .sc-note { font-family: var(--fs-mono); font-size: 10px; letter-spacing: .04em; text-transform: uppercase; color: var(--mid); text-align: center; margin-top: 10px; }
+
+    /* Related posts sidebar */
+    .related-sidebar h3 { font-family: var(--fs-mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--lime-dk); margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+    .related-sidebar h3::before { content: ''; width: 18px; height: 1px; background: var(--lime-dk); }
+    .rel-link {
+      display: block;
+      font-size: 14px; line-height: 1.5; color: var(--ink);
+      text-decoration: none; padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+      transition: color .15s;
+    }
+    .rel-link:last-child { border: none; }
+    .rel-link:hover { color: var(--lime-dk); }
+    .rel-link .rt { font-family: var(--fs-mono); font-size: 10px; letter-spacing: .06em; text-transform: uppercase; color: var(--mid); margin-bottom: 4px; }
+
+    /* Post footer */
+    .post-footer {
+      background: var(--off);
+      border-top: 1px solid var(--border);
+      padding: 80px 64px;
+    }
+    .post-footer-inner { max-width: 1100px; margin: 0 auto; }
+    .pf-label { font-family: var(--fs-mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--lime-dk); margin-bottom: 28px; display: flex; align-items: center; gap: 12px; }
+    .pf-label::before { content: ''; width: 28px; height: 1px; background: var(--lime-dk); }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .rel-card {
+      background: var(--white); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 28px; text-decoration: none; color: inherit;
+      display: flex; flex-direction: column;
+      transition: all .2s;
+    }
+    .rel-card:hover { border-color: var(--ink); transform: translateY(-4px); box-shadow: 0 12px 32px rgba(17,17,17,.06); }
+    .rel-card .tag { font-family: var(--fs-mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--lime-dk); margin-bottom: 12px; }
+    .rel-card h3 { font-size: 17px; font-weight: 600; line-height: 1.4; margin-bottom: 8px; }
+    .rel-card p { font-size: 13px; line-height: 1.6; color: var(--mid); margin-top: auto; padding-top: 12px; }
+    .rel-card .arrow { font-family: var(--fs-mono); font-size: 11px; color: var(--mid); margin-top: 14px; }
+    .rel-card:hover .arrow { color: var(--ink); }
+
+    /* Site footer */
+    .site-footer {
+      background: var(--ink); color: var(--white);
+      padding: 56px 64px 40px;
+    }
+    .sf-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; margin-bottom: 40px; }
+    .sf-brand { font-family: var(--fs-serif); font-size: 22px; font-style: italic; color: var(--white); }
+    .sf-brand b { font-style: normal; }
+    .sf-links { display: flex; gap: 32px; }
+    .sf-links a { font-family: var(--fs-mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: rgba(255,255,255,.5); text-decoration: none; transition: color .15s; }
+    .sf-links a:hover { color: var(--white); }
+    .sf-bottom { padding-top: 28px; border-top: 1px solid rgba(255,255,255,.1); display: flex; justify-content: space-between; font-family: var(--fs-mono); font-size: 10.5px; letter-spacing: .05em; color: rgba(255,255,255,.35); }
+
+    /* Responsive */
+    @media (max-width: 960px) {
+      .article-wrap { grid-template-columns: 1fr; gap: 40px; padding: 0 36px 80px; }
+      .sidebar { position: static; }
+      .blog-hero { padding: 56px 36px 48px; }
+      .toc-wrap { padding: 0 36px; }
+      .related-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      header { padding: 0 20px; }
+      .nav-center { display: none; }
+      .btn-ghost { display: none; }
+      .blog-hero { padding: 48px 24px 40px; }
+      .post-h1 { font-size: 32px; }
+      .toc-wrap { padding: 0 24px; }
+      .article-wrap { padding: 0 24px 64px; }
+      .post-footer { padding: 60px 24px; }
+      .site-footer { padding: 48px 24px 32px; }
+      .sf-top { flex-direction: column; }
+      .sf-links { flex-wrap: wrap; gap: 16px; }
+      .related-grid { grid-template-columns: 1fr; }
+      .mid-cta-price { display: none; }
+      .checklist-item { padding: 24px; }
+      .cl-header { flex-direction: column; align-items: flex-start; gap: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="cur"></div>
+
+<div class="marquee-bar">
+  <div class="marquee-track">
+    <div class="marquee-unit">
+      <span class="hi">12 Real Testers</span><span class="sep">·</span>
+      <span>No Emulators. Ever.</span><span class="sep">·</span>
+      <span class="hi">$69 Flat</span><span class="sep">·</span>
+      <span>14 Days Daily Coverage</span><span class="sep">·</span>
+      <span class="hi">Reply in 2 Hours</span><span class="sep">·</span>
+      <span>Real Android Devices</span><span class="sep">·</span>
+    </div>
+    <div class="marquee-unit" aria-hidden="true">
+      <span class="hi">12 Real Testers</span><span class="sep">·</span>
+      <span>No Emulators. Ever.</span><span class="sep">·</span>
+      <span class="hi">$69 Flat</span><span class="sep">·</span>
+      <span>14 Days Daily Coverage</span><span class="sep">·</span>
+      <span class="hi">Reply in 2 Hours</span><span class="sep">·</span>
+      <span>Real Android Devices</span><span class="sep">·</span>
+    </div>
+  </div>
+</div>
+
+<header>
+  <a href="/" class="logo"><b>getsome</b>.rest</a>
+  <div class="nav-center">
+    <span class="status-dot"></span>
+    Accepting orders now
+  </div>
+  <div class="nav-actions">
+    <a href="mailto:nabeel.ugd@gmail.com" class="btn btn-ghost">Contact</a>
+    <a href="/#order" class="btn btn-lime">Get 12 Testers →</a>
+  </div>
+</header>
+
+<section class="blog-hero">
+  <div class="hero-inner">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="sep">/</span>
+      <a href="/blog">Blog</a>
+      <span class="sep">/</span>
+      <span>Developer Checklist</span>
+    </nav>
+
+    <div class="post-tags">
+      <span class="post-tag">Checklist</span>
+      <span class="post-tag">App Launch</span>
+      <span class="post-tag">Google Play</span>
+    </div>
+
+    <h1 class="post-h1">
+      Android App Launch Checklist:<br>
+      <span class="hl">Everything to Do</span> Before Submitting to Google Play
+    </h1>
+
+    <div class="post-meta">
+      <div class="post-meta-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        April 16, 2026
+      </div>
+      <div class="post-meta-sep"></div>
+      <div class="post-meta-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        12 min read
+      </div>
+      <div class="post-meta-sep"></div>
+      <div class="post-meta-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        Getsome.rest Team
+      </div>
+    </div>
+
+    <div class="share-bar">
+      <span class="sb-label">Share:</span>
+      <a href="#" class="sb-btn" title="Share on Twitter/X">
+        <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a href="#" class="sb-btn" title="Share on LinkedIn">
+        <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+      <a href="#" class="sb-btn" title="Share on Facebook">
+        <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+      <a href="#" class="sb-btn" title="Share via WhatsApp">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      </a>
+    </div>
+
+    <p class="post-intro">
+      Launching an Android app is thrilling, but the final stretch can feel like navigating a bureaucratic minefield. Figuring out <strong>how to publish android app google play</strong> style requires much more than just uploading code. From stringent privacy policies to mandatory 14-day closed testing periods, missing a single step can result in weeks of delays or outright rejection. We have compiled the ultimate <strong>google play submission checklist</strong> to ensure your app sails through the review process on the very first try.
+    </p>
+  </div>
+</section>
+
+<div class="toc-wrap" style="padding-top:20px;">
+  <div class="toc-box">
+    <div class="toc-label">In this guide</div>
+    <ul class="toc-list">
+      <li><a href="#step-1"><span class="toc-num">01</span> Account & Legal Setup</a></li>
+      <li><a href="#step-2"><span class="toc-num">02</span> Core App Requirements</a></li>
+      <li><a href="#step-3"><span class="toc-num">03</span> App Content Declarations</a></li>
+      <li><a href="#step-4"><span class="toc-num">04</span> Store Listing & ASO</a></li>
+      <li><a href="#step-5"><span class="toc-num">05</span> Internal Testing (Before Closed Beta)</a></li>
+      <li><a href="#step-6"><span class="toc-num">06</span> The Mandatory Closed Testing Phase</a></li>
+      <li><a href="#step-7"><span class="toc-num">07</span> Final Production Review</a></li>
+      <li><a href="#faq"><span class="toc-num">08</span> Frequently Asked Questions</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="article-wrap">
+  <article class="article-body">
+
+    <div class="checklist-item" id="step-1">
+      <div class="cl-header">
+        <div class="cl-num">1</div>
+        <h2 class="cl-title">Account & Legal Setup</h2>
+      </div>
+      <p>Before touching the code upload, you must ensure your administrative foundation is rock solid. Google is incredibly strict about developer identity and legal compliance.</p>
+      <ul>
+        <li><strong>Developer Account Verification:</strong> Ensure you have paid the $25 registration fee and completed identity verification (using a government ID). Read our full guide on <a href="/blog/google-play-new-developer-account-production-access-2026">setting up a new developer account</a> if you haven't done this yet.</li>
+        <li><strong>Merchant Account:</strong> If your app costs money to download or includes in-app purchases, you must link a Google payments merchant profile.</li>
+        <li><strong>The Privacy Policy:</strong> This is non-negotiable. You must have a comprehensive privacy policy hosted on an active, public URL. It must detail exactly what user data is collected, how it is stored, and who it is shared with.</li>
+      </ul>
+      <div class="callout danger">
+        <div class="callout-label">⚠ Privacy Policy Warning</div>
+        <p>A massive percentage of apps are rejected simply because the privacy policy URL in the Play Console returns a 404 error or points to a generic Google Doc without proper formatting. Ensure your link works perfectly before submitting.</p>
+      </div>
+    </div>
+
+    <div class="checklist-item" id="step-2">
+      <div class="cl-header">
+        <div class="cl-num">2</div>
+        <h2 class="cl-title">Core App Requirements</h2>
+      </div>
+      <p>Your code needs to meet modern Android standards before it can be accepted into any testing track.</p>
+      <ul>
+        <li><strong>Android App Bundle (.aab):</strong> Google no longer accepts standalone APKs for new apps. You must compile your project into a signed `.aab` file.</li>
+        <li><strong>Target API Level:</strong> Ensure your app targets the latest required Android API level (usually within one year of the latest major Android release).</li>
+        <li><strong>Permissions Check:</strong> Audit your `AndroidManifest.xml`. If you request sensitive permissions (like location, camera, or SMS), you must have a clear, user-facing rationale for why you need them.</li>
+      </ul>
+    </div>
+
+    <div class="checklist-item" id="step-3">
+      <div class="cl-header">
+        <div class="cl-num">3</div>
+        <h2 class="cl-title">App Content Declarations</h2>
+      </div>
+      <p>The Play Console requires you to fill out several exhaustive questionnaires about your app's content to keep the store safe.</p>
+      <ul>
+        <li><strong>Data Safety Form:</strong> You must declare precisely what data your app collects, whether it is encrypted in transit, and if users can request deletion.</li>
+        <li><strong>Content Rating:</strong> Complete the IARC questionnaire to receive your official age rating (e.g., E for Everyone, Teen).</li>
+        <li><strong>Target Audience:</strong> Select the age groups your app is designed for. <em>Note: If you select children under 13, you will trigger the highly restrictive "Families Policy" review.</em></li>
+        <li><strong>Ads & Financial Features:</strong> Declare if your app contains advertisements or deals with financial data (crypto, banking).</li>
+      </ul>
+    </div>
+
+    <div class="checklist-item" id="step-4">
+      <div class="cl-header">
+        <div class="cl-num">4</div>
+        <h2 class="cl-title">Store Listing & ASO</h2>
+      </div>
+      <p>Your store listing is your sales pitch. To master <strong>android app store listing tips</strong>, focus heavily on visual appeal and keyword optimization.</p>
+      <ul>
+        <li><strong>App Title & Short Description:</strong> Keep them punchy and embed your primary keywords naturally.</li>
+        <li><strong>Long Description:</strong> Use formatting, bullet points, and clear language.</li>
+        <li><strong>High-Quality Graphics:</strong> You need an app icon (512x512), a feature graphic (1024x500), and a minimum of 2-3 high-resolution screenshots. Ensure they highlight actual UI elements, not just generic branding.</li>
+      </ul>
+    </div>
+
+    <div class="checklist-item" id="step-5">
+      <div class="cl-header">
+        <div class="cl-num">5</div>
+        <h2 class="cl-title">Internal Testing (Before Closed Beta)</h2>
+      </div>
+      <p>Many developers jump straight into closed testing, which is a mistake. You should utilize the <strong>Internal Testing</strong> track first.</p>
+      <p>The internal testing track allows you to quickly distribute your app to up to 100 internal developers or trusted QA testers. The benefit? <strong>Releases pushed to internal testing do not require a manual Google review.</strong> They are available almost instantly.</p>
+      <p>Use internal testing links to rapidly squash crash-on-launch bugs and test your in-app billing flows. Once the app is stable internally, then you promote it to the Closed Testing track. For a full breakdown of how to configure this, see our <a href="/blog/google-play-closed-testing-setup-guide">closed testing setup guide</a>.</p>
+    </div>
+
+    <div class="mid-cta">
+      <div class="mid-cta-label">Stuck on Step 6?</div>
+      <h3>Automate your 14-day closed testing requirement.</h3>
+      <p>Don't waste weeks trying to find testers on forums. We provide 12 real Android users to test your app for the full 14 days, guaranteeing your compliance.</p>
+      <a href="https://getsome.rest/#order">Get 12 Testers for $69 →</a>
+      <div class="mid-cta-price">$69</div>
+    </div>
+
+    <div class="checklist-item" id="step-6">
+      <div class="cl-header">
+        <div class="cl-num">6</div>
+        <h2 class="cl-title">The Mandatory Closed Testing Phase</h2>
+      </div>
+      <p>If you have a new personal developer account, you cannot skip this step. This is the infamous <strong>android app launch checklist</strong> bottleneck.</p>
+      <ul>
+        <li><strong>Recruit 12 Testers:</strong> You must find 12 real people with unique Google accounts to opt-in to your test.</li>
+        <li><strong>The 14-Day Clock:</strong> Those 12 testers must remain opted-in for 14 <em>consecutive</em> days. If your count drops below 12, the clock resets.</li>
+        <li><strong>Gather Feedback:</strong> You must actively update your app or log the feedback received during this window to prove to Google you are actually testing the product.</li>
+      </ul>
+      <p>Unsure how this rule works? Read our comprehensive <a href="/blog/google-play-12-tester-requirement-explained">12-tester requirement breakdown</a>.</p>
+    </div>
+
+    <div class="checklist-item" id="step-7">
+      <div class="cl-header">
+        <div class="cl-num">7</div>
+        <h2 class="cl-title">Final Production Review</h2>
+      </div>
+      <p>Once your 14 days are successfully completed, your dashboard will unlock the ability to apply for production.</p>
+      <ul>
+        <li><strong>The Production Form:</strong> You must fill out a detailed questionnaire explaining your testing methodology and the changes you made based on tester feedback.</li>
+        <li><strong>Manual Review:</strong> A human reviewer at Google will read your form, check your tester analytics, and test your app. This process can take 1 to 3 weeks. Check our guide on the <a href="/blog/google-play-app-review-process-after-closed-testing">app review process after closed testing</a> to know what to expect.</li>
+      </ul>
+      <p>If approved, your app will transition to the Production track and finally be live on the Google Play Store!</p>
+    </div>
+
+    <div class="faq-section" id="faq">
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <div class="faq-q">Do I need a privacy policy to publish on Google Play?</div>
+        <div class="faq-a">Yes. All apps on Google Play must have a privacy policy linked in the store listing and within the app itself if it handles any sort of personal data. The URL must be active and publicly accessible.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">How far in advance should I start closed testing before my launch?</div>
+        <div class="faq-a">You should start the closed testing process at least 6 weeks before your target launch date. This accounts for the 14-day mandatory test period, the 1-3 weeks required for Google's final manual form review, and any potential back-and-forth if your app requires minor fixes.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Can I skip closed testing if my app is very simple?</div>
+        <div class="faq-a">No. If your developer account was created after November 2023 and is registered as a personal account, the 12-tester, 14-day closed testing requirement is mandatory, regardless of how simple the application is.</div>
+      </div>
+
+    </div>
+
+  </article>
+
+  <aside class="sidebar">
+    <div class="sidebar-card">
+      <div class="sidebar-card-head">
+        <div class="sc-label">Getsome.rest — Flat rate</div>
+        <div class="sc-price">$69</div>
+        <div class="sc-sub">12 testers · 14 days · daily reports</div>
+      </div>
+      <div class="sidebar-card-body">
+        <div class="sc-feat"><div class="sc-check">✓</div> 12 real Android testers</div>
+        <div class="sc-feat"><div class="sc-check">✓</div> 14 consecutive days guaranteed</div>
+        <div class="sc-feat"><div class="sc-check">✓</div> Drop-out replacement included</div>
+        <div class="sc-feat"><div class="sc-check">✓</div> Daily written reports</div>
+        <div class="sc-feat"><div class="sc-check">✓</div> Real devices — no emulators</div>
+        <div class="sc-feat"><div class="sc-check">✓</div> 2-hour email/WhatsApp reply</div>
+        <a href="https://getsome.rest/#order" class="sc-btn">Start 14-Day Test →</a>
+        <div class="sc-note">2-hour reply · Private · No spam</div>
+      </div>
+    </div>
+
+    <div class="related-sidebar">
+      <h3>Related guides</h3>
+      <a href="/blog/google-play-new-developer-account-production-access-2026" class="rel-link">
+        <div class="rt">Account Setup</div>
+        New developer account roadmap
+      </a>
+      <a href="/blog/google-play-closed-testing-setup-guide" class="rel-link">
+        <div class="rt">Testing Setup</div>
+        How to configure closed tracks
+      </a>
+      <a href="/blog/google-play-app-review-process-after-closed-testing" class="rel-link">
+        <div class="rt">Review Process</div>
+        What happens after testing
+      </a>
+    </div>
+  </aside>
+</div>
+
+<section class="post-footer">
+  <div class="post-footer-inner">
+    <div class="pf-label">Continue reading</div>
+    <div class="related-grid">
+      <a href="/blog/google-play-new-developer-account-production-access-2026" class="rel-card">
+        <span class="tag">Account Setup</span>
+        <h3>New Developer Account: Production Access Roadmap</h3>
+        <p>The complete roadmap from creating an account to publishing your very first app.</p>
+        <div class="arrow">Read guide →</div>
+      </a>
+      <a href="/blog/google-play-closed-testing-setup-guide" class="rel-card">
+        <span class="tag">Testing Setup</span>
+        <h3>Google Play Closed Testing Setup Guide</h3>
+        <p>Step-by-step instructions on configuring your Play Console for your first closed beta test.</p>
+        <div class="arrow">Read guide →</div>
+      </a>
+      <a href="/blog/google-play-app-review-process-after-closed-testing" class="rel-card">
+        <span class="tag">Review Process</span>
+        <h3>The App Review Process After Testing</h3>
+        <p>What happens after you hit submit? Realistic timelines for Google's manual review.</p>
+        <div class="arrow">Read guide →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="sf-top">
+    <div class="sf-brand"><b>getsome</b>.rest</div>
+    <div class="sf-links">
+      <a href="/">Home</a>
+      <a href="/blog">Blog</a>
+      <a href="mailto:nabeel.ugd@gmail.com">Contact</a>
+      <a href="https://wa.me/+923452063859">WhatsApp</a>
+      <a href="/privacy-policy">Privacy Policy</a>
+    </div>
+  </div>
+  <div class="sf-bottom">
+    <span>© 2026 Getsome.rest. All rights reserved.</span>
+    <span>Not affiliated with Google LLC.</span>
+  </div>
+</footer>
+
+<script>
+  const cur = document.getElementById('cur');
+  document.addEventListener('mousemove', e => {
+    cur.style.left = e.clientX + 'px';
+    cur.style.top  = e.clientY + 'px';
+  });
+  document.querySelectorAll('a, button, input, select, textarea').forEach(el => {
+    el.addEventListener('mouseenter', () => document.body.classList.add('hovering'));
+    el.addEventListener('mouseleave', () => document.body.classList.remove('hovering'));
+  });
+</script>
+
+</body>
+</html>
