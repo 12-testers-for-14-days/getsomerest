@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QA Report: Melify Music Reviews</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1e293b;
+            --primary-light: #334155;
+            --text-main: #1e293b;
+            --text-secondary: #64748b;
+            --bg-body: #f1f5f9;
+            --bg-card: #ffffff;
+            --border-color: #e2e8f0;
+            --critical: #dc2626;
+            --critical-bg: #fef2f2;
+            --major: #d97706;
+            --major-bg: #fffbeb;
+            --minor: #2563eb;
+            --minor-bg: #eff6ff;
+            --positive: #16a34a;
+            --positive-bg: #f0fdf4;
+            --accent: #6366f1;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-body);
+            padding: 24px;
+        }
+
+        .container { max-width: 900px; margin: 0 auto; }
+
+        .header {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 32px;
+            margin-bottom: 24px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--accent);
+        }
+
+        .header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--primary);
+        }
+
+        .meta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .meta-item label {
+            display: block;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-secondary);
+            margin-bottom: 4px;
+        }
+
+        .meta-item span { font-weight: 500; color: var(--primary); }
+
+        /* Stats Bar */
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .stat-box {
+            background: var(--bg-card);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .stat-number {
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+
+        .stat-label { font-size: 12px; font-weight: 500; color: var(--text-secondary); }
+        .stat-box.critical .stat-number { color: var(--critical); }
+        .stat-box.major .stat-number { color: var(--major); }
+        .stat-box.minor .stat-number { color: var(--minor); }
+        .stat-box.positive .stat-number { color: var(--positive); }
+
+        /* Sections */
+        .section {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .section-header h2 { font-size: 18px; font-weight: 700; color: var(--primary); }
+
+        .section-icon {
+            width: 32px; height: 32px;
+            border-radius: 8px;
+            display: flex; align-items: center; justify-content: center;
+        }
+
+        .section-icon.critical { background: var(--critical-bg); color: var(--critical); }
+        .section-icon.major { background: var(--major-bg); color: var(--major); }
+        .section-icon.minor { background: var(--minor-bg); color: var(--minor); }
+        .section-icon.positive { background: var(--positive-bg); color: var(--positive); }
+
+        /* Issue Cards */
+        .issue-list { display: flex; flex-direction: column; gap: 16px; }
+
+        .issue-card {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            background: #fafbfc;
+        }
+
+        .issue-card.critical-border { border-left: 4px solid var(--critical); }
+        .issue-card.major-border { border-left: 4px solid var(--major); }
+        .issue-card.minor-border { border-left: 4px solid var(--minor); }
+
+        .issue-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px; }
+
+        .tag {
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+
+        .tag.critical { background: var(--critical-bg); color: var(--critical); }
+        .tag.major { background: var(--major-bg); color: var(--major); }
+        .tag.minor { background: var(--minor-bg); color: var(--minor); }
+        .tag.positive { background: var(--positive-bg); color: var(--positive); }
+
+        .issue-title { font-weight: 600; color: var(--primary); }
+        .issue-observation { font-size: 14px; color: var(--text-secondary); margin-bottom: 12px; }
+
+        .issue-detail {
+            background: var(--bg-card);
+            border-radius: 6px;
+            padding: 12px;
+            font-size: 13px;
+        }
+
+        .issue-detail strong { color: var(--primary); font-weight: 600; }
+        .issue-detail p { color: var(--text-secondary); margin-top: 4px; }
+        .issue-detail ul { margin-top: 8px; padding-left: 18px; color: var(--text-secondary); }
+        .issue-detail li { margin-bottom: 4px; }
+
+        /* Positive Section */
+        .positive-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; }
+
+        .positive-item {
+            padding: 16px;
+            background: var(--positive-bg);
+            border-radius: 8px;
+            border: 1px solid #bbf7d0;
+        }
+
+        .positive-item h4 {
+            font-weight: 600;
+            color: var(--positive);
+            margin-bottom: 6px;
+            display: flex; align-items: center; gap: 8px;
+        }
+
+        .positive-item p { font-size: 14px; color: var(--text-secondary); }
+
+        /* Summary */
+        .summary-box {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 24px;
+        }
+
+        .summary-box h3 {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .priority-list { display: flex; flex-direction: column; gap: 8px; }
+        .priority-item { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; }
+
+        .priority-badge {
+            width: 24px; height: 24px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 12px; font-weight: 700;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .priority-badge.p0 { background: var(--critical); }
+        .priority-badge.p1 { background: var(--major); }
+        .priority-badge.p2 { background: var(--minor); }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .stats-bar { grid-template-columns: repeat(2, 1fr); }
+            .header, .section { padding: 20px; }
+        }
+
+        @media print {
+            body { background: white; padding: 0; }
+            .section { break-inside: avoid; box-shadow: none; border: 1px solid #ddd; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+    <header class="header">
+        <h1>Melify Music Reviews — QA Report</h1>
+        <div class="meta-grid">
+            <div class="meta-item">
+                <label>Project</label>
+                <span>Melify Android App</span>
+            </div>
+            <div class="meta-item">
+                <label>Prepared For</label>
+                <span>Raj</span>
+            </div>
+            <div class="meta-item">
+                <label>Report Date</label>
+                <span>May 13, 2026</span>
+            </div>
+            <div class="meta-item">
+                <label>Audit Type</label>
+                <span>Functional, UI/UX & Performance</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Stats Bar -->
+    <div class="stats-bar">
+        <div class="stat-box critical">
+            <div class="stat-number">1</div>
+            <div class="stat-label">Critical Issue</div>
+        </div>
+        <div class="stat-box major">
+            <div class="stat-number">2</div>
+            <div class="stat-label">Major Issues</div>
+        </div>
+        <div class="stat-box minor">
+            <div class="stat-number">3</div>
+            <div class="stat-label">UI/UX Suggestions</div>
+        </div>
+        <div class="stat-box positive">
+            <div class="stat-number">5</div>
+            <div class="stat-label">Positive Findings</div>
+        </div>
+    </div>
+
+    <!-- Critical Bugs Section -->
+    <section class="section">
+        <div class="section-header">
+            <div class="section-icon critical">
+                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+            </div>
+            <h2>Critical & Functional Bugs</h2>
+        </div>
+
+        <div class="issue-list">
+            <!-- Nav State Bug -->
+            <div class="issue-card critical-border">
+                <div class="issue-header">
+                    <span class="tag critical">Critical</span>
+                    <span class="issue-title">Bottom Navigation Bar State is Broken</span>
+                </div>
+                <p class="issue-observation">Across almost all screens (Home, Search, Profile, Your Reviews), the "Recognize" tab remains visually highlighted as the active tab. The active state indicator does not update when navigating between sections.</p>
+                <div class="issue-detail">
+                    <p><strong>Impact:</strong> Users lose sense of their current location in the app, breaking fundamental navigation feedback.</p>
+                    <p style="margin-top: 8px;"><strong>Fix:</strong> Ensure selected tab state syncs with the active fragment/screen.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Major Bugs Section -->
+    <section class="section">
+        <div class="section-header">
+            <div class="section-icon major">
+                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            </div>
+            <h2>Major Issues</h2>
+        </div>
+
+        <div class="issue-list">
+            <!-- Scroll Lag -->
+            <div class="issue-card major-border">
+                <div class="issue-header">
+                    <span class="tag major">Performance</span>
+                    <span class="issue-title">App Lagging While Scrolling</span>
+                </div>
+                <p class="issue-observation">Significant frame drops and stuttering occur during vertical scrolling on lists (Home feed, Reviews, Search results), making the app feel unresponsive.</p>
+                <div class="issue-detail">
+                    <p><strong>Potential Causes:</strong> Large image loading without caching, main thread blocking, missing RecyclerView optimizations.</p>
+                    <p style="margin-top: 8px;"><strong>Recommendation:</strong> Implement Glide/Picasso for image caching, optimize RecyclerView ViewHolders, and ensure smooth 60fps rendering.</p>
+                </div>
+            </div>
+
+            <!-- Loading States -->
+            <div class="issue-card major-border">
+                <div class="issue-header">
+                    <span class="tag major">Major</span>
+                    <span class="issue-title">No Loading States or Progress Indicators</span>
+                </div>
+                <p class="issue-observation">During search and data loading operations, there are no visual feedback indicators. Users cannot tell if the app is working or frozen.</p>
+                <div class="issue-detail">
+                    <p><strong>Fix:</strong> Add shimmer effects, progress bars, or skeleton loaders during data fetching operations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- UI/UX Section -->
+    <section class="section">
+        <div class="section-header">
+            <div class="section-icon minor">
+                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path></svg>
+            </div>
+            <h2>UI/UX Improvement Suggestions</h2>
+        </div>
+
+        <div class="issue-list">
+            <div class="issue-card minor-border">
+                <div class="issue-header">
+                    <span class="tag minor">Accessibility</span>
+                    <span class="issue-title">Low Contrast on Play Buttons</span>
+                </div>
+                <p class="issue-observation">On the Profile Stats screen (under "Top rated"), the play icon next to song titles is extremely faint. It needs higher contrast for visibility.</p>
+            </div>
+
+            <div class="issue-card minor-border">
+                <div class="issue-header">
+                    <span class="tag minor">Typography</span>
+                    <span class="issue-title">Trailing Punctuation Typo</span>
+                </div>
+                <p class="issue-observation">On the "Your reviews" screen, the header reads "Your reviews and fan notes (1 review .)". The trailing period looks like a string formatting error.</p>
+            </div>
+
+            <div class="issue-card minor-border">
+                <div class="issue-header">
+                    <span class="tag minor">UX</span>
+                    <span class="issue-title">Empty Section Handling</span>
+                </div>
+                <p class="issue-observation">Sections like Comments, Fan Notes, and Activity show "(none)" without guidance. Consider hiding empty sections or adding helpful CTAs like "Be the first to comment."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- What's Good Section -->
+    <section class="section">
+        <div class="section-header">
+            <div class="section-icon positive">
+                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            </div>
+            <h2>What's Working Well</h2>
+        </div>
+
+        <div class="positive-grid">
+            <div class="positive-item">
+                <h4>
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    Song Recognition Functional
+                </h4>
+                <p>The core feature to identify songs with a tap is working correctly, fulfilling the app's primary use case.</p>
+            </div>
+
+            <div class="positive-item">
+                <h4>
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    Clean, Minimalist UI
+                </h4>
+                <p>Card-based layouts and ample white space give the app a professional, modern, and uncluttered appearance.</p>
+            </div>
+
+            <div class="positive-item">
+                <h4>
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    Graceful Empty States
+                </h4>
+                <p>Screens with no data ("No search history", "No activity") are handled gracefully without looking broken or confusing.</p>
+            </div>
+
+            <div class="positive-item">
+                <h4>
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    Musical Personality Feature
+                </h4>
+                <p>The profile stats showing most-rated artists is a unique, engaging feature that encourages continued app usage.</p>
+            </div>
+
+            <div class="positive-item">
+                <h4>
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    Modern Aesthetics
+                </h4>
+                <p>Profile banner gradients, typography choices, and dark theme create a visually appealing music app experience.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Summary & Recommendations -->
+    <section class="section">
+        <div class="section-header">
+            <div class="section-icon critical">
+                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg>
+            </div>
+            <h2>Summary & Prioritized Recommendations</h2>
+        </div>
+
+        <div class="summary-box">
+            <h3>Immediate Action Required (P0)</h3>
+            <div class="priority-list">
+                <div class="priority-item">
+                    <span class="priority-badge p0">1</span>
+                    <span>Fix bottom navigation active state synchronization</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="summary-box" style="margin-top: 12px; background: #fffbeb; border-color: #fcd34d;">
+            <h3 style="color: var(--major);">High Priority (P1)</h3>
+            <div class="priority-list">
+                <div class="priority-item">
+                    <span class="priority-badge p1">1</span>
+                    <span>Optimize scrolling performance — implement image caching (Glide/Picasso)</span>
+                </div>
+                <div class="priority-item">
+                    <span class="priority-badge p1">2</span>
+                    <span>Add loading states and progress indicators throughout the app</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="summary-box" style="margin-top: 12px; background: #eff6ff; border-color: #93c5fd;">
+            <h3 style="color: var(--minor);">Medium Priority (P2)</h3>
+            <div class="priority-list">
+                <div class="priority-item">
+                    <span class="priority-badge p2">1</span>
+                    <span>Fix trailing punctuation typo on reviews screen</span>
+                </div>
+                <div class="priority-item">
+                    <span class="priority-badge p2">2</span>
+                    <span>Improve contrast on play button icons for accessibility</span>
+                </div>
+                <div class="priority-item">
+                    <span class="priority-badge p2">3</span>
+                    <span>Refine empty state messaging with helpful CTAs</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>
