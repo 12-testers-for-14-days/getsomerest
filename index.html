@@ -1,1609 +1,1230 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" type="image/png" sizes="512x512" href="images/favicon.png">
-  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>12 Testers for 14 Days | Google Play Closed Testing Service — Getsome.rest</title>
-  <meta name="description" content="Get Google Play production access with 12 real Android testers for 14 consecutive days. Real devices, daily reports, guaranteed compliance. $69 flat fee.">
+  <title>GetSome.Rest — Android Closed Testing, Guaranteed.</title>
+  <meta name="description" content="12–20 real Android testers for 14 days. Google Play production access, guaranteed. Professional closed testing service.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
-
-  <link rel="canonical" href="https://getsome.rest/">
-  <link rel="icon" type="image/png" sizes="512x512" href="/images/favicon.png">
-  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
-  <meta property="og:title" content="12 Testers for 14 Days | Google Play Closed Testing Service">
-  <meta property="og:description" content="Professional 14-day closed testing service for Android apps. 12 real users. Real devices. Guaranteed Play Console compliance.">
-  <meta property="og:url" content="https://getsome.rest/">
-  <meta property="og:image" content="https://getsome.rest/images/12-testers-for-14-days.jpg">
-  <meta property="og:type" content="website">
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "12 Testers for 14 Days Google Play Testing",
-    "provider": {
-      "@type": "Organization",
-      "name": "GetSome.Rest",
-      "url": "https://getsome.rest/"
-    },
-    "description": "Professional 14-day closed testing service for Android apps. We provide 12 real users with real Android devices to meet Google Play Console requirements and unlock production access.",
-    "category": "Software Testing",
-    "offers": {
-      "@type": "Offer",
-      "priceCurrency": "USD",
-      "price": "69",
-      "url": "https://getsome.rest/"
-    }
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How do you provide 12 testers for Google Play Console closed testing?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "We maintain a verified network of real Android users across diverse devices and geographies. Once you submit your internal testing track link, we deploy 12 unique testers who download your app via physical devices (not emulators) and maintain daily engagement for exactly 14 consecutive days to satisfy Google Play's production access requirements."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Does Google Play detect emulator or bot testing, and is your service safe?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, Google Play Console's integrity systems easily detect emulators, VPN masking, and bot behavior, resulting in immediate account suspension or permanent production access rejection. Our service uses 100% genuine Android hardware with carrier SIM cards, residential IPs, and natural usage patterns that are indistinguishable from organic user acquisition."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What happens if I don't have 12 testers for the full 14 days?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Google Play will reject your production access request and reset your testing timeline. You must restart the 14-day period with 12 new active testers. Incomplete testing data is the leading cause of app launch delays, which is why developers use managed testing services to guarantee compliance on the first submission."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Which Android devices and OS versions do your testers use?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Our testing matrix covers Samsung Galaxy (A and S series), Xiaomi (Redmi/MIUI), Google Pixel, OnePlus, Oppo, and Motorola devices running Android 8.0 through Android 16 (API 26–36). This diversity ensures your pre-launch report captures real-world fragmentation issues like manufacturer-specific battery optimizations and display density variations."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How quickly can I get Google Play production access using your service?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Exactly 14 days from tester deployment. Our service guarantees that all 12 testers remain active for the full 336-hour period required by Google Play Console. You cannot expedite this window—Google enforces it strictly to analyze crash rates, ANRs, and retention curves before approving production distribution."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is the difference between closed testing and internal testing tracks?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Internal testing is for immediate developer access with up to 100 testers and has no time requirement. Closed testing (the 12 testers/14 days requirement) is the formal compliance track that unlocks production access. Our service specifically fulfills the closed testing mandate with external testers who are not affiliated with your developer account."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do your testers provide feedback, crash logs, or ANR reports?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. While the primary deliverable is compliance data, testers document critical issues including application not responding (ANR) errors, crashes, UI layout breaks on specific devices, and functional bugs. This data appears in your Play Console pre-launch report, allowing you to fix stability issues before public release."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can I choose specific countries or demographics for my 12 testers?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Our standard service provides geographic diversity to simulate global launch conditions. However, we can target specific regions (e.g., US, UK, India, EU) if your app has localization requirements or regional compliance needs. All testers must match real demographic profiles to satisfy Google's authenticity checks."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is this service considered buying reviews or fake engagement?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No. This is managed compliance testing, not review manipulation. We do not guarantee positive ratings or incentivize five-star reviews. Testers provide honest usage data and may leave organic feedback if they choose, but the service focuses solely on meeting Google Play's technical testing requirements for production access approval."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What do I need to provide to start the 14-day testing period?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "You need a Google Play Console account with your app uploaded to the Closed Testing track and an active opt-in link (email list or URL). We handle tester recruitment, device provisioning, daily engagement verification, and compliance documentation. No SDK integration or code changes are required on your end."
-        }
-      }
-    ]
-  }
-  </script>
-
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --white:   #ffffff;
-      --off:     #f7f6f3;
-      --ink:     #111111;
-      --mid:     #888880;
-      --border:  #e8e6e0;
-      --lime:    #c8f542;
-      --lime-dk: #9dc918;
-      --red:     #e63d2f;
-      --radius:  14px;
-      --fs-mono: 'DM Mono', monospace;
-      --fs-serif:'Lora', Georgia, serif;
+      --ink:      #0a0a0a;
+      --ink-2:    #1c1c1e;
+      --ink-3:    #3a3a3c;
+      --mid:      #6e6e73;
+      --subtle:   #aeaeb2;
+      --rule:     #e5e5ea;
+      --surface:  #f5f5f7;
+      --white:    #ffffff;
+      --accent:   #0071e3;
+      --accent-h: #0077ed;
+      --accent-l: #e8f1fd;
+      --green:    #30d158;
+      --red:      #ff453a;
+      --amber:    #ff9f0a;
+      --r-sm:     10px;
+      --r:        18px;
+      --r-lg:     28px;
+      --r-xl:     40px;
+      --sans:     'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --serif:    'Fraunces', Georgia, serif;
     }
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html { font-size:16px; scroll-behavior:smooth; }
+    body { font-family:var(--sans); background:var(--white); color:var(--ink); -webkit-font-smoothing:antialiased; overflow-x:hidden; }
 
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    html { font-size: 16px; scroll-behavior: smooth; }
+    /* ── NAV ── */
+    nav {
+      position:sticky; top:0; z-index:300;
+      display:flex; align-items:center; justify-content:space-between;
+      padding:0 52px; height:60px;
+      background:rgba(255,255,255,0.82);
+      backdrop-filter:saturate(180%) blur(20px);
+      -webkit-backdrop-filter:saturate(180%) blur(20px);
+      border-bottom:1px solid rgba(0,0,0,0.06);
+    }
+    .nav-logo {
+      font-family:var(--sans); font-size:17px; font-weight:700;
+      color:var(--ink); text-decoration:none; letter-spacing:-.4px;
+    }
+    .nav-logo span { color:var(--accent); }
+    .nav-links { display:flex; align-items:center; gap:32px; }
+    .nav-links a {
+      font-size:13px; font-weight:500; color:var(--mid);
+      text-decoration:none; transition:color .2s;
+    }
+    .nav-links a:hover { color:var(--ink); }
+    .nav-cta {
+      padding:8px 20px; border-radius:980px;
+      background:var(--accent); color:var(--white);
+      font-size:13px; font-weight:600; border:none; cursor:pointer;
+      transition:background .2s, transform .2s;
+      text-decoration:none; display:inline-block;
+    }
+    .nav-cta:hover { background:var(--accent-h); }
 
-    body {
-      font-family: var(--fs-serif);
-      background: var(--white);
-      color: var(--ink);
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    body { cursor: none; }
-    #cur {
-      position: fixed; z-index: 9999; pointer-events: none;
-      width: 12px; height: 12px;
-      background: var(--lime);
-      border-radius: 50%;
-      transform: translate(-50%,-50%);
-      transition: width .25s, height .25s, background .2s;
-      mix-blend-mode: multiply;
-    }
-    body.hovering #cur { width: 44px; height: 44px; }
-
-    .marquee-bar {
-      width: 100%; overflow: hidden;
-      background: var(--ink); padding: 11px 0;
-      border-bottom: none;
-    }
-    .marquee-track {
-      display: flex; width: max-content;
-      animation: marq 28s linear infinite;
-    }
-    .marquee-track:hover { animation-play-state: paused; }
-
-    @keyframes marq { to { transform: translateX(-50%); } }
-
-    .marquee-unit {
-      display: flex; align-items: center; gap: 32px;
-      padding: 0 40px; white-space: nowrap;
-      font-family: var(--fs-mono);
-      font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase;
-      color: rgba(255,255,255,.45);
-    }
-    .marquee-unit .hi { color: var(--lime); font-weight: 500; }
-    .marquee-unit .sep { opacity: .2; }
-
-    header {
-      position: sticky; top: 0; z-index: 200;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 48px;
-      height: 64px;
-      background: rgba(255,255,255,.92);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .logo {
-      font-family: var(--fs-serif);
-      font-size: 19px; font-style: italic;
-      color: var(--ink); text-decoration: none;
-      letter-spacing: -.3px;
-    }
-    .logo b { font-style: normal; font-weight: 700; }
-
-    .nav-center {
-      display: flex; align-items: center; gap: 6px;
-      font-family: var(--fs-mono);
-      font-size: 11px; letter-spacing: .05em; text-transform: uppercase;
-      color: var(--mid);
-    }
-    .status-dot {
-      width: 7px; height: 7px;
-      background: #3ecf6b; border-radius: 50%;
-      animation: blink 1.6s ease-in-out infinite;
-    }
-    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.25} }
-
-    .nav-actions { display: flex; align-items: center; gap: 10px; }
-
-    .btn {
-      display: inline-flex; align-items: center; gap: 7px;
-      font-family: var(--fs-mono);
-      font-size: 12px; letter-spacing: .05em; text-transform: uppercase;
-      text-decoration: none; border: none; cursor: none;
-      padding: 9px 20px; border-radius: 50px;
-      transition: all .22s ease;
-      font-weight: 500;
-    }
-    .btn-ghost {
-      background: transparent;
-      border: 1px solid var(--border);
-      color: var(--mid);
-    }
-    .btn-ghost:hover { border-color: var(--ink); color: var(--ink); }
-
-    .btn-lime {
-      background: var(--lime);
-      border: 1px solid var(--lime);
-      color: var(--ink);
-      font-weight: 700;
-    }
-    .btn-lime:hover {
-      background: var(--lime-dk);
-      border-color: var(--lime-dk);
-      transform: translateY(-1px);
-      box-shadow: 0 8px 24px rgba(156,201,24,.3);
-    }
-
+    /* ── HERO ── */
     .hero {
-      display: grid;
-      grid-template-columns: 1fr 480px;
-      min-height: calc(100vh - 64px - 42px);
-      border-bottom: 1px solid var(--border);
+      padding:120px 52px 110px;
+      max-width:1200px; margin:0 auto;
+      display:grid; grid-template-columns:1fr 1fr;
+      align-items:center; gap:80px;
+    }
+    .hero-eyebrow {
+      display:inline-flex; align-items:center; gap:8px;
+      padding:5px 14px; border-radius:980px;
+      background:var(--accent-l);
+      font-size:12px; font-weight:600; color:var(--accent);
+      letter-spacing:.04em; text-transform:uppercase;
+      margin-bottom:28px;
+    }
+    .hero-eyebrow-dot {
+      width:6px; height:6px; border-radius:50%;
+      background:var(--green);
+      box-shadow:0 0 0 2px rgba(48,209,88,.3);
+      animation:blink 2s ease-in-out infinite;
+    }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.4} }
+    .hero-h {
+      font-family:var(--serif);
+      font-size:clamp(44px,5vw,72px);
+      font-weight:500; line-height:1.06; letter-spacing:-.03em;
+      margin-bottom:24px; color:var(--ink);
+    }
+    .hero-h em { font-style:italic; font-weight:300; color:var(--accent); }
+    .hero-sub {
+      font-size:18px; line-height:1.75; color:var(--mid); font-weight:400;
+      margin-bottom:44px; max-width:480px;
+    }
+    .hero-sub strong { color:var(--ink); font-weight:600; }
+    .hero-actions { display:flex; align-items:center; gap:16px; }
+    .btn-blue {
+      padding:15px 30px; border-radius:980px;
+      background:var(--accent); color:var(--white);
+      font-size:15px; font-weight:600; border:none; cursor:pointer;
+      transition:all .22s; text-decoration:none; display:inline-block;
+    }
+    .btn-blue:hover { background:var(--accent-h); transform:scale(1.02); box-shadow:0 8px 28px rgba(0,113,227,.28); }
+    .btn-link {
+      font-size:15px; font-weight:500; color:var(--accent);
+      text-decoration:none; display:inline-flex; align-items:center; gap:5px;
+      transition:gap .2s;
+    }
+    .btn-link:hover { gap:9px; }
+    .btn-link::after { content:'→'; }
+
+    /* Hero right — visual card */
+    .hero-visual {
+      background:var(--surface);
+      border-radius:var(--r-xl);
+      padding:44px 40px;
+      position:relative; overflow:hidden;
+    }
+    .hero-visual::before {
+      content:'';
+      position:absolute; top:-60px; right:-60px;
+      width:260px; height:260px; border-radius:50%;
+      background:radial-gradient(circle, rgba(0,113,227,.09), transparent 70%);
+    }
+    .hv-label {
+      font-family:var(--sans); font-size:11px; font-weight:600;
+      letter-spacing:.12em; text-transform:uppercase; color:var(--subtle);
+      margin-bottom:6px;
+    }
+    .hv-big {
+      font-family:var(--serif); font-size:80px; font-weight:500;
+      line-height:.9; letter-spacing:-.05em; color:var(--ink);
+      margin-bottom:4px;
+    }
+    .hv-big sup { font-size:36px; vertical-align:top; margin-top:12px; font-weight:400; }
+    .hv-sub { font-size:13px; color:var(--mid); margin-bottom:36px; }
+    .hv-items { display:flex; flex-direction:column; gap:1px; margin-bottom:32px; }
+    .hv-row {
+      display:flex; align-items:center; justify-content:space-between;
+      padding:13px 16px; background:var(--white);
+      border-radius:var(--r-sm);
+      font-size:14px; font-weight:500; color:var(--ink-2);
+    }
+    .hv-row:first-child { border-radius:var(--r-sm) var(--r-sm) 2px 2px; }
+    .hv-row:last-child { border-radius:2px 2px var(--r-sm) var(--r-sm); }
+    .hv-row-val { font-size:13px; color:var(--accent); font-weight:600; }
+    .hv-cta {
+      display:block; width:100%; padding:15px;
+      background:var(--ink); color:var(--white); border:none; border-radius:var(--r);
+      font-family:var(--sans); font-size:14px; font-weight:600; cursor:pointer;
+      transition:all .22s;
+    }
+    .hv-cta:hover { background:var(--ink-2); transform:translateY(-2px); box-shadow:0 10px 32px rgba(0,0,0,.18); }
+    .hv-note { text-align:center; margin-top:14px; font-size:12px; color:var(--subtle); }
+
+    /* ── SOCIAL PROOF STRIP ── */
+    .proof-strip {
+      background:var(--surface);
+      padding:22px 52px;
+      display:flex; align-items:center; justify-content:center; gap:56px;
+      flex-wrap:wrap;
+    }
+    .proof-item {
+      display:flex; align-items:center; gap:10px;
+      font-size:13px; font-weight:500; color:var(--mid);
+    }
+    .proof-item-icon {
+      width:32px; height:32px; border-radius:50%;
+      background:var(--white);
+      display:flex; align-items:center; justify-content:center;
+      font-size:15px;
+      box-shadow:0 1px 4px rgba(0,0,0,.08);
     }
 
-    .left {
-      padding: 72px 64px 80px;
-      border-right: 1px solid var(--border);
-      display: flex; flex-direction: column; justify-content: space-between;
-      position: relative; overflow: hidden;
+    /* ── SECTION SHARED ── */
+    .section { padding:110px 52px; max-width:1200px; margin:0 auto; }
+    .section-full { padding:110px 0; border-top:1px solid var(--rule); }
+    .section-full-inner { max-width:1200px; margin:0 auto; padding:0 52px; }
+    .eyebrow {
+      font-size:11.5px; font-weight:700; letter-spacing:.14em;
+      text-transform:uppercase; color:var(--accent);
+      margin-bottom:16px; display:block;
     }
+    .section-h {
+      font-family:var(--serif);
+      font-size:clamp(34px,3.8vw,54px);
+      font-weight:500; line-height:1.1; letter-spacing:-.03em;
+      color:var(--ink); margin-bottom:20px;
+    }
+    .section-h em { font-style:italic; font-weight:300; }
+    .section-body {
+      font-size:17px; line-height:1.8; color:var(--mid);
+      max-width:600px; margin-bottom:64px;
+    }
+    .section-body strong { color:var(--ink); font-weight:600; }
 
-    .bg-price {
-      position: absolute;
-      bottom: -40px; right: -30px;
-      font-family: var(--fs-mono);
-      font-size: 340px; font-weight: 300;
-      line-height: 1; letter-spacing: -20px;
-      color: transparent;
-      -webkit-text-stroke: 1px rgba(17,17,17,.055);
-      pointer-events: none; user-select: none;
-      animation: breathe 7s ease-in-out infinite;
+    /* ── CHALLENGE ── */
+    .challenge-layout {
+      display:grid; grid-template-columns:1fr 1fr; gap:28px;
     }
-    @keyframes breathe {
-      0%,100% { transform: scale(1) translateY(0); }
-      50%      { transform: scale(1.015) translateY(-6px); }
+    .ch-card {
+      border-radius:var(--r-lg); padding:48px 44px;
+      position:relative; overflow:hidden;
     }
+    .ch-card.bad  { background:#fff2f1; }
+    .ch-card.good { background:#f0f9f3; }
+    .ch-flag {
+      display:inline-flex; align-items:center; gap:6px;
+      padding:5px 14px; border-radius:980px;
+      font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase;
+      margin-bottom:24px;
+    }
+    .ch-flag.bad  { background:rgba(255,69,58,.1); color:var(--red); }
+    .ch-flag.good { background:rgba(48,209,88,.14); color:#1a8a3c; }
+    .ch-card h3 {
+      font-family:var(--serif);
+      font-size:28px; font-weight:500; line-height:1.25;
+      color:var(--ink); margin-bottom:16px;
+    }
+    .ch-card > p { font-size:15px; line-height:1.75; color:var(--mid); margin-bottom:28px; }
+    .ch-list { list-style:none; }
+    .ch-list li {
+      font-size:14px; line-height:1.7; color:var(--ink-3);
+      padding:10px 0 10px 26px; position:relative;
+      border-bottom:1px solid rgba(0,0,0,.06);
+    }
+    .ch-list li:last-child { border-bottom:none; }
+    .ch-list.bad  li::before { content:'✕'; position:absolute; left:0; color:var(--red); font-size:12px; font-weight:700; }
+    .ch-list.good li::before { content:'✓'; position:absolute; left:0; color:#1a8a3c; font-size:12px; font-weight:700; }
 
-    .kicker {
-      display: inline-flex; align-items: center; gap: 10px;
-      font-family: var(--fs-mono);
-      font-size: 11px; letter-spacing: .12em; text-transform: uppercase;
-      color: var(--mid);
-      margin-bottom: 36px;
+    /* ── STATS ROW ── */
+    .stats-section {
+      background:var(--ink); color:var(--white);
+      padding:80px 52px;
     }
-    .kicker::before {
-      content: '';
-      display: inline-block;
-      width: 24px; height: 1px;
-      background: var(--mid);
+    .stats-inner {
+      max-width:1200px; margin:0 auto;
+      display:grid; grid-template-columns:repeat(4,1fr);
+      gap:1px; background:rgba(255,255,255,.1);
+      border-radius:var(--r-lg); overflow:hidden;
     }
-
-    .headline {
-      font-size: clamp(40px, 4.5vw, 66px);
-      font-weight: 600; line-height: 1.08;
-      letter-spacing: -.04em;
-      margin-bottom: 28px;
-      max-width: 640px;
+    .stat-cell {
+      background:var(--ink-2);
+      padding:48px 40px;
+      text-align:center;
     }
-    .headline em { font-style: italic; font-weight: 400; color: var(--mid); }
-    .headline .underline {
-      position: relative; white-space: nowrap;
-    }
-    .headline .underline::after {
-      content: '';
-      position: absolute;
-      left: 0; bottom: 4px;
-      width: 100%; height: 10px;
-      background: var(--lime);
-      border-radius: 3px;
-      z-index: -1;
-      transform-origin: left;
-      animation: revealBar .9s cubic-bezier(.77,0,.18,1) .4s both;
-    }
-    @keyframes revealBar {
-      from { transform: scaleX(0); }
-      to   { transform: scaleX(1); }
-    }
-
-    .desc {
-      font-size: 17px; font-weight: 400; line-height: 1.75;
-      color: var(--mid);
-      max-width: 500px;
-      margin-bottom: 52px;
-    }
-    .desc strong { color: var(--ink); font-weight: 600; }
-
-    .stats {
-      display: flex; gap: 0;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-      max-width: 560px;
-    }
-    .stat {
-      flex: 1; padding: 22px 24px;
-      border-right: 1px solid var(--border);
-      position: relative;
-    }
-    .stat:last-child { border-right: none; }
+    .stat-cell:first-child { border-radius:var(--r-lg) 0 0 var(--r-lg); }
+    .stat-cell:last-child  { border-radius:0 var(--r-lg) var(--r-lg) 0; }
     .stat-num {
-      font-family: var(--fs-mono);
-      font-size: 28px; font-weight: 500;
-      color: var(--ink); letter-spacing: -.02em;
-      display: block; margin-bottom: 4px;
+      font-family:var(--serif);
+      font-size:60px; font-weight:500; line-height:.9;
+      letter-spacing:-.04em; color:var(--white);
+      display:block; margin-bottom:12px;
     }
-    .stat-num .accent { color: var(--lime-dk); }
-    .stat-label {
-      font-family: var(--fs-mono);
-      font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase;
-      color: var(--mid);
+    .stat-num sup { font-size:28px; vertical-align:top; margin-top:10px; }
+    .stat-lbl { font-size:13px; font-weight:500; color:rgba(255,255,255,.45); letter-spacing:.04em; text-transform:uppercase; }
+
+    /* ── PROCESS ── */
+    .process-grid {
+      display:grid; grid-template-columns:repeat(4,1fr); gap:1px;
+      background:var(--rule); border-radius:var(--r-lg); overflow:hidden;
     }
-    .stat:first-child::before {
-      content: '';
-      position: absolute; top: 12px; right: 14px;
-      width: 8px; height: 8px;
-      background: var(--lime); border-radius: 50%;
+    .proc-cell {
+      background:var(--white); padding:40px 32px;
+      transition:background .25s;
+    }
+    .proc-cell:hover { background:var(--surface); }
+    .proc-cell:first-child { border-radius:var(--r-lg) 0 0 var(--r-lg); }
+    .proc-cell:last-child  { border-radius:0 var(--r-lg) var(--r-lg) 0; }
+    .proc-num {
+      font-family:var(--serif); font-size:48px; font-weight:300;
+      color:var(--rule); line-height:1;
+      margin-bottom:24px; display:block;
+    }
+    .proc-day {
+      display:inline-block; padding:3px 12px; border-radius:980px;
+      background:var(--accent-l); color:var(--accent);
+      font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+      margin-bottom:16px;
+    }
+    .proc-cell h3 { font-size:17px; font-weight:700; margin-bottom:10px; color:var(--ink); }
+    .proc-cell p  { font-size:14px; line-height:1.7; color:var(--mid); }
+
+    /* ── DEVICES ── */
+    .devices-grid {
+      display:grid; grid-template-columns:repeat(4,1fr); gap:16px;
+    }
+    .dev-tile {
+      background:var(--surface); border-radius:var(--r-lg);
+      padding:36px 28px; text-align:center;
+      transition:all .25s;
+      border:1.5px solid transparent;
+    }
+    .dev-tile:hover { background:var(--white); border-color:var(--rule); transform:translateY(-4px); box-shadow:0 16px 48px rgba(0,0,0,.07); }
+    .dev-icon {
+      width:56px; height:56px; border-radius:16px;
+      background:var(--white); margin:0 auto 18px;
+      display:flex; align-items:center; justify-content:center;
+      font-weight:700; font-size:16px; color:var(--ink);
+      box-shadow:0 2px 12px rgba(0,0,0,.08);
+      letter-spacing:-.02em;
+    }
+    .dev-tile h4 { font-size:16px; font-weight:700; color:var(--ink); margin-bottom:5px; }
+    .dev-tile p  { font-size:12px; font-weight:500; color:var(--subtle); letter-spacing:.04em; text-transform:uppercase; }
+
+    /* ── TESTIMONIALS ── */
+    .testi-wrap {
+      display:grid; grid-template-columns:repeat(3,1fr); gap:20px;
+    }
+    .testi-card {
+      background:var(--surface); border-radius:var(--r-lg);
+      padding:36px; display:flex; flex-direction:column;
+      transition:all .25s;
+    }
+    .testi-card:hover { background:var(--white); box-shadow:0 20px 56px rgba(0,0,0,.08); transform:translateY(-4px); }
+    .testi-stars { color:var(--amber); font-size:14px; letter-spacing:3px; margin-bottom:20px; }
+    .testi-q {
+      font-family:var(--serif); font-size:17px; line-height:1.75;
+      color:var(--ink); font-style:italic; flex:1; margin-bottom:28px;
+    }
+    .testi-who { display:flex; align-items:center; gap:12px; }
+    .testi-av {
+      width:42px; height:42px; border-radius:50%;
+      display:flex; align-items:center; justify-content:center;
+      font-size:14px; font-weight:700; color:var(--white); flex-shrink:0;
+    }
+    .testi-av.a { background:linear-gradient(135deg,#0071e3,#00c7be); }
+    .testi-av.b { background:linear-gradient(135deg,#30d158,#34c759); }
+    .testi-av.c { background:linear-gradient(135deg,#ff9f0a,#ff453a); }
+    .testi-name { font-size:14px; font-weight:700; color:var(--ink); }
+    .testi-role { font-size:12px; color:var(--subtle); font-weight:500; }
+
+    /* ── PRICING ── */
+    .pricing-bg {
+      background:var(--surface);
+      padding:110px 52px;
+      border-top:1px solid var(--rule);
+    }
+    .pricing-intro { text-align:center; max-width:560px; margin:0 auto 72px; }
+    .pricing-intro .section-body { margin:0 auto; }
+    .pricing-row {
+      max-width:1100px; margin:0 auto;
+      display:grid; grid-template-columns:repeat(3,1fr); gap:20px;
+      align-items:start;
+    }
+    .plan {
+      background:var(--white); border-radius:var(--r-xl);
+      overflow:hidden;
+      border:1.5px solid var(--rule);
+      transition:all .3s;
+    }
+    .plan:hover { transform:translateY(-6px); box-shadow:0 24px 64px rgba(0,0,0,.09); }
+    .plan.featured {
+      border-color:var(--accent);
+      box-shadow:0 0 0 1px var(--accent), 0 20px 56px rgba(0,113,227,.14);
+    }
+    .plan.featured:hover { box-shadow:0 0 0 1px var(--accent), 0 32px 80px rgba(0,113,227,.2); }
+    .plan-header {
+      padding:36px 36px 28px;
+      border-bottom:1px solid var(--rule);
+      position:relative;
+    }
+    .plan.featured .plan-header { background:linear-gradient(160deg, rgba(0,113,227,.04), var(--white)); }
+    .plan-badge {
+      position:absolute; top:20px; right:20px;
+      padding:4px 14px; border-radius:980px;
+      background:var(--accent); color:var(--white);
+      font-size:11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase;
+    }
+    .plan-tier { font-size:12px; font-weight:700; color:var(--subtle); letter-spacing:.1em; text-transform:uppercase; margin-bottom:8px; }
+    .plan.featured .plan-tier { color:var(--accent); }
+    .plan-name { font-size:22px; font-weight:700; color:var(--ink); margin-bottom:24px; }
+    .plan-pricing { display:flex; align-items:flex-end; gap:8px; margin-bottom:6px; }
+    .plan-was { font-size:18px; color:var(--subtle); text-decoration:line-through; font-weight:500; }
+    .plan-price {
+      font-family:var(--serif); font-size:64px; font-weight:500;
+      line-height:.88; letter-spacing:-.05em; color:var(--ink);
+    }
+    .plan-price sup { font-size:28px; vertical-align:top; margin-top:10px; font-weight:400; }
+    .plan-period { font-size:13px; color:var(--mid); font-weight:500; padding-bottom:4px; }
+    .plan-saving {
+      display:inline-block; padding:3px 12px; border-radius:980px;
+      background:rgba(48,209,88,.1); color:#1a8a3c;
+      font-size:12px; font-weight:700; letter-spacing:.04em;
+      margin-bottom:20px;
+    }
+    .plan-desc { font-size:14px; line-height:1.65; color:var(--mid); }
+    .plan-body { padding:28px 36px 36px; }
+    .plan-feat { list-style:none; margin-bottom:28px; }
+    .plan-feat li {
+      display:flex; align-items:flex-start; gap:10px;
+      font-size:14px; line-height:1.6; color:var(--ink-3);
+      padding:10px 0; border-bottom:1px solid var(--rule);
+    }
+    .plan-feat li:first-child { border-top:1px solid var(--rule); }
+    .plan-feat li strong { color:var(--ink); font-weight:600; }
+    .feat-check {
+      width:18px; height:18px; border-radius:50%; flex-shrink:0; margin-top:1px;
+      display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:700;
+    }
+    .feat-check.yes { background:rgba(48,209,88,.14); color:#1a8a3c; }
+    .feat-check.no  { background:rgba(0,0,0,.04); color:var(--subtle); }
+    .plan-btn {
+      display:block; width:100%; padding:16px;
+      border-radius:var(--r); font-family:var(--sans);
+      font-size:15px; font-weight:700; border:none; cursor:pointer;
+      transition:all .22s; text-align:center;
+    }
+    .plan-btn.solid { background:var(--accent); color:var(--white); }
+    .plan-btn.solid:hover { background:var(--accent-h); transform:translateY(-2px); box-shadow:0 10px 32px rgba(0,113,227,.28); }
+    .plan-btn.outline {
+      background:transparent; border:1.5px solid var(--rule);
+      color:var(--mid);
+    }
+    .plan-btn.outline:hover { border-color:var(--ink); color:var(--ink); }
+
+    /* ── FAQ ── */
+    .faq-layout { max-width:780px; margin:0 auto; }
+    details {
+      border-bottom:1px solid var(--rule);
+    }
+    summary {
+      list-style:none; padding:26px 0;
+      display:flex; justify-content:space-between; align-items:center;
+      cursor:pointer; gap:24px;
+    }
+    summary::-webkit-details-marker { display:none; }
+    summary:focus { outline:none; }
+    .faq-q { font-size:18px; font-weight:600; color:var(--ink); line-height:1.4; }
+    .faq-icon {
+      width:30px; height:30px; border-radius:50%; flex-shrink:0;
+      background:var(--surface); border:1.5px solid var(--rule);
+      display:flex; align-items:center; justify-content:center;
+      font-size:18px; color:var(--mid); transition:all .25s;
+      font-weight:300;
+    }
+    details[open] summary .faq-icon { background:var(--accent-l); border-color:var(--accent); color:var(--accent); transform:rotate(45deg); }
+    .faq-ans { font-size:15px; line-height:1.85; color:var(--mid); padding-bottom:28px; max-width:680px; }
+    .faq-ans strong { color:var(--ink); }
+
+    /* ── FOOTER ── */
+    .footer {
+      background:var(--ink); color:var(--white);
+      padding:80px 52px 48px;
+    }
+    .footer-grid {
+      max-width:1200px; margin:0 auto;
+      display:grid; grid-template-columns:2fr 1fr 1fr 1fr;
+      gap:60px; padding-bottom:56px;
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    .footer-brand { font-size:20px; font-weight:700; color:var(--white); margin-bottom:14px; }
+    .footer-brand span { color:var(--accent); }
+    .footer-desc { font-size:14px; line-height:1.7; color:rgba(255,255,255,.38); max-width:240px; }
+    .footer-col h4 {
+      font-size:11px; font-weight:700; letter-spacing:.12em;
+      text-transform:uppercase; color:rgba(255,255,255,.32); margin-bottom:20px;
+    }
+    .footer-col a, .footer-col p {
+      display:block; font-size:14px; color:rgba(255,255,255,.55);
+      text-decoration:none; margin-bottom:12px; transition:color .2s;
+    }
+    .footer-col a:hover { color:var(--white); }
+    .footer-base {
+      max-width:1200px; margin:0 auto;
+      padding-top:32px;
+      display:flex; justify-content:space-between; align-items:center;
+      font-size:12px; color:rgba(255,255,255,.28);
     }
 
-    .contact-row {
-      display: flex; align-items: center; gap: 28px;
-      margin-top: 48px;
+    /* ── ORDER MODAL ── */
+    .veil {
+      position:fixed; inset:0; z-index:500;
+      background:rgba(0,0,0,.45);
+      backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px);
+      display:none; align-items:center; justify-content:center;
+      padding:20px; overflow-y:auto;
     }
-    .contact-link {
-      display: flex; align-items: center; gap: 9px;
-      font-family: var(--fs-mono);
-      font-size: 12px; letter-spacing: .04em; text-transform: uppercase;
-      color: var(--mid); text-decoration: none;
-      transition: color .2s;
-    }
-    .contact-link:hover { color: var(--ink); }
-    .contact-link svg { width: 15px; height: 15px; }
-    .contact-sep { width: 1px; height: 20px; background: var(--border); }
+    .veil.open { display:flex; animation:fin .3s ease; }
+    @keyframes fin { from{opacity:0} to{opacity:1} }
 
-    .right {
-      background: var(--off);
-      display: flex; flex-direction: column;
+    .order-modal {
+      width:100%; max-width:980px;
+      background:var(--white); border-radius:var(--r-xl);
+      overflow:hidden;
+      box-shadow:0 48px 120px rgba(0,0,0,.22);
+      animation:rise .45s cubic-bezier(.22,1,.36,1);
+      display:grid; grid-template-columns:380px 1fr;
     }
-
-    .price-hero {
-      padding: 44px 44px 36px;
-      border-bottom: 1px solid var(--border);
-      position: relative;
-    }
-    .price-eyebrow {
-      font-family: var(--fs-mono);
-      font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase;
-      color: var(--mid); margin-bottom: 16px;
-    }
-    .price-display {
-      display: flex; align-items: flex-start; gap: 6px;
-      margin-bottom: 12px;
-    }
-    .price-dollar {
-      font-family: var(--fs-mono);
-      font-size: 22px; font-weight: 300;
-      color: var(--mid); margin-top: 10px;
-    }
-    .price-big {
-      font-family: var(--fs-serif);
-      font-size: 88px; font-weight: 700;
-      line-height: .95; letter-spacing: -.06em;
-      color: var(--ink);
-    }
-    .price-meta {
-      display: flex; flex-direction: column; justify-content: flex-end;
-      padding-bottom: 8px; gap: 3px;
-    }
-    .price-meta span {
-      font-family: var(--fs-mono);
-      font-size: 10.5px; letter-spacing: .06em; text-transform: uppercase;
-      color: var(--mid);
-    }
-    .price-tagline {
-      font-size: 14px; font-style: italic;
-      color: var(--mid); line-height: 1.6;
-    }
-    .price-tagline b { font-style: normal; font-weight: 600; color: var(--ink); }
-
-    .price-hero::before {
-      content: '';
-      position: absolute; top: 0; left: 0; right: 0; height: 4px;
-      background: var(--lime);
+    @keyframes rise {
+      from { transform:translateY(32px) scale(.97); opacity:0; }
+      to   { transform:translateY(0) scale(1); opacity:1; }
     }
 
-    .form-body {
-      padding: 36px 44px 44px;
-      flex: 1;
+    .om-left {
+      background:var(--ink); padding:52px 44px;
+      display:flex; flex-direction:column;
     }
-    .form-title {
-      font-family: var(--fs-serif);
-      font-size: 20px; font-style: italic; font-weight: 400;
-      color: var(--ink); margin-bottom: 26px;
+    .om-tag { font-size:11px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:rgba(255,255,255,.35); margin-bottom:10px; }
+    .om-plan-name { font-family:var(--serif); font-size:30px; font-weight:500; color:var(--white); margin-bottom:28px; line-height:1.2; }
+    .om-price-row { display:flex; align-items:flex-end; gap:10px; margin-bottom:6px; }
+    .om-was { font-size:18px; color:rgba(255,255,255,.28); text-decoration:line-through; }
+    .om-now { font-family:var(--serif); font-size:60px; font-weight:500; line-height:.88; letter-spacing:-.05em; color:var(--white); }
+    .om-now sup { font-size:26px; vertical-align:top; margin-top:8px; font-weight:400; }
+    .om-save {
+      display:inline-block; padding:3px 12px; border-radius:980px;
+      background:rgba(48,209,88,.18); color:var(--green);
+      font-size:12px; font-weight:700; margin-bottom:36px;
     }
+    .om-feat-title { font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:rgba(255,255,255,.3); margin-bottom:14px; }
+    .om-feat-list { list-style:none; flex:1; }
+    .om-feat-list li {
+      display:flex; align-items:center; gap:10px;
+      font-size:14px; color:rgba(255,255,255,.62); padding:9px 0;
+      border-bottom:1px solid rgba(255,255,255,.07);
+    }
+    .om-feat-list li:last-child { border-bottom:none; }
+    .om-feat-list li::before { content:'✓'; font-size:11px; font-weight:700; color:var(--green); flex-shrink:0; }
+    .om-guarantee { margin-top:32px; padding:20px; background:rgba(255,255,255,.04); border-radius:var(--r); border:1px solid rgba(255,255,255,.07); }
+    .om-guarantee p { font-size:13px; line-height:1.65; color:rgba(255,255,255,.4); }
+    .om-guarantee strong { color:rgba(255,255,255,.75); }
 
-    .fg { margin-bottom: 13px; }
-    .fg-label {
-      display: block;
-      font-family: var(--fs-mono);
-      font-size: 9.5px; letter-spacing: .12em; text-transform: uppercase;
-      color: var(--mid); margin-bottom: 6px;
+    .om-right { padding:52px 48px; position:relative; }
+    .om-close {
+      position:absolute; top:20px; right:20px;
+      width:34px; height:34px; border-radius:50%;
+      background:var(--surface); border:1.5px solid var(--rule);
+      display:flex; align-items:center; justify-content:center;
+      font-size:16px; cursor:pointer; color:var(--mid);
+      transition:all .2s;
+    }
+    .om-close:hover { background:var(--rule); color:var(--ink); }
+    .om-form-title { font-family:var(--serif); font-size:28px; font-weight:500; color:var(--ink); margin-bottom:6px; }
+    .om-form-sub { font-size:14px; color:var(--mid); margin-bottom:36px; line-height:1.6; }
+
+    .fg { margin-bottom:16px; }
+    .fg label {
+      display:block; font-size:11px; font-weight:700;
+      letter-spacing:.1em; text-transform:uppercase; color:var(--mid);
+      margin-bottom:7px;
     }
     .fg-ctrl {
-      width: 100%;
-      padding: 13px 15px;
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      font-family: var(--fs-serif);
-      font-size: 15px; color: var(--ink);
-      outline: none;
-      transition: border-color .2s, box-shadow .2s;
-      cursor: none;
+      width:100%; padding:13px 16px;
+      background:var(--surface); border:1.5px solid var(--rule);
+      border-radius:var(--r-sm); font-family:var(--sans);
+      font-size:15px; color:var(--ink); outline:none;
+      transition:border-color .2s, background .2s;
     }
-    .fg-ctrl::placeholder { color: rgba(17,17,17,.22); font-style: italic; }
-    .fg-ctrl:focus {
-      border-color: var(--ink);
-      box-shadow: 0 0 0 3px rgba(17,17,17,.06);
-    }
+    .fg-ctrl::placeholder { color:var(--subtle); }
+    .fg-ctrl:focus { border-color:var(--accent); background:var(--white); }
     select.fg-ctrl {
-      appearance: none; cursor: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='11' fill='%23888880' viewBox='0 0 16 16'%3E%3Cpath d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 15px center;
-      background-color: var(--white);
+      appearance:none; cursor:pointer;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' fill='%23aeaeb2' viewBox='0 0 16 16'%3E%3Cpath d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+      background-repeat:no-repeat; background-position:right 16px center;
     }
-    select.fg-ctrl option { background: var(--white); }
-    textarea.fg-ctrl { resize: none; height: 68px; font-style: italic; }
-
-    .fg-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-
-    .submit-wrap { margin-top: 18px; }
-    .submit-btn {
-      display: block; width: 100%;
-      padding: 17px;
-      background: var(--ink);
-      color: var(--white);
-      border: none; border-radius: 12px;
-      font-family: var(--fs-mono);
-      font-size: 13px; font-weight: 500;
-      letter-spacing: .06em; text-transform: uppercase;
-      cursor: none;
-      position: relative; overflow: hidden;
-      transition: transform .22s, box-shadow .22s;
+    .fg-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+    .form-submit {
+      display:block; width:100%; padding:16px;
+      background:var(--accent); color:var(--white);
+      font-family:var(--sans); font-size:15px; font-weight:700;
+      border:none; border-radius:var(--r); cursor:pointer;
+      transition:all .22s; margin-top:8px;
     }
-    .submit-btn::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: var(--lime);
-      transform: translateX(-101%);
-      transition: transform .38s cubic-bezier(.77,0,.18,1);
-    }
-    .submit-btn:hover::before { transform: translateX(0); }
-    .submit-btn:hover {
-      color: var(--ink);
-      transform: translateY(-2px);
-      box-shadow: 0 14px 36px rgba(17,17,17,.14);
-    }
-    .submit-btn span { position: relative; z-index: 1; }
-
-    .form-footnote {
-      display: flex; align-items: center; justify-content: center; gap: 7px;
-      margin-top: 13px;
-      font-family: var(--fs-mono);
-      font-size: 10px; letter-spacing: .06em; text-transform: uppercase;
-      color: rgba(17,17,17,.3);
-    }
-    .form-footnote svg { width: 11px; height: 11px; color: var(--lime-dk); }
-
-    /* Content Sections */
-    .section {
-      padding: 100px 64px;
-      border-bottom: 1px solid var(--border);
-    }
-    .section-header {
-      max-width: 800px;
-      margin-bottom: 60px;
-    }
-    .section-eyebrow {
-      font-family: var(--fs-mono);
-      font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
-      color: var(--lime-dk);
-      margin-bottom: 16px;
-      display: flex; align-items: center; gap: 12px;
-    }
-    .section-eyebrow::before {
-      content: '';
-      width: 32px; height: 1px;
-      background: var(--lime-dk);
-    }
-    .section h2 {
-      font-size: clamp(32px, 3.5vw, 48px);
-      font-weight: 600; line-height: 1.1;
-      letter-spacing: -.03em;
-      margin-bottom: 24px;
-    }
-    .section h2 em {
-      font-style: italic;
-      font-weight: 400;
-      color: var(--mid);
-    }
-    .section-intro {
-      font-size: 18px; line-height: 1.8;
-      color: var(--mid);
-      max-width: 640px;
-    }
-    .section-intro strong { color: var(--ink); font-weight: 600; }
-
-    /* Problem/Solution Grid */
-    .problem-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
-      margin-top: 48px;
-    }
-    .problem-card {
-      padding: 40px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      background: var(--white);
-    }
-    .problem-card h3 {
-      font-family: var(--fs-mono);
-      font-size: 12px; letter-spacing: .1em; text-transform: uppercase;
-      color: var(--mid);
-      margin-bottom: 16px;
-    }
-    .problem-card h4 {
-      font-size: 24px; font-weight: 600;
-      margin-bottom: 16px;
-      line-height: 1.3;
-    }
-    .problem-card p {
-      font-size: 16px; line-height: 1.7;
-      color: var(--mid);
-    }
-    .problem-card ul {
-      margin-top: 20px;
-      list-style: none;
-    }
-    .problem-card li {
-      font-size: 15px; line-height: 1.8;
-      color: var(--ink);
-      padding-left: 24px;
-      position: relative;
-      margin-bottom: 8px;
-    }
-    .problem-card li::before {
-      content: '→';
-      position: absolute; left: 0;
-      color: var(--lime-dk);
-      font-family: var(--fs-mono);
+    .form-submit:hover { background:var(--accent-h); transform:translateY(-2px); box-shadow:0 10px 32px rgba(0,113,227,.28); }
+    .form-note {
+      text-align:center; margin-top:14px;
+      font-size:12px; color:var(--subtle); font-weight:500;
     }
 
-    /* How It Works - Timeline */
-    .timeline {
-      display: flex;
-      flex-direction: column;
-      gap: 32px;
-      max-width: 800px;
+    /* ── SUCCESS ── */
+    .success-screen {
+      position:fixed; inset:0; z-index:600;
+      background:rgba(255,255,255,.9);
+      backdrop-filter:blur(24px);
+      display:none; align-items:center; justify-content:center;
+      flex-direction:column; text-align:center; padding:24px;
     }
-    .timeline-item {
-      display: grid;
-      grid-template-columns: 80px 1fr;
-      gap: 32px;
-      padding: 32px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      transition: all .2s;
+    .success-screen.show { display:flex; animation:fin .35s ease; }
+    .success-box {
+      max-width:500px; background:var(--white);
+      border-radius:var(--r-xl); padding:64px 52px;
+      border:1.5px solid var(--rule);
+      box-shadow:0 32px 80px rgba(0,0,0,.1);
+      animation:rise .5s cubic-bezier(.22,1,.36,1);
     }
-    .timeline-item:hover {
-      border-color: var(--ink);
-      transform: translateX(8px);
+    .success-emoji { font-size:52px; margin-bottom:24px; display:block; }
+    .success-h { font-family:var(--serif); font-size:40px; font-weight:500; color:var(--ink); margin-bottom:16px; }
+    .success-p { font-size:16px; line-height:1.8; color:var(--mid); margin-bottom:36px; }
+    .success-p strong { color:var(--ink); }
+    .success-dismiss {
+      padding:13px 32px; border-radius:980px;
+      background:var(--surface); border:1.5px solid var(--rule);
+      font-family:var(--sans); font-size:14px; font-weight:600;
+      color:var(--mid); cursor:pointer; transition:all .2s;
     }
-    .timeline-num {
-      font-family: var(--fs-mono);
-      font-size: 32px; font-weight: 300;
-      color: var(--lime-dk);
-      line-height: 1;
-    }
-    .timeline-content h3 {
-      font-size: 20px; font-weight: 600;
-      margin-bottom: 8px;
-    }
-    .timeline-content p {
-      font-size: 15px; line-height: 1.7;
-      color: var(--mid);
-    }
-    .timeline-content .time {
-      font-family: var(--fs-mono);
-      font-size: 11px; letter-spacing: .08em; text-transform: uppercase;
-      color: var(--lime-dk);
-      margin-top: 12px;
-    }
+    .success-dismiss:hover { background:var(--rule); color:var(--ink); }
 
-    /* Device Grid */
-    .device-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-      margin-top: 48px;
-    }
-    .device-card {
-      padding: 32px 24px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      text-align: center;
-      transition: all .2s;
-    }
-    .device-card:hover {
-      border-color: var(--lime-dk);
-      background: rgba(200, 245, 66, 0.03);
-    }
-    .device-icon {
-      width: 48px; height: 48px;
-      margin: 0 auto 16px;
-      background: var(--off);
-      border-radius: 12px;
-      display: flex; align-items: center; justify-content: center;
-      font-family: var(--fs-mono);
-      font-size: 20px;
-      color: var(--ink);
-    }
-    .device-card h4 {
-      font-size: 16px; font-weight: 600;
-      margin-bottom: 8px;
-    }
-    .device-card p {
-      font-family: var(--fs-mono);
-      font-size: 11px; letter-spacing: .05em;
-      color: var(--mid);
-      text-transform: uppercase;
-    }
+    /* ── CONFETTI ── */
+    #cnv { position:fixed; inset:0; z-index:601; pointer-events:none; display:none; }
+    #cnv.on { display:block; }
 
-    /* Blog Links Section */
-    .blog-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-top: 48px;
-    }
-    .blog-card {
-      padding: 32px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      text-decoration: none;
-      color: inherit;
-      display: flex; flex-direction: column;
-      transition: all .2s;
-      height: 100%;
-    }
-    .blog-card:hover {
-      border-color: var(--ink);
-      transform: translateY(-4px);
-      box-shadow: 0 12px 32px rgba(17,17,17,.06);
-    }
-    .blog-card .tag {
-      font-family: var(--fs-mono);
-      font-size: 10px; letter-spacing: .1em; text-transform: uppercase;
-      color: var(--lime-dk);
-      margin-bottom: 12px;
-    }
-    .blog-card h3 {
-      font-size: 18px; font-weight: 600;
-      line-height: 1.4;
-      margin-bottom: 12px;
-    }
-    .blog-card p {
-      font-size: 14px; line-height: 1.6;
-      color: var(--mid);
-      margin-top: auto;
-    }
-    .blog-card .arrow {
-      margin-top: 16px;
-      font-family: var(--fs-mono);
-      font-size: 12px;
-      color: var(--mid);
-    }
-    .blog-card:hover .arrow {
-      color: var(--ink);
-    }
+    /* ── SCROLL REVEAL ── */
+    .reveal { opacity:0; transform:translateY(28px); transition:opacity .65s ease, transform .65s ease; }
+    .reveal.in { opacity:1; transform:translateY(0); }
 
-    /* Testimonials */
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
-      margin-top: 48px;
+    /* ── RESPONSIVE ── */
+    @media(max-width:1060px){
+      .hero { grid-template-columns:1fr; gap:52px; padding:80px 36px; }
+      .hero-visual { max-width:520px; }
+      .challenge-layout,.process-grid { grid-template-columns:1fr; }
+      .devices-grid,.testi-wrap,.pricing-row { grid-template-columns:1fr 1fr; }
+      .stats-inner { grid-template-columns:1fr 1fr; }
+      .stat-cell { border-radius:0 !important; }
+      .order-modal { grid-template-columns:1fr; }
+      .om-left { display:none; }
+      .footer-grid { grid-template-columns:1fr 1fr; }
     }
-    .testimonial {
-      padding: 40px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      background: var(--white);
+    @media(max-width:720px){
+      nav { padding:0 20px; }
+      .nav-links { display:none; }
+      .section,.section-full-inner { padding:80px 24px; }
+      .pricing-bg { padding:80px 24px; }
+      .hero { padding:72px 24px 60px; }
+      .hero-actions { flex-direction:column; align-items:flex-start; }
+      .devices-grid,.testi-wrap,.pricing-row,.stats-inner { grid-template-columns:1fr; }
+      .proc-cell:first-child,.proc-cell:last-child,.stat-cell:first-child,.stat-cell:last-child { border-radius:0; }
+      .footer { padding:60px 24px 40px; }
+      .footer-grid { grid-template-columns:1fr; gap:40px; }
+      .footer-base { flex-direction:column; gap:8px; text-align:center; }
+      .om-right { padding:36px 24px; }
+      .fg-row { grid-template-columns:1fr; }
+      .proof-strip { gap:28px; padding:22px 28px; justify-content:flex-start; flex-wrap:wrap; }
     }
-    .testimonial-stars {
-      color: var(--lime-dk);
-      font-size: 16px;
-      margin-bottom: 20px;
-      letter-spacing: 2px;
-    }
-    .testimonial-text {
-      font-size: 16px; line-height: 1.8;
-      color: var(--ink);
-      margin-bottom: 24px;
-      font-style: italic;
-    }
-    .testimonial-author {
-      display: flex; align-items: center; gap: 16px;
-    }
-    .testimonial-avatar {
-      width: 48px; height: 48px;
-      border-radius: 50%;
-      background: var(--off);
-      display: flex; align-items: center; justify-content: center;
-      font-family: var(--fs-mono);
-      font-size: 16px; font-weight: 500;
-      color: var(--ink);
-    }
-    .testimonial-name {
-      font-weight: 600;
-      font-size: 15px;
-    }
-    .testimonial-role {
-      font-family: var(--fs-mono);
-      font-size: 11px; letter-spacing: .05em;
-      text-transform: uppercase;
-      color: var(--mid);
-      margin-top: 2px;
-    }
-
-    /* FAQ Section */
-    .faq-container {
-      max-width: 800px;
-      margin-top: 48px;
-    }
-    .faq-item {
-      border-bottom: 1px solid var(--border);
-      padding: 32px 0;
-    }
-    .faq-question {
-      font-size: 20px; font-weight: 600;
-      margin-bottom: 16px;
-      line-height: 1.4;
-      cursor: pointer;
-      display: flex; justify-content: space-between; align-items: center;
-    }
-    .faq-question::after {
-      content: '+';
-      font-family: var(--fs-mono);
-      color: var(--mid);
-      font-size: 24px;
-    }
-    .faq-answer {
-      font-size: 16px; line-height: 1.8;
-      color: var(--mid);
-      max-width: 640px;
-    }
-    .faq-answer strong { color: var(--ink); }
-
-    /* Trust Footer */
-    .trust-section {
-      background: var(--ink);
-      color: var(--white);
-      padding: 80px 64px;
-    }
-    .trust-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
-      gap: 48px;
-    }
-    .trust-brand {
-      font-family: var(--fs-serif);
-      font-size: 24px; font-style: italic;
-      margin-bottom: 24px;
-    }
-    .trust-brand b { font-style: normal; }
-    .trust-desc {
-      font-size: 14px; line-height: 1.7;
-      color: rgba(255,255,255,.5);
-      max-width: 280px;
-    }
-    .trust-col h4 {
-      font-family: var(--fs-mono);
-      font-size: 11px; letter-spacing: .12em; text-transform: uppercase;
-      color: var(--lime);
-      margin-bottom: 20px;
-    }
-    .trust-col a, .trust-col p {
-      display: block;
-      font-size: 14px;
-      color: rgba(255,255,255,.6);
-      text-decoration: none;
-      margin-bottom: 12px;
-      transition: color .2s;
-    }
-    .trust-col a:hover {
-      color: var(--white);
-    }
-    .trust-bottom {
-      margin-top: 64px;
-      padding-top: 32px;
-      border-top: 1px solid rgba(255,255,255,.1);
-      display: flex; justify-content: space-between;
-      align-items: center;
-      font-family: var(--fs-mono);
-      font-size: 11px; letter-spacing: .05em;
-      color: rgba(255,255,255,.4);
-    }
-
-    /* Modal */
-    .modal-veil {
-      position: fixed; inset: 0; z-index: 800;
-      background: rgba(17,17,17,.65);
-      backdrop-filter: blur(18px);
-      display: none; align-items: center; justify-content: center;
-      padding: 20px;
-    }
-    .modal-veil.open { display: flex; animation: veilin .3s ease; }
-    @keyframes veilin { from{opacity:0} to{opacity:1} }
-
-    .modal-card {
-      width: 100%; max-width: 500px;
-      background: var(--white);
-      border-radius: 24px;
-      overflow: hidden;
-      box-shadow: 0 40px 100px rgba(17,17,17,.25);
-      animation: cardin .45s cubic-bezier(.22,1,.36,1);
-    }
-    @keyframes cardin {
-      from { transform: translateY(24px) scale(.97); opacity: 0; }
-      to   { transform: translateY(0) scale(1); opacity: 1; }
-    }
-
-    .modal-top {
-      background: var(--ink); padding: 40px 44px 36px;
-      position: relative;
-    }
-    .modal-top::before {
-      content: '';
-      position: absolute; top: 0; left: 0; right: 0; height: 4px;
-      background: var(--lime);
-    }
-
-    .modal-close {
-      position: absolute; top: 18px; right: 18px;
-      width: 34px; height: 34px;
-      background: rgba(255,255,255,.08);
-      border: 1px solid rgba(255,255,255,.12);
-      border-radius: 50%; cursor: none;
-      color: rgba(255,255,255,.5);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 16px;
-      transition: all .2s;
-    }
-    .modal-close:hover { background: rgba(255,255,255,.16); color: #fff; }
-
-    .modal-tag {
-      font-family: var(--fs-mono);
-      font-size: 10px; letter-spacing: .14em; text-transform: uppercase;
-      color: var(--lime); margin-bottom: 16px;
-      display: flex; align-items: center; gap: 8px;
-    }
-    .modal-tag::before {
-      content: '';
-      width: 18px; height: 1px; background: var(--lime);
-    }
-
-    .modal-h {
-      font-family: var(--fs-serif);
-      font-size: 32px; font-weight: 700; line-height: 1.1;
-      color: var(--white); margin-bottom: 8px;
-    }
-    .modal-h em { font-style: italic; font-weight: 400; color: var(--lime); }
-
-    .modal-sub {
-      font-size: 14px; color: rgba(255,255,255,.45);
-      line-height: 1.6; margin-bottom: 28px;
-      font-style: italic;
-    }
-
-    .modal-price-row {
-      display: flex; align-items: center; gap: 16px;
-    }
-    .m-was {
-      font-family: var(--fs-mono);
-      font-size: 20px; font-weight: 300;
-      color: rgba(255,255,255,.25);
-      text-decoration: line-through;
-    }
-    .m-arrow { color: rgba(255,255,255,.2); font-size: 18px; }
-    .m-now {
-      font-family: var(--fs-serif);
-      font-size: 48px; font-weight: 700; letter-spacing: -.04em;
-      color: var(--lime); line-height: 1;
-    }
-    .m-now sup { font-size: 22px; vertical-align: super; }
-    .m-badge {
-      margin-left: auto;
-      padding: 5px 14px;
-      background: var(--lime);
-      color: var(--ink);
-      border-radius: 50px;
-      font-family: var(--fs-mono);
-      font-size: 11px; font-weight: 700; letter-spacing: .06em;
-    }
-
-    .modal-form { padding: 32px 44px 36px; }
-
-    .modal-form .fg-ctrl { background: var(--off); }
-    .modal-form .fg-ctrl:focus { background: var(--white); }
-
-    .modal-submit {
-      display: block; width: 100%;
-      padding: 17px;
-      background: var(--lime);
-      color: var(--ink);
-      border: none; border-radius: 12px;
-      font-family: var(--fs-mono);
-      font-size: 13px; font-weight: 700;
-      letter-spacing: .06em; text-transform: uppercase;
-      cursor: none;
-      position: relative; overflow: hidden;
-      transition: transform .2s, box-shadow .2s, background .2s;
-      margin-top: 6px;
-    }
-    .modal-submit:hover {
-      background: var(--lime-dk);
-      transform: translateY(-2px);
-      box-shadow: 0 12px 32px rgba(156,201,24,.35);
-    }
-
-    .modal-timer {
-      text-align: center; margin-top: 14px;
-      font-family: var(--fs-mono);
-      font-size: 11px; letter-spacing: .05em;
-      color: var(--mid);
-    }
-    .modal-timer b { color: var(--red); }
-
-    /* Responsive */
-    @media (max-width: 1024px) {
-      .hero { grid-template-columns: 1fr; }
-      .left {
-        border-right: none; border-bottom: 1px solid var(--border);
-        padding: 56px 36px 60px;
-      }
-      .right { min-height: auto; }
-      .problem-grid, .blog-grid, .testimonials-grid { grid-template-columns: 1fr; }
-      .device-grid { grid-template-columns: repeat(2, 1fr); }
-      .trust-grid { grid-template-columns: 1fr 1fr; }
-      .section { padding: 80px 36px; }
-    }
-    @media (max-width: 720px) {
-      header { padding: 0 20px; }
-      .nav-center { display: none; }
-      .btn-ghost { display: none; }
-      .left { padding: 48px 24px 56px; }
-      .price-hero, .form-body { padding-left: 24px; padding-right: 24px; }
-      .headline { font-size: 36px; }
-      .stats { flex-direction: column; }
-      .stat { border-right: none; border-bottom: 1px solid var(--border); }
-      .stat:last-child { border-bottom: none; }
-      .fg-row { grid-template-columns: 1fr; }
-      .modal-top, .modal-form { padding-left: 28px; padding-right: 28px; }
-      .modal-h { font-size: 26px; }
-      .device-grid { grid-template-columns: 1fr; }
-      .trust-grid { grid-template-columns: 1fr; }
-      .section { padding: 60px 24px; }
-      .timeline-item { grid-template-columns: 1fr; gap: 16px; }
-    }
-
-    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
   </style>
 </head>
 <body>
 
-  <div id="cur"></div>
+<canvas id="cnv"></canvas>
 
-  <div class="marquee-bar">
-    <div class="marquee-track">
-      <div class="marquee-unit">
-        <span class="hi">12 Real Testers</span><span class="sep">·</span>
-        <span>No Emulators. Ever.</span><span class="sep">·</span>
-        <span class="hi">$69 Flat</span><span class="sep">·</span>
-        <span>14 Days Daily Coverage</span><span class="sep">·</span>
-        <span class="hi">Reply in 2 Hours</span><span class="sep">·</span>
-        <span>Real Android Devices</span><span class="sep">·</span>
-        <span class="hi">Limited Slots</span><span class="sep">·</span>
-        <span>Daily Written Reports</span><span class="sep">·</span>
-      </div>
-      <div class="marquee-unit" aria-hidden="true">
-        <span class="hi">12 Real Testers</span><span class="sep">·</span>
-        <span>No Emulators. Ever.</span><span class="sep">·</span>
-        <span class="hi">$69 Flat</span><span class="sep">·</span>
-        <span>14 Days Daily Coverage</span><span class="sep">·</span>
-        <span class="hi">Reply in 2 Hours</span><span class="sep">·</span>
-        <span>Real Android Devices</span><span class="sep">·</span>
-        <span class="hi">Limited Slots</span><span class="sep">·</span>
-        <span>Daily Written Reports</span><span class="sep">·</span>
-      </div>
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">getsome<span>.rest</span></a>
+  <div class="nav-links">
+    <a href="#challenge">How it works</a>
+    <a href="#devices">Coverage</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+  </div>
+  <button class="nav-cta" onclick="openModal('pro')">Get Started</button>
+</nav>
+
+<!-- HERO -->
+<div style="border-bottom:1px solid var(--rule);">
+<div class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow"><span class="hero-eyebrow-dot"></span>Accepting orders now</div>
+    <h1 class="hero-h">
+      Google Play<br>
+      production access.<br>
+      <em>Guaranteed.</em>
+    </h1>
+    <p class="hero-sub">
+      <strong>12–20 real Android testers</strong> for 14 consecutive days. Real devices, real engagement, daily reports. The professional way to meet Google Play's closed testing requirement.
+    </p>
+    <div class="hero-actions">
+      <button class="btn-blue" onclick="openModal('pro')">Claim your testing slot</button>
+      <a href="#challenge" class="btn-link">How it works</a>
     </div>
   </div>
 
-  <header>
-    <a href="#" class="logo"><b>getsome</b>.rest</a>
-    <div class="nav-center">
-      <span class="status-dot"></span>
-      Accepting orders now
+  <div class="hero-visual">
+    <p class="hv-label">Starting from</p>
+    <div class="hv-big"><sup>$</sup>250</div>
+    <p class="hv-sub">per 14-day testing cycle</p>
+    <div class="hv-items">
+      <div class="hv-row"><span>Real testers</span><span class="hv-row-val">12–20 humans</span></div>
+      <div class="hv-row"><span>Testing window</span><span class="hv-row-val">14 days</span></div>
+      <div class="hv-row"><span>Device types</span><span class="hv-row-val">6 manufacturers</span></div>
+      <div class="hv-row"><span>Reports</span><span class="hv-row-val">Daily · written</span></div>
+      <div class="hv-row"><span>Response time</span><span class="hv-row-val">~2 hours</span></div>
     </div>
-    <div class="nav-actions">
-      <a href="mailto:nabeel.ugd@gmail.com" class="btn btn-ghost">nabeel.ugd@gmail.com</a>
-      <a href="https://wa.me/+923452063859" class="btn btn-lime">WhatsApp Us</a>
-    </div>
-  </header>
+    <button class="hv-cta" onclick="openModal('pro')">Reserve my slot →</button>
+    <p class="hv-note">🔒 Encrypted · Private · No spam</p>
+  </div>
+</div>
+</div>
 
-  <section class="hero">
-    <div class="left">
-      <div class="bg-price" aria-hidden="true">$69</div>
-      <div>
-        <div class="kicker">Premium Android Beta Testing · Since Day One</div>
-        
-        <!-- FIXED H1: Visible, keyword-rich, properly tagged -->
-        <h1 class="headline">
-          Get <span class="underline">12 testers</span><br>
-          for <span class="underline">14 days</span>,<br>
-          unlock <em>production access.</em>
-        </h1>
+<!-- PROOF STRIP -->
+<div class="proof-strip">
+  <div class="proof-item"><div class="proof-item-icon">✅</div>No emulators, ever</div>
+  <div class="proof-item"><div class="proof-item-icon">📱</div>Real carrier SIM cards</div>
+  <div class="proof-item"><div class="proof-item-icon">🏠</div>Residential IPs only</div>
+  <div class="proof-item"><div class="proof-item-icon">📊</div>Daily written reports</div>
+  <div class="proof-item"><div class="proof-item-icon">⚡</div>Reply in ~2 hours</div>
+</div>
 
-        <p class="desc">
-          We provide <strong>12 real Android testers</strong> for <strong>14 consecutive days</strong> to meet Google Play's closed testing requirements. Real devices, real engagement, daily reports. No emulators, no bots, no risk of account suspension. Just guaranteed compliance for <strong>$69 flat</strong>.
-        </p>
-
-        <div class="stats">
-          <div class="stat">
-            <span class="stat-num">12<span class="accent">×</span></span>
-            <span class="stat-label">Real testers</span>
-          </div>
-          <div class="stat">
-            <span class="stat-num">14</span>
-            <span class="stat-label">Days coverage</span>
-          </div>
-          <div class="stat">
-            <span class="stat-num"><span class="accent">$</span>69</span>
-            <span class="stat-label">Flat fee</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="contact-row">
-        <a href="mailto:nabeel.ugd@gmail.com" class="contact-link">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          nabeel.ugd@gmail.com
-        </a>
-        <div class="contact-sep"></div>
-        <a href="https://wa.me/+923452063859" class="contact-link">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          Chat on WhatsApp
-        </a>
-        <div class="contact-sep"></div>
-        <span class="contact-link" style="cursor:none;">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          Reply in ~2 hours
-        </span>
-      </div>
-    </div>
-
-    <div class="right">
-      <div class="price-hero">
-        <p class="price-eyebrow">Flat price, no surprises</p>
-        <div class="price-display">
-          <span class="price-dollar">$</span>
-          <span class="price-big">69</span>
-          <div class="price-meta">
-            <span>12 premium testers</span>
-            <span>14 days activity on app</span>
-            <span>daily reports</span>
-          </div>
-        </div>
-        <p class="price-tagline">The cost of a lunch — for the <b>peace of mind</b> your app deserves.</p>
-      </div>
-
-      <div class="form-body">
-        <p class="form-title">Start here — we'll do the rest.</p>
-
-        <form action="https://formsubmit.co/nabeel.ugd@gmail.com" method="POST">
-          <input type="hidden" name="_subject" value="New Order — getsome.rest v4">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="Form Source" value="Main Form — v4">
-
-          <div class="fg">
-            <label class="fg-label">Your Name</label>
-            <input class="fg-ctrl" type="text" name="Name" placeholder="Jane Smith" required>
-          </div>
-
-          <div class="fg fg-row">
-            <div class="fg">
-              <label class="fg-label">Email</label>
-              <input class="fg-ctrl" type="email" name="Email" placeholder="jane@app.com" required>
-            </div>
-            <div class="fg">
-              <label class="fg-label">WhatsApp</label>
-              <input class="fg-ctrl" type="tel" name="WhatsApp" placeholder="+1 234 567 890">
-            </div>
-          </div>
-
-          <div class="fg">
-            <label class="fg-label">Play Store Link</label>
-            <input class="fg-ctrl" type="url" name="App Link" placeholder="https://play.google.com/store/apps/…">
-          </div>
-
-          <div class="fg">
-            <label class="fg-label">Number of Testers</label>
-            <select class="fg-ctrl" name="Testers Count">
-              <option value="12 testers — $69">12 Testers — $69 &nbsp;(most popular)</option>
-              <option value="24 testers — $120">24 Testers — $120</option>
-              <option value="50 testers — $280">50 Testers — $280</option>
-            </select>
-          </div>
-
-          <div class="fg">
-            <label class="fg-label">Anything we should know?</label>
-            <textarea class="fg-ctrl" name="Message" placeholder="Edge cases, focus areas, special requirements…"></textarea>
-          </div>
-
-          <div class="submit-wrap">
-            <button type="submit" class="submit-btn">
-              <span>Submit & Claim My Spot →</span>
-            </button>
-            <p class="form-footnote">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-              Private · No spam · 2-hour reply
-            </p>
-          </div>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- NEW SECTION: The Problem (SEO Rich Content) -->
-  <section class="section" id="problem">
-    <div class="section-header">
-      <div class="section-eyebrow">The Challenge</div>
-      <h2>Why Google Play's <em>12 Tester Requirement</em> Kills 90% of App Launches</h2>
-      <p class="section-intro">
-        Since 2023, Google Play Console requires <strong>12 testers for 14 consecutive days</strong> of closed testing before granting production access. This isn't a suggestion—it's a hard gate. Most developers underestimate the complexity: finding 12 real people with diverse Android devices who will actually engage daily for two weeks straight. <a href="/blog/google-play-12-tester-requirement-explained" style="color: var(--lime-dk); text-decoration: none; border-bottom: 1px solid var(--lime-dk);">Learn more about the requirement →</a>
-      </p>
-    </div>
-
-    <div class="problem-grid">
-      <div class="problem-card">
-        <h3>The Risk</h3>
-        <h4>Emulators & Bots Get You Banned</h4>
-        <p>Google Play's integrity algorithms easily detect emulators, VPN masking, and synthetic engagement. Using bots or virtual devices results in immediate account suspension and permanent loss of your developer account.</p>
-        <ul>
-          <li>Zero-tolerance for emulator fingerprints</li>
-          <li>IP analysis detects data center traffic</li>
-          <li>Behavioral patterns identify automation</li>
+<!-- CHALLENGE -->
+<div class="section-full" id="challenge">
+  <div class="section-full-inner">
+    <span class="eyebrow">The Challenge</span>
+    <h2 class="section-h">Why the 12-tester requirement<br><em>trips up 90% of developers.</em></h2>
+    <p class="section-body">
+      Since 2023, Google Play requires <strong>12 active testers for 14 consecutive days</strong> before granting production access. It sounds simple. It rarely is.
+    </p>
+    <div class="challenge-layout reveal">
+      <div class="ch-card bad">
+        <div class="ch-flag bad">⚠ The Risk</div>
+        <h3>Bots and emulators will get your account banned</h3>
+        <p>Google Play's Play Integrity API detects emulators, VPN-masked traffic, and synthetic engagement with precision. The result: immediate account suspension and permanent loss of production access.</p>
+        <ul class="ch-list bad">
+          <li>Emulator hardware fingerprints detected instantly</li>
+          <li>Data center IP ranges are blocklisted globally</li>
+          <li>Automated behavioral patterns flagged in hours</li>
+          <li>Account suspension is final with no appeal path</li>
         </ul>
       </div>
-      <div class="problem-card">
-        <h3>The Solution</h3>
-        <h4>Real Humans on Real Devices</h4>
-        <p>We maintain a verified network of Android users across diverse hardware and geographies. Each tester uses physical devices with carrier SIM cards and residential IPs—completely indistinguishable from organic acquisition.</p>
-        <ul>
-          <li>100% genuine Android hardware</li>
-          <li>Natural usage patterns</li>
-          <li>336 hours of continuous testing</li>
+      <div class="ch-card good">
+        <div class="ch-flag good">✓ Our Solution</div>
+        <h3>Real humans on real devices, every single time</h3>
+        <p>We maintain a vetted network of Android users across real hardware, carrier SIM networks, and residential IP addresses — fully organic, fully safe, fully compliant.</p>
+        <ul class="ch-list good">
+          <li>100% genuine Android hardware, zero emulation</li>
+          <li>Carrier SIM cards with residential IP addresses</li>
+          <li>Human pacing and natural engagement rhythms</li>
+          <li>336 continuous hours of documented test coverage</li>
         </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- NEW SECTION: How It Works (Process Content) -->
-  <section class="section" style="background: var(--off);">
-    <div class="section-header">
-      <div class="section-eyebrow">The Process</div>
-      <h2>How to Get <em>Production Access</em> in Exactly 14 Days</h2>
-      <p class="section-intro">
-        Our process is designed to satisfy <a href="/blog/how-long-google-play-closed-testing-take" style="color: var(--ink); text-decoration: underline;">Google Play's timeline requirements</a> perfectly. From the moment you submit your closed testing track link, we deploy 12 verified testers who maintain daily engagement for the full 336-hour period required by Google Play Console.
-      </p>
-    </div>
-
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-num">01</div>
-        <div class="timeline-content">
-          <h3>Submit Your Testing Track</h3>
-          <p>You provide your Google Play Console closed testing opt-in URL. No SDK integration required. No code changes. Just the link where testers can join your internal testing track.</p>
-          <div class="time">Day 0</div>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-num">02</div>
-        <div class="timeline-content">
-          <h3>Tester Deployment</h3>
-          <p>We immediately deploy 12 unique testers across our device matrix. Each tester downloads your APK via physical Android devices and begins the onboarding process. You receive confirmation of all active installations within 24 hours.</p>
-          <div class="time">Day 1</div>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-num">03</div>
-        <div class="timeline-content">
-          <h3>Daily Engagement & Reporting</h3>
-          <p>Testers engage with your app daily, exploring core functionality, edge cases, and user flows. You receive written reports documenting crashes, ANRs, UI issues, and behavioral observations.</p>
-          <div class="time">Days 2–13</div>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-num">04</div>
-        <div class="timeline-content">
-          <h3>Compliance Achievement</h3>
-          <p>After 14 consecutive days of active testing, your Play Console will show complete compliance data. You submit for production access with confidence, backed by real retention curves and crash-free session data.</p>
-          <div class="time">Day 14</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- NEW SECTION: Device Coverage (Technical SEO) -->
-  <section class="section">
-    <div class="section-header">
-      <div class="section-eyebrow">Device Coverage</div>
-      <h2>Tested on <em>Real Android Fragmentation</em></h2>
-      <p class="section-intro">
-        Android isn't one platform—it's 24,000 distinct device models. Our testing matrix covers the manufacturers and OS versions that matter for <a href="/blog/google-play-closed-testing-setup-guide" style="color: var(--lime-dk); text-decoration: none; border-bottom: 1px solid var(--lime-dk);">global Play Store distribution</a>, ensuring your app survives real-world conditions like MIUI battery optimization, Samsung One UI quirks, and varying display densities.
-      </p>
-    </div>
-
-    <div class="device-grid">
-      <div class="device-card">
-        <div class="device-icon">Sg</div>
-        <h4>Samsung Galaxy</h4>
-        <p>A & S Series · One UI</p>
-      </div>
-      <div class="device-card">
-        <div class="device-icon">Xr</div>
-        <h4>Xiaomi / Redmi</h4>
-        <p>MIUI · MIUI 14+</p>
-      </div>
-      <div class="device-card">
-        <div class="device-icon">Px</div>
-        <h4>Google Pixel</h4>
-        <p>Stock Android · API 26-36</p>
-      </div>
-      <div class="device-card">
-        <div class="device-icon">1+</div>
-        <h4>OnePlus</h4>
-        <p>OxygenOS</p>
-      </div>
-      <div class="device-card">
-        <div class="device-icon">Op</div>
-        <h4>Oppo</h4>
-        <p>ColorOS</p>
-      </div>
-      <div class="device-card">
-        <div class="device-icon">Mo</div>
-        <h4>Motorola</h4>
-        <p>Near-stock Experience</p>
-      </div>
-      <div class="device-card">
-        <div class="device-icon">An</div>
-        <h4>Android Versions</h4>
-        <p>8.0 through 16</p>
-      </div>
-      <div class="device-card">
-        <div class="device-icon">Rs</div>
-        <h4>Real-world Conditions</h4>
-        <p>4G/5G · Variable Storage</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- NEW SECTION: Resources/Blog (Internal Links) -->
-  <section class="section" style="background: var(--off);">
-    <div class="section-header">
-      <div class="section-eyebrow">Resources</div>
-      <h2>Google Play <em>Testing Guides</em> & Resources</h2>
-      <p class="section-intro">
-        Deep dives into <a href="/blog/google-play-testing-service-buyers-guide" style="color: var(--ink); text-decoration: underline;">closed testing strategies</a>, compliance requirements, and launch optimization. Written by developers who've navigated the 12-tester requirement hundreds of times.
-      </p>
-    </div>
-
-    <div class="blog-grid">
-      <a href="/blog/how-to-get-12-testers-google-play-closed-testing" class="blog-card">
-        <span class="tag">Tutorial</span>
-        <h3>How to Get 12 Testers for Google Play Closed Testing</h3>
-        <p>A complete walkthrough of the closed testing track setup, from creating your testing release to verifying tester engagement metrics.</p>
-        <span class="arrow">Read guide →</span>
-      </a>
-      <a href="/blog/12-testers-fiverr-vs-professional-service" class="blog-card">
-        <span class="tag">Comparison</span>
-        <h3>Fiverr vs. Professional Testing Services</h3>
-        <p>Why cheap tester gigs fail and how to spot fake engagement before it destroys your Play Console standing.</p>
-        <span class="arrow">Read comparison →</span>
-      </a>
-      <a href="/blog/best-communities-find-android-beta-testers" class="blog-card">
-        <span class="tag">Community</span>
-        <h3>Best Communities to Find Android Beta Testers</h3>
-        <p>Reddit, Discord, and IndieHackers strategies for finding testers when you're bootstrapping—but why they often fall short.</p>
-        <span class="arrow">Read list →</span>
-      </a>
-      <a href="/blog/google-play-app-review-process-after-closed-testing" class="blog-card">
-        <span class="tag">Process</span>
-        <h3>What Happens After Closed Testing?</h3>
-        <p>The review process timeline, common rejection reasons, and how to prepare your store listing for final approval.</p>
-        <span class="arrow">Read process →</span>
-      </a>
-      <a href="/blog/12-testers-vs-more-testers-google-play" class="blog-card">
-        <span class="tag">Strategy</span>
-        <h3>Is 12 Testers Enough? Or Do You Need More?</h3>
-        <p>Analysis of testing volume vs. statistical significance for crash detection and ANR prevention.</p>
-        <span class="arrow">Read analysis →</span>
-      </a>
-      <a href="/blog/android-app-launch-checklist-google-play" class="blog-card">
-        <span class="tag">Checklist</span>
-        <h3>The Complete Android App Launch Checklist</h3>
-        <p>Beyond testing: store listing optimization, policy compliance, and pre-launch marketing essentials.</p>
-        <span class="arrow">Read checklist →</span>
-      </a>
-    </div>
-  </section>
-
-  <!-- NEW SECTION: Testimonials (E-E-A-T Signals) -->
-  <section class="section">
-    <div class="section-header">
-      <div class="section-eyebrow">Testimonials</div>
-      <h2>Apps That <em>Passed</em> on the First Try</h2>
-      <p class="section-intro">
-        Verified reviews from developers who used our <a href="/blog/google-play-production-access-form-guide" style="color: var(--lime-dk); text-decoration: none; border-bottom: 1px solid var(--lime-dk);">production access service</a> to launch on Google Play without delays or rejections.
-      </p>
-    </div>
-
-    <div class="testimonials-grid">
-      <div class="testimonial">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">"I wasted three weeks trying to find testers on Reddit. Half of them ghosted me after day 3. Getsome.rest delivered exactly what they promised—12 active testers for exactly 14 days. My production access was approved immediately."</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">MK</div>
-          <div>
-            <div class="testimonial-name">Marcus K.</div>
-            <div class="testimonial-role">Indie Developer, FitTrack App</div>
-          </div>
-        </div>
-      </div>
-      <div class="testimonial">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">"The daily reports caught a critical ANR on Xiaomi devices that Firebase Test Lab completely missed. Without that insight, we would have launched with a 15% crash rate. Worth every penny of the $69."</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">SL</div>
-          <div>
-            <div class="testimonial-name">Sarah L.</div>
-            <div class="testimonial-role">CTO, EduTech Startup</div>
-          </div>
-        </div>
-      </div>
-      <div class="testimonial">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">"I was skeptical because the price seemed low compared to enterprise testing services. But these are real humans on real phones. Google Play approved us in 4 hours after submitting the production form. Incredible."</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">RJ</div>
-          <div>
-            <div class="testimonial-name">Rajesh I.</div>
-            <div class="testimonial-role">Solo Developer, Productivity Tools</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- NEW SECTION: Visible FAQ (Matching Schema) -->
-  <section class="section" style="background: var(--off);">
-    <div class="section-header">
-      <div class="section-eyebrow">FAQ</div>
-      <h2>Frequently Asked <em>Questions</em></h2>
-      <p class="section-intro">
-        Everything you need to know about <a href="/blog/12-testers-google-play-faq" style="color: var(--ink); text-decoration: underline;">Google Play's 12 tester requirement</a> and how our service ensures compliance.
-      </p>
-    </div>
-
-    <div class="faq-container">
-      <div class="faq-item">
-        <div class="faq-question">How do you provide 12 testers for Google Play Console closed testing?</div>
-        <div class="faq-answer">
-          We maintain a verified network of real Android users across diverse devices and geographies. Once you submit your internal testing track link, we deploy 12 unique testers who download your app via physical devices (not emulators) and maintain daily engagement for exactly 14 consecutive days to satisfy Google Play's production access requirements. <a href="/blog/how-to-get-12-testers-google-play-free" style="color: var(--lime-dk);">Compare with DIY approaches →</a>
-        </div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">Does Google Play detect emulator or bot testing, and is your service safe?</div>
-        <div class="faq-answer">
-          Yes, Google Play Console's integrity systems easily detect emulators, VPN masking, and bot behavior, resulting in immediate account suspension or permanent production access rejection. Our service uses 100% genuine Android hardware with carrier SIM cards, residential IPs, and natural usage patterns that are indistinguishable from organic user acquisition. <a href="/blog/pass-google-play-12-tester-requirement-without-service" style="color: var(--lime-dk);">Read about compliance risks →</a>
-        </div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">What happens if I don't have 12 testers for the full 14 days?</div>
-        <div class="faq-answer">
-          Google Play will reject your production access request and reset your testing timeline. You must restart the 14-day period with 12 new active testers. Incomplete testing data is the leading cause of app launch delays, which is why developers use managed testing services to guarantee compliance on the first submission.
-        </div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">Which Android devices and OS versions do your testers use?</div>
-        <div class="faq-answer">
-          Our testing matrix covers Samsung Galaxy (A and S series), Xiaomi (Redmi/MIUI), Google Pixel, OnePlus, Oppo, and Motorola devices running Android 8.0 through Android 16 (API 26–36). This diversity ensures your pre-launch report captures real-world fragmentation issues like manufacturer-specific battery optimizations and display density variations.
-        </div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">How quickly can I get Google Play production access using your service?</div>
-        <div class="faq-answer">
-          Exactly 14 days from tester deployment. Our service guarantees that all 12 testers remain active for the full 336-hour period required by Google Play Console. You cannot expedite this window—Google enforces it strictly to analyze crash rates, ANRs, and retention curves before approving production distribution. <a href="/blog/google-play-new-developer-account-production-access-2024" style="color: var(--lime-dk);">New developer account guide →</a>
-        </div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">Do your testers provide feedback, crash logs, or ANR reports?</div>
-        <div class="faq-answer">
-          Yes. While the primary deliverable is compliance data, testers document critical issues including application not responding (ANR) errors, crashes, UI layout breaks on specific devices, and functional bugs. This data appears in your Play Console pre-launch report, allowing you to fix stability issues before public release.
-        </div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">Is this service considered buying reviews or fake engagement?</div>
-        <div class="faq-answer">
-          No. This is managed compliance testing, not review manipulation. We do not guarantee positive ratings or incentivize five-star reviews. Testers provide honest usage data and may leave organic feedback if they choose, but the service focuses solely on meeting Google Play's technical testing requirements for production access approval. <a href="/blog/google-play-policy-2024-new-rules-developers" style="color: var(--lime-dk);">2024 Policy Update →</a>
-        </div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">What do I need to provide to start the 14-day testing period?</div>
-        <div class="faq-answer">
-          You need a Google Play Console account with your app uploaded to the Closed Testing track and an active opt-in link (email list or URL). We handle tester recruitment, device provisioning, daily engagement verification, and compliance documentation. No SDK integration or code changes are required on your end. <a href="/blog/google-play-store-listing-pass-review" style="color: var(--lime-dk);">Store listing optimization tips →</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- NEW: Trust Footer -->
-  <footer class="trust-section">
-    <div class="trust-grid">
-      <div>
-        <div class="trust-brand"><b>getsome</b>.rest</div>
-        <p class="trust-desc">
-          Professional Android testing services for Google Play compliance. Real devices, real testers, guaranteed production access.
-        </p>
-      </div>
-      <div class="trust-col">
-        <h4>Service</h4>
-        <a href="#problem">How it Works</a>
-        <a href="#">Pricing</a>
-        <a href="#">Device Coverage</a>
-        <a href="#">Enterprise</a>
-      </div>
-      <div class="trust-col">
-        <h4>Resources</h4>
-        <a href="/blog/google-play-12-tester-requirement-explained">12 Tester Guide</a>
-        <a href="/blog/google-play-closed-testing-setup-guide">Setup Tutorial</a>
-        <a href="/blog/google-play-testing-service-buyers-guide">Buyer's Guide</a>
-        <a href="/blog/12-testers-google-play-faq">FAQ</a>
-      </div>
-      <div class="trust-col">
-        <h4>Legal</h4>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
-        <a href="#">Refund Policy</a>
-        <p style="margin-top: 20px; color: var(--lime);">nabeel.ugd@gmail.com</p>
-      </div>
-    </div>
-    <div class="trust-bottom">
-      <span>© 2026 Getsome.rest. All rights reserved.</span>
-      <span>Not affiliated with Google LLC.</span>
-    </div>
-  </footer>
-
-  <!-- Exit Intent Modal -->
-  <div class="modal-veil" id="veil">
-    <div class="modal-card">
-      <div class="modal-top">
-        <button class="modal-close" id="mclose">✕</button>
-        <div class="modal-tag">One-time offer</div>
-        <h2 class="modal-h">Before you go — <em>20% off</em>, just for you.</h2>
-        <p class="modal-sub">We don't discount often. But if you were on the fence, this should tip you over.</p>
-        <div class="modal-price-row">
-          <span class="m-was">$69</span>
-          <span class="m-arrow">→</span>
-          <span class="m-now"><sup>$</sup>52.20</span>
-          <span class="m-badge">–20%</span>
-        </div>
-      </div>
-      <div class="modal-form">
-        <form action="https://formsubmit.co/nabeel.ugd@gmail.com" method="POST">
-          <input type="hidden" name="_subject" value="🔥 DISCOUNT LEAD — 20% OFF — getsome.rest v4">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="Form Source" value="Exit Intent — 20% OFF — v4">
-          <input type="hidden" name="Discount" value="20% — $55.20">
-
-          <div class="fg-row" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;">
-            <div class="fg">
-              <label class="fg-label">Name</label>
-              <input class="fg-ctrl" type="text" name="Name" placeholder="Jane Smith" required>
-            </div>
-            <div class="fg">
-              <label class="fg-label">Email</label>
-              <input class="fg-ctrl" type="email" name="Email" placeholder="jane@app.com" required>
-            </div>
-          </div>
-          <div class="fg" style="margin-bottom:10px;">
-            <label class="fg-label">WhatsApp</label>
-            <input class="fg-ctrl" type="tel" name="WhatsApp" placeholder="+1 234 567 890">
-          </div>
-          <div class="fg" style="margin-bottom:16px;">
-            <label class="fg-label">Play Store Link (optional)</label>
-            <input class="fg-ctrl" type="url" name="App Link" placeholder="https://play.google.com/…">
-          </div>
-
-          <button type="submit" class="modal-submit">Lock In 20% Discount →</button>
-          <p class="modal-timer">⏰ Offer disappears in <b id="mtimer">10:00</b></p>
-        </form>
       </div>
     </div>
   </div>
+</div>
 
-  <script>
-    const cur = document.getElementById('cur');
-    document.addEventListener('mousemove', e => {
-      cur.style.left = e.clientX + 'px';
-      cur.style.top  = e.clientY + 'px';
+<!-- STATS -->
+<div class="stats-section">
+  <div class="stats-inner reveal">
+    <div class="stat-cell">
+      <span class="stat-num">12<sup>+</sup></span>
+      <span class="stat-lbl">Real Testers</span>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-num">14</span>
+      <span class="stat-lbl">Days Consecutive</span>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-num">336<sup>h</sup></span>
+      <span class="stat-lbl">Active Coverage</span>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-num">100<sup>%</sup></span>
+      <span class="stat-lbl">Real Devices</span>
+    </div>
+  </div>
+</div>
+
+<!-- PROCESS -->
+<div class="section-full">
+  <div class="section-full-inner">
+    <span class="eyebrow">The Process</span>
+    <h2 class="section-h">Production access in<br><em>exactly 14 days.</em></h2>
+    <p class="section-body">We engineered every step around Google Play's compliance requirements. From submission to approval — nothing is left to chance.</p>
+    <div class="process-grid reveal">
+      <div class="proc-cell">
+        <span class="proc-num">01</span>
+        <span class="proc-day">Day 0</span>
+        <h3>Submit your testing link</h3>
+        <p>Share your Google Play closed testing opt-in URL. No SDK, no code changes. One link is all we need.</p>
+      </div>
+      <div class="proc-cell">
+        <span class="proc-num">02</span>
+        <span class="proc-day">Day 1</span>
+        <h3>Tester deployment</h3>
+        <p>We deploy your assigned testers across our device matrix. You receive confirmation of every active install within 24 hours.</p>
+      </div>
+      <div class="proc-cell">
+        <span class="proc-num">03</span>
+        <span class="proc-day">Days 2–13</span>
+        <h3>Daily engagement</h3>
+        <p>Testers engage daily and report crashes, ANRs, and UI bugs. Data flows directly to your Play Console pre-launch report.</p>
+      </div>
+      <div class="proc-cell">
+        <span class="proc-num">04</span>
+        <span class="proc-day">Day 14</span>
+        <h3>Full compliance</h3>
+        <p>336 hours complete. Your Play Console shows verified compliance data. Submit for production access with confidence.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DEVICES -->
+<div class="section-full" id="devices" style="background:var(--surface); border-top:1px solid var(--rule);">
+  <div class="section-full-inner">
+    <span class="eyebrow">Device Coverage</span>
+    <h2 class="section-h">Tested on real<br><em>Android fragmentation.</em></h2>
+    <p class="section-body">Android isn't one platform — it's 24,000 distinct device models. Our matrix covers the manufacturers and OS versions that matter for global distribution.</p>
+    <div class="devices-grid reveal">
+      <div class="dev-tile"><div class="dev-icon">Sg</div><h4>Samsung Galaxy</h4><p>A & S Series · One UI</p></div>
+      <div class="dev-tile"><div class="dev-icon">Mi</div><h4>Xiaomi / Redmi</h4><p>MIUI 14 · HyperOS</p></div>
+      <div class="dev-tile"><div class="dev-icon">Px</div><h4>Google Pixel</h4><p>Stock Android · API 26–36</p></div>
+      <div class="dev-tile"><div class="dev-icon">1+</div><h4>OnePlus</h4><p>OxygenOS 12+</p></div>
+      <div class="dev-tile"><div class="dev-icon">Op</div><h4>Oppo</h4><p>ColorOS 13+</p></div>
+      <div class="dev-tile"><div class="dev-icon">Mz</div><h4>Motorola</h4><p>Near-Stock Android</p></div>
+      <div class="dev-tile"><div class="dev-icon">🤖</div><h4>Android 8–16</h4><p>API 26 through 36</p></div>
+      <div class="dev-tile"><div class="dev-icon">🌐</div><h4>Real Networks</h4><p>4G / 5G · Variable Storage</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<div class="section-full">
+  <div class="section-full-inner">
+    <span class="eyebrow">Testimonials</span>
+    <h2 class="section-h">Apps that passed<br><em>on the first try.</em></h2>
+    <p class="section-body">From indie developers to startup CTOs — developers who used our service shipped without delays or rejections.</p>
+    <div class="testi-wrap reveal">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-q">"Wasted three weeks trying to find testers on Reddit. Half ghosted after day three. GetSome.rest delivered exactly what they promised — 12 active testers for 14 days straight. Production approved within hours."</p>
+        <div class="testi-who">
+          <div class="testi-av a">MK</div>
+          <div><div class="testi-name">Marcus K.</div><div class="testi-role">Indie Developer · FitTrack</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-q">"The daily reports caught a critical ANR on Xiaomi MIUI that Firebase Test Lab missed completely. Without that insight we would have launched with a 15% crash rate. The device coverage alone is worth every cent."</p>
+        <div class="testi-who">
+          <div class="testi-av b">SL</div>
+          <div><div class="testi-name">Sarah L.</div><div class="testi-role">CTO · EduTech Startup</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-q">"Skeptical at first. But these are real humans on real phones. Google Play approved our production submission in under 5 hours after the 14-day window closed. Nothing short of remarkable."</p>
+        <div class="testi-who">
+          <div class="testi-av c">RI</div>
+          <div><div class="testi-name">Rajesh I.</div><div class="testi-role">Solo Developer · Productivity</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PRICING -->
+<div class="pricing-bg" id="pricing">
+  <div class="pricing-intro reveal">
+    <span class="eyebrow" style="display:block;text-align:center;">Pricing</span>
+    <h2 class="section-h" style="text-align:center;">Simple, transparent pricing.</h2>
+    <p class="section-body" style="text-align:center;margin:0 auto;">One flat fee per testing cycle. No hidden costs, no per-tester billing. Pick the coverage level that fits your launch.</p>
+  </div>
+  <div class="pricing-row reveal">
+
+    <!-- STARTER -->
+    <div class="plan" id="plan-starter">
+      <div class="plan-header">
+        <div class="plan-tier">Starter</div>
+        <div class="plan-name">Compliance Base</div>
+        <div class="plan-pricing">
+          <span class="plan-was">$300</span>
+          <span class="plan-price"><sup>$</sup>250</span>
+          <span class="plan-period">/ cycle</span>
+        </div>
+        <span class="plan-saving">You save $50</span>
+        <p class="plan-desc">Everything required to satisfy the baseline Google Play closed testing mandate and unlock production access.</p>
+      </div>
+      <div class="plan-body">
+        <ul class="plan-feat">
+          <li><span class="feat-check yes">✓</span><strong>12 Real Android Testers</strong></li>
+          <li><span class="feat-check yes">✓</span><strong>Full 14-Day Testing Window</strong></li>
+          <li><span class="feat-check yes">✓</span>Structured Daily Engagement</li>
+          <li><span class="feat-check yes">✓</span>Basic Activity Report</li>
+          <li><span class="feat-check yes">✓</span>4 Device Manufacturers</li>
+          <li><span class="feat-check yes">✓</span>Android 10–16 Coverage</li>
+          <li><span class="feat-check no">—</span>Crash & ANR Documentation</li>
+          <li><span class="feat-check no">—</span>Buffer Tester Coverage</li>
+          <li><span class="feat-check no">—</span>Priority Response</li>
+        </ul>
+        <button class="plan-btn outline" onclick="openModal('starter')">Get started</button>
+      </div>
+    </div>
+
+    <!-- PRO -->
+    <div class="plan featured" id="plan-pro">
+      <div class="plan-header">
+        <div class="plan-badge">Most Popular</div>
+        <div class="plan-tier">Professional</div>
+        <div class="plan-name">Compliance Pro</div>
+        <div class="plan-pricing">
+          <span class="plan-was">$420</span>
+          <span class="plan-price"><sup>$</sup>300</span>
+          <span class="plan-period">/ cycle</span>
+        </div>
+        <span class="plan-saving">You save $120</span>
+        <p class="plan-desc">Buffer testers and crash analytics for developers who can't afford to restart a 14-day cycle.</p>
+      </div>
+      <div class="plan-body">
+        <ul class="plan-feat">
+          <li><span class="feat-check yes">✓</span><strong>16 Real Android Testers</strong></li>
+          <li><span class="feat-check yes">✓</span><strong>Full 14-Day Testing Window</strong></li>
+          <li><span class="feat-check yes">✓</span>Buffer Tester Coverage (+4)</li>
+          <li><span class="feat-check yes">✓</span>Crash & ANR Documentation</li>
+          <li><span class="feat-check yes">✓</span>6 Device Manufacturers</li>
+          <li><span class="feat-check yes">✓</span>Android 8–16 Coverage</li>
+          <li><span class="feat-check yes">✓</span>Detailed Daily Reports</li>
+          <li><span class="feat-check yes">✓</span>Multi-OS Version Coverage</li>
+          <li><span class="feat-check yes">✓</span>Priority Response (&lt;2 hours)</li>
+        </ul>
+        <button class="plan-btn solid" onclick="openModal('pro')">Claim my slot</button>
+      </div>
+    </div>
+
+    <!-- ENTERPRISE -->
+    <div class="plan" id="plan-enterprise">
+      <div class="plan-header">
+        <div class="plan-tier">Enterprise</div>
+        <div class="plan-name">Dedicated Infrastructure</div>
+        <div class="plan-pricing">
+          <span class="plan-was">$700</span>
+          <span class="plan-price"><sup>$</sup>500</span>
+          <span class="plan-period">/ cycle</span>
+        </div>
+        <span class="plan-saving">You save $200</span>
+        <p class="plan-desc">Maximum coverage for agencies, studios, and high-stakes launches with multiple concurrent submissions.</p>
+      </div>
+      <div class="plan-body">
+        <ul class="plan-feat">
+          <li><span class="feat-check yes">✓</span><strong>20+ Real Android Testers</strong></li>
+          <li><span class="feat-check yes">✓</span><strong>Full 14-Day Testing Window</strong></li>
+          <li><span class="feat-check yes">✓</span>Advanced Engagement Coverage</li>
+          <li><span class="feat-check yes">✓</span>Detailed Crash & ANR Reports</li>
+          <li><span class="feat-check yes">✓</span>All 8 Manufacturers Covered</li>
+          <li><span class="feat-check yes">✓</span>Full Android 8–16 Matrix</li>
+          <li><span class="feat-check yes">✓</span>Play Readiness Report™</li>
+          <li><span class="feat-check yes">✓</span>Submission Coordination</li>
+          <li><span class="feat-check yes">✓</span>Pre-Submission Checklist</li>
+        </ul>
+        <button class="plan-btn outline" onclick="openModal('enterprise')">Start my cycle</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="section-full" id="faq">
+  <div class="section-full-inner">
+    <span class="eyebrow">FAQ</span>
+    <h2 class="section-h">Frequently asked<br><em>questions.</em></h2>
+    <p class="section-body">Everything you need to know about Google Play's 12-tester requirement and how we guarantee compliance.</p>
+    <div class="faq-layout reveal">
+
+      <details open>
+        <summary><span class="faq-q">How do you provide real testers?</span><span class="faq-icon">+</span></summary>
+        <p class="faq-ans">We maintain a vetted network of real Android users across diverse devices and geographies. Once you submit your closed testing track link, we deploy testers who download your app via physical devices — never emulators — and maintain daily engagement for exactly 14 consecutive days, meeting Google Play's production access requirements precisely.</p>
+      </details>
+
+      <details>
+        <summary><span class="faq-q">Is this safe? Will Google detect it?</span><span class="faq-icon">+</span></summary>
+        <p class="faq-ans">Yes, it's completely safe. Our service uses <strong>100% genuine Android hardware</strong> with carrier SIM cards and residential IP addresses. Usage patterns are human and natural. Google Play's integrity systems look for emulators, VPNs, and bots — our testers exhibit none of those signals. This is indistinguishable from organic tester acquisition.</p>
+      </details>
+
+      <details>
+        <summary><span class="faq-q">What happens if a tester drops before 14 days?</span><span class="faq-icon">+</span></summary>
+        <p class="faq-ans">If tester count drops below 12, Google Play will reset the 14-day clock — forcing you to restart entirely. This is exactly why our Professional plan includes <strong>4 buffer testers</strong> (16 total). If any tester becomes inactive, a buffer immediately takes their place, maintaining compliance throughout.</p>
+      </details>
+
+      <details>
+        <summary><span class="faq-q">What devices and Android versions are covered?</span><span class="faq-icon">+</span></summary>
+        <p class="faq-ans">Our matrix covers Samsung Galaxy (A &amp; S series), Xiaomi/Redmi (MIUI/HyperOS), Google Pixel, OnePlus (OxygenOS), Oppo (ColorOS), and Motorola running Android 8.0 through 16 (API 26–36). The Enterprise plan covers all eight major manufacturers with a full OS version spread — capturing manufacturer-specific quirks like MIUI battery optimization and Samsung One UI behaviors.</p>
+      </details>
+
+      <details>
+        <summary><span class="faq-q">How fast can I get production access?</span><span class="faq-icon">+</span></summary>
+        <p class="faq-ans">Exactly 14 days from when testers are deployed. Google enforces this window strictly to analyze crash rates, ANRs, and retention curves. This cannot be shortened by any means. Our service guarantees all testers remain active for the full 336-hour period — so your first production submission is your only one.</p>
+      </details>
+
+      <details>
+        <summary><span class="faq-q">Do testers provide crash reports and bug feedback?</span><span class="faq-icon">+</span></summary>
+        <p class="faq-ans">Yes. Beyond compliance data, testers document ANR errors, crashes, UI layout issues on specific devices, and functional bugs. This data surfaces in your Play Console pre-launch report in real time, giving you actionable insight to fix stability issues before your public release. Professional and Enterprise plans include detailed daily written reports.</p>
+      </details>
+
+      <details>
+        <summary><span class="faq-q">What do I need to provide?</span><span class="faq-icon">+</span></summary>
+        <p class="faq-ans">Just your Google Play Console closed testing opt-in URL. Your app must be uploaded to the Closed Testing track with an active opt-in link. We handle tester recruitment, device provisioning, daily engagement, and compliance documentation. <strong>No SDK integration, no code changes, no technical setup required on your end.</strong></p>
+      </details>
+
+      <details>
+        <summary><span class="faq-q">Is this considered fake engagement or policy violation?</span><span class="faq-icon">+</span></summary>
+        <p class="faq-ans">No. This is managed compliance testing — not review manipulation. We do not incentivize star ratings or guarantee positive reviews. Testers provide genuine usage data and may leave organic feedback if they choose. The service is scoped entirely to meeting Google Play's technical testing requirements. No policy is violated.</p>
+      </details>
+
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">getsome<span>.rest</span></div>
+      <p class="footer-desc">Professional Android closed testing. Real devices, real testers, guaranteed production access for Google Play.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Service</h4>
+      <a href="#challenge">How it Works</a>
+      <a href="#devices">Device Coverage</a>
+      <a href="#pricing">Pricing</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p>nabeelsaleem1@proton.me</p>
+      <p style="font-size:13px;color:rgba(255,255,255,.25);margin-top:2px;">Reply within ~2 hours</p>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Refund Policy</a>
+    </div>
+  </div>
+  <div class="footer-base">
+    <span>© 2026 Getsome.rest — All rights reserved.</span>
+    <span>Not affiliated with Google LLC.</span>
+  </div>
+</footer>
+
+<!-- ══════════════════════════════════ -->
+<!-- ORDER MODAL -->
+<!-- ══════════════════════════════════ -->
+<div class="veil" id="modalVeil">
+  <div class="order-modal" role="dialog" aria-modal="true">
+
+    <div class="om-left" id="omLeft">
+      <div class="om-tag">Order Summary</div>
+      <div class="om-plan-name" id="omName">Compliance Pro</div>
+      <div class="om-price-row">
+        <span class="om-was" id="omWas">$420</span>
+        <span class="om-now" id="omNow"><sup>$</sup>300</span>
+      </div>
+      <span class="om-save" id="omSave">You save $120</span>
+      <div class="om-feat-title">What's included</div>
+      <ul class="om-feat-list" id="omFeats">
+        <li>16 Real Android Testers</li>
+        <li>Full 14-Day Testing Window</li>
+        <li>Buffer Tester Coverage</li>
+        <li>Crash & ANR Reports</li>
+        <li>Priority Response (&lt;2hr)</li>
+      </ul>
+      <div class="om-guarantee">
+        <p><strong>100% Compliance Guarantee.</strong> If Google Play doesn't register your testers as active, we redeploy at no additional cost.</p>
+      </div>
+    </div>
+
+    <div class="om-right">
+      <button class="om-close" onclick="closeModal()" aria-label="Close">✕</button>
+      <div class="om-form-title">Start your testing cycle</div>
+      <p class="om-form-sub">We'll send you the Gmail list and a payment link within 2 hours of receiving your order.</p>
+
+      <form id="orderForm" onsubmit="handleOrder(event)">
+        <input type="hidden" id="hiddenPlan" name="plan" value="Compliance Pro — $300">
+
+        <div class="fg">
+          <label for="f-name">Full Name</label>
+          <input id="f-name" class="fg-ctrl" type="text" name="name" placeholder="Jane Smith" required>
+        </div>
+        <div class="fg-row">
+          <div class="fg">
+            <label for="f-email">Email Address</label>
+            <input id="f-email" class="fg-ctrl" type="email" name="email" placeholder="jane@app.com" required>
+          </div>
+          <div class="fg">
+            <label for="f-phone">Phone / Telegram</label>
+            <input id="f-phone" class="fg-ctrl" type="text" name="phone" placeholder="+1 234 567 890">
+          </div>
+        </div>
+        <div class="fg">
+          <label for="f-link">Closed Testing Track Link</label>
+          <input id="f-link" class="fg-ctrl" type="url" name="trackLink" placeholder="https://play.google.com/apps/testing/…" required>
+        </div>
+        <div class="fg">
+          <label for="f-app">App / Company Name</label>
+          <input id="f-app" class="fg-ctrl" type="text" name="appName" placeholder="My Awesome App" required>
+        </div>
+        <div class="fg">
+          <label for="f-notes">Anything we should know? <span style="font-weight:400;text-transform:none;letter-spacing:0;font-size:12px;color:var(--subtle)">(optional)</span></label>
+          <input id="f-notes" class="fg-ctrl" type="text" name="notes" placeholder="Target devices, language requirements, edge cases…">
+        </div>
+        <button type="submit" class="form-submit" id="formSubmitBtn">Complete order →</button>
+        <p class="form-note">🔒 Encrypted · Private · Your data is never shared</p>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- SUCCESS -->
+<div class="success-screen" id="successScreen">
+  <div class="success-box">
+    <span class="success-emoji">🎉</span>
+    <h2 class="success-h">Order received!</h2>
+    <p class="success-p">
+      Thank you! We'll contact you within <strong>2 hours</strong>.<br><br>
+      Expect an email with your <strong>tester Gmail list</strong> to add to your closed testing track, plus a <strong>secure payment link</strong>.<br><br>
+      Check the inbox you provided.
+    </p>
+    <button class="success-dismiss" onclick="dismissSuccess()">Back to site</button>
+  </div>
+</div>
+
+<script>
+// ── PLAN DATA ──────────────────────────────
+const PLANS = {
+  starter:    { name:'Compliance Base',           was:'$300', now:'$250', save:'You save $50',  field:'Compliance Base — $250',           feats:['12 Real Android Testers','Full 14-Day Window','Structured Daily Engagement','Basic Activity Report','4 Device Manufacturers'] },
+  pro:        { name:'Compliance Pro',            was:'$420', now:'$300', save:'You save $120', field:'Compliance Pro — $300',            feats:['16 Real Android Testers','Full 14-Day Window','Buffer Tester Coverage (+4)','Crash & ANR Documentation','Priority Response (<2hr)'] },
+  enterprise: { name:'Dedicated Infrastructure',  was:'$700', now:'$500', save:'You save $200', field:'Dedicated Infrastructure — $500',  feats:['20+ Real Android Testers','Full 14-Day Window','Advanced Engagement Coverage','Play Readiness Report™','Submission Coordination'] },
+};
+
+function openModal(key) {
+  const p = PLANS[key] || PLANS.pro;
+  document.getElementById('omName').textContent   = p.name;
+  document.getElementById('omWas').textContent    = p.was;
+  document.getElementById('omNow').innerHTML      = '<sup>$</sup>' + p.now.replace('$','');
+  document.getElementById('omSave').textContent   = p.save;
+  document.getElementById('hiddenPlan').value     = p.field;
+  const ul = document.getElementById('omFeats');
+  ul.innerHTML = p.feats.map(f=>`<li>${f}</li>`).join('');
+  document.getElementById('modalVeil').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('modalVeil').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.getElementById('modalVeil').addEventListener('click', e => {
+  if (e.target === document.getElementById('modalVeil')) closeModal();
+});
+
+// ── FORM ──────────────────────────────────
+async function handleOrder(e) {
+  e.preventDefault();
+  const btn = document.getElementById('formSubmitBtn');
+  btn.textContent = 'Submitting…'; btn.disabled = true;
+
+  const fd = new FormData(e.target);
+  const body = new FormData();
+  body.append('_subject', `🚀 New Order — ${fd.get('plan')} — getsome.rest`);
+  body.append('_template','table');
+  body.append('_captcha','false');
+  body.append('Plan',       fd.get('plan')      || '');
+  body.append('Name',       fd.get('name')      || '');
+  body.append('Email',      fd.get('email')     || '');
+  body.append('Phone',      fd.get('phone')     || '');
+  body.append('App Name',   fd.get('appName')   || '');
+  body.append('Track Link', fd.get('trackLink') || '');
+  body.append('Notes',      fd.get('notes')     || '');
+
+  try {
+    await fetch('https://formsubmit.co/nabeelsaleem1@proton.me', {
+      method:'POST', body, headers:{Accept:'application/json'}
     });
-    document.querySelectorAll('a, button, input, select, textarea, .contact-link').forEach(el => {
-      el.addEventListener('mouseenter', () => document.body.classList.add('hovering'));
-      el.addEventListener('mouseleave', () => document.body.classList.remove('hovering'));
+  } catch(_){}
+  closeModal();
+  showSuccess();
+}
+
+// ── SUCCESS ────────────────────────────────
+function showSuccess() {
+  document.getElementById('successScreen').classList.add('show');
+  document.getElementById('cnv').classList.add('on');
+  document.body.style.overflow = 'hidden';
+  boom();
+}
+function dismissSuccess() {
+  document.getElementById('successScreen').classList.remove('show');
+  document.getElementById('cnv').classList.remove('on');
+  document.body.style.overflow = '';
+}
+document.getElementById('successScreen').addEventListener('click', e => {
+  if (e.target === document.getElementById('successScreen')) dismissSuccess();
+});
+
+// ── CONFETTI ───────────────────────────────
+function boom() {
+  const cv = document.getElementById('cnv');
+  const cx = cv.getContext('2d');
+  cv.width = innerWidth; cv.height = innerHeight;
+  const cols = ['#0071e3','#34c759','#ff9f0a','#ff453a','#af52de','#5ac8fa','#ffffff'];
+  const bits = Array.from({length:200},()=>({
+    x: Math.random()*cv.width, y: Math.random()*cv.height - cv.height,
+    w: Math.random()*10+5, h: Math.random()*5+3,
+    c: cols[Math.random()*cols.length|0],
+    vy: Math.random()*3+2, spin: (Math.random()-.5)*7,
+    a: Math.random()*360, wobble: Math.random()*4,
+    wa: Math.random()*Math.PI*2, ws: Math.random()*.06+.02
+  }));
+  let f=0;
+  (function draw(){
+    cx.clearRect(0,0,cv.width,cv.height);
+    let alive=false;
+    bits.forEach(b=>{
+      b.y+=b.vy; b.a+=b.spin; b.wa+=b.ws;
+      if(b.y<cv.height+20) alive=true;
+      cx.save();
+      cx.translate(b.x+Math.sin(b.wa)*b.wobble,b.y);
+      cx.rotate(b.a*Math.PI/180);
+      cx.globalAlpha=Math.max(0,1-(b.y/cv.height)*.5);
+      cx.fillStyle=b.c;
+      cx.fillRect(-b.w/2,-b.h/2,b.w,b.h);
+      cx.restore();
     });
+    f++;
+    if(alive&&f<360) requestAnimationFrame(draw);
+    else cx.clearRect(0,0,cv.width,cv.height);
+  })();
+}
 
-    const veil   = document.getElementById('veil');
-    const mclose = document.getElementById('mclose');
-    let shown = false;
+// ── SCROLL REVEAL ──────────────────────────
+const io = new IntersectionObserver(entries => {
+  entries.forEach(en => { if(en.isIntersecting) en.target.classList.add('in'); });
+}, { threshold:0.1 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-    function openModal() {
-      if (shown) return;
-      shown = true;
-      veil.classList.add('open');
-      startTimer();
-    }
-
-    document.addEventListener('mouseleave', e => {
-      if (e.clientY < 8) openModal();
-    });
-    setTimeout(openModal, 50000);
-
-    mclose.addEventListener('click', () => veil.classList.remove('open'));
-    veil.addEventListener('click',   e => { if (e.target === veil) veil.classList.remove('open'); });
-
-    function startTimer() {
-      let s = 600;
-      const el = document.getElementById('mtimer');
-      const t = setInterval(() => {
-        s--;
-        const m = Math.floor(s / 60);
-        const sc = s % 60;
-        el.textContent = m + ':' + (sc < 10 ? '0' : '') + sc;
-        if (s <= 0) { clearInterval(t); el.textContent = 'Expired'; }
-      }, 1000);
-    }
-  </script>
+// ── FAQ native details ──────────────────────
+// (uses native <details>/<summary> — no JS needed for toggle)
+</script>
 </body>
 </html>
